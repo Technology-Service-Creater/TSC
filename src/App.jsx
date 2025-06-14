@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
-  return <div className="text-3xl">App</div>;
+  return (
+    <AppRoutes />
+  );
 };
 
 export default App;
