@@ -43,6 +43,7 @@ yarn dev
 
 ## 📁 Project Structure
 
+```
 twc-tsc
 ├── src
 │ ├── components
@@ -67,6 +68,7 @@ twc-tsc
 ├── vite.config.js # Vite configuration
 ├── package.json # Project dependencies
 └── README.md # Project documentation
+```
 
 ## 🧪 Available Scripts
 
