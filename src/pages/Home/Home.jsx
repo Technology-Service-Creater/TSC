@@ -7,7 +7,7 @@ function Home() {
             <h2 className="font-[Montserrat] font-normal text-xl">This is Montserrat font (h2)</h2>
             <p className="font-[inter] font-medium">This is Inter font (p)</p>
         </div>
-    );
+    )
 }
 
 
