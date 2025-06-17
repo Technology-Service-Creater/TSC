@@ -1,10 +1,14 @@
-import { ChevronUp, ChevronRight, Search } from 'lucide-react';
-import { useState } from 'react';
+import { ChevronUp, ChevronDown, Search, Menu, X } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import Submenu from './Submenu';
 
 const Navbar = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-  const [activeIndustry, setActiveIndustry] = useState(null);
-  const [clickedIndustry, setClickedIndustry] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const submenuRef = useRef(null);
+  const buttonRef = useRef(null);
+  const location = useLocation();
 
   // List of services
   const services = [
@@ -27,7 +31,7 @@ const Navbar = () => {
     'Regulatory Compliance',
   ];
 
-  // List of industries (no nested submenu)
+  // List of industries
   const industries = [
     'Digital Marketing & Online Growth',
     'Customer Experience & Marketing Strategy',
@@ -46,7 +50,7 @@ const Navbar = () => {
     'Design Services',
   ];
 
-  // Map of industry details for the right column
+  // Map of industry details
   const industryDetailsMap = {
     'Digital Marketing & Online Growth': [
       'Search Engine Optimization (SEO)',
@@ -205,106 +209,241 @@ const Navbar = () => {
     ],
   };
 
+  // Close submenu on outside click
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        submenuRef.current &&
+        !submenuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsSubmenuOpen(false);
+      }
+    }
+    if (isSubmenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSubmenuOpen]);
+
+  // Helper for active route
+  const isActive = path => location.pathname === path;
+
   return (
     <>
-      <div className="font-[Montserrat] font-normal max-w-screen-xl mx-auto flex flex-col gap-2 my-3">
-        <div className="flex justify-end items-center gap-12">
-          <p className="cursor-pointer active:scale-95">For Companies</p>
-          <p className="cursor-pointer active:scale-95">Events</p>
-          <p className="cursor-pointer active:scale-95">Become a Master</p>
-          <p className="cursor-pointer active:scale-95">Blogs</p>
+      {/* Top Bar - Always visible */}
+      <div className="w-full bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-4 md:gap-12 items-center">
+          <a
+            href="#"
+            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
+          >
+            For Companies
+          </a>
+          <a
+            href="#"
+            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
+          >
+            Events
+          </a>
+          <a
+            href="#"
+            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
+          >
+            Become a master
+          </a>
+          <a
+            href="#"
+            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
+          >
+            Blogs
+          </a>
         </div>
       </div>
-      <hr className="border-[#E5E5E5] border-b-[1px]" />
-      <div className="font-[Montserrat] font-normal max-w-screen-xl mx-auto flex flex-col gap-2 my-3">
-        <div className="flex justify-between items-center relative">
-          <div className="flex items-center gap-2 h-10 w-10 ">
-            <img src="/Images/logo.png" alt="logo" />
-            <p className="font-[Poppins] font-extrabold text-3xl">TSC</p>
+
+      {/* Main Navbar */}
+      <nav className="font-[Montserrat] font-normal max-w-screen-xl mx-auto my-3 px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center gap-2">
+            <img src="/Images/logo.png" alt="logo" className="h-10 w-10" />
+            <Link to="/" className="font-[Poppins] font-extrabold text-2xl md:text-3xl">
+              TSC
+            </Link>
           </div>
-          <div className="flex justify-end items-center gap-12 relative">
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8 lg:gap-12">
             <div className="relative">
-              <p
-                className="flex items-center cursor-pointer active:scale-95 select-none"
-                onClick={() => {
-                  setIsSubmenuOpen(!isSubmenuOpen);
-                  setActiveIndustry(null);
-                  setClickedIndustry(null);
-                }}
+              <button
+                ref={buttonRef}
+                onClick={() => setIsSubmenuOpen(open => !open)}
+                className={`flex items-center cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                  ${isSubmenuOpen ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+                type="button"
+                aria-expanded={isSubmenuOpen}
+                aria-haspopup="true"
               >
-                What we do{' '}
-                <ChevronUp
-                  className={`${isSubmenuOpen ? 'rotate-180' : ''} transition-transform duration-300`}
+                What we do {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              </button>
+              <div ref={submenuRef}>
+                <Submenu
+                  isOpen={isSubmenuOpen}
+                  onClose={() => setIsSubmenuOpen(false)}
+                  services={services}
+                  industries={industries}
+                  industryDetailsMap={industryDetailsMap}
                 />
-              </p>
-              {isSubmenuOpen && (
-                <div className="fixed top-[110px] left-0 right-0 w-screen bg-white shadow-lg rounded-md z-50 p-6 flex justify-center">
-                  <div className="px-10 flex gap-12 w-full">
-                    <div className="flex flex-col w-1/3 border-r border-gray-300 pr-6">
-                      <h3 className="text-lg font-semibold mb-4">Services</h3>
-                      <ul className="flex flex-col gap-2 text-sm">
-                        {services.map((service, idx) => (
-                          <li
-                            key={idx}
-                            className="cursor-pointer hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md px-3 py-1.5 transition-colors duration-300"
-                          >
-                            {service}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-col w-1/3 border-r border-gray-300 px-6">
-                      <h3 className="text-lg font-semibold mb-4">Industries</h3>
-                      <ul className="flex flex-col gap-2 text-sm">
-                        {industries.map((industry, idx) => (
-                          <li
-                            key={idx}
-                            className="flex justify-between items-center cursor-pointer hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md px-4 py-2 transition-colors duration-300"
-                            onMouseEnter={() => setActiveIndustry(industry)}
-                            onClick={() => setClickedIndustry(industry)}
-                            onMouseLeave={() => {
-                              if (clickedIndustry !== industry) {
-                                setActiveIndustry(null);
-                              }
-                            }}
-                          >
-                            <span>{industry}</span>
-                            <ChevronRight size={16} />
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {(activeIndustry || clickedIndustry) && (
-                      <div className="flex flex-col w-fit px-6 pt-2 rounded-md bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 ">
-                        <h3 className="text-lg font-semibold mb-4">Details</h3>
-                        <ul className="text-sm">
-                          {industryDetailsMap[clickedIndustry || activeIndustry]?.map(
-                            (item, idx) => (
-                              <li
-                                key={idx}
-                                className="p-1 hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md px-4 py-2 transition-colors duration-300"
-                              >
-                                {item}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
-            <p className="cursor-pointer active:scale-95">About Us</p>
-            <p className="cursor-pointer active:scale-95">Careers</p>
-            <p className="cursor-pointer active:scale-95">Contact Us</p>
-            <p className="flex items-center gap-2 cursor-pointer active:scale-95 px-4 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white">
+            <Link
+              to="/about"
+              className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+              `}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/careers"
+              className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+              `}
+            >
+              Careers
+            </Link>
+            <Link
+              to="/contact"
+              className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+              `}
+            >
+              Contact Us
+            </Link>
+            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white">
               <Search size={16} />
               Search
-            </p>
+            </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden flex items-center"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 bg-white z-40 p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out">
+            {/* Close Button */}
+            <div className="flex justify-end mb-4">
+              <button
+                className="text-gray-500 hover:text-[#A468DA]"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Mobile Menu Content */}
+            <div className="space-y-4">
+              {/* What we do collapsible section */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
+                  className={`w-full flex items-center justify-between px-4 py-2 rounded-md text-base font-medium transition-colors
+                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                    ${isSubmenuOpen ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                  `}
+                >
+                  What we do {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </button>
+                {isSubmenuOpen && (
+                  <div className="pl-4 space-y-2">
+                    <h3 className="font-semibold text-sm text-gray-500">Services</h3>
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={`/what-we-do/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block px-4 py-2 text-base hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsSubmenuOpen(false);
+                        }}
+                      >
+                        {service}
+                      </Link>
+                    ))}
+                    <h3 className="font-semibold text-sm text-gray-500 mt-4">Industries</h3>
+                    {industries.map((industry, index) => (
+                      <Link
+                        key={index}
+                        to={`/what-we-do/industries/${industry.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block px-4 py-2 text-base hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsSubmenuOpen(false);
+                        }}
+                      >
+                        {industry}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {/* Other main links for mobile */}
+              <Link
+                to="/about"
+                className={`block px-4 py-2 rounded-md text-base font-medium transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                  ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link
+                to="/careers"
+                className={`block px-4 py-2 rounded-md text-base font-medium transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                  ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Careers
+              </Link>
+              <Link
+                to="/contact"
+                className={`block px-4 py-2 rounded-md text-base font-medium transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                  ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              <button className="flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center">
+                <Search size={16} />
+                Search
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
     </>
   );
 };
