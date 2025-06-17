@@ -3,37 +3,62 @@
 
 @font-face {
     font-family: "Inter";
-    src: url('/fonts/Inter_24pt-Medium.ttf') format('truetype');
+    src: url('/src/assets/fonts/Inter_24pt-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: "Poppins";
-    src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+    src: url('/src/assets/fonts/Poppins-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: bold;
 }
 @font-face {
     font-family: "Poppins";
-    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+    src: url('/src/assets/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: "Montserrat";
-    src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+    src: url('/src/assets/fonts/Montserrat-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: bold;
 }
 @font-face {
     font-family: "Montserrat";
-    src: url('/fonts/Montserrat-Medium.ttf') format('truetype');
+    src: url('/src/assets/fonts/Montserrat-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: medium;
 }
 @font-face {
     font-family: "Montserrat";
-    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('/src/assets/fonts/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/src/assets/fonts/LeagueSpartan-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: extrabold;
+}
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/src/assets/fonts/LeagueSpartan-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: medium;
+}
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/src/assets/fonts/LeagueSpartan-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/src/assets/fonts/LeagueSpartan-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: semibold;
 }
