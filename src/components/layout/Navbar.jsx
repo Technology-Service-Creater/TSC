@@ -14,9 +14,9 @@ const Navbar = () => {
       <hr className="border-[#E5E5E5] border-b-[1px]" />
       <div className="font-[Montserrat] font-normal max-w-screen-xl mx-auto flex flex-col gap-2 my-3">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2 h-10 w-10 font-[LeagueSpartan] font-extrabold">
+          <div className="flex items-center gap-2 h-10 w-10 ">
             <img src="/Images/logo.png" alt="logo" />
-            TSC
+            <p className="font-[Poppins] font-extrabold text-3xl">TSC</p>
           </div>
           <div className="flex justify-end items-center gap-12">
             <p className="flex items-center cursor-pointer active:scale-95">
