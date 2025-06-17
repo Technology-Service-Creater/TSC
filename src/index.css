@@ -37,3 +37,28 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/public/fonts/LeagueSpartan-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: extrabold;
+}
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/public/fonts/LeagueSpartan-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: medium;
+}
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/public/fonts/LeagueSpartan-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url('/public/fonts/LeagueSpartan-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: semibold;
+}
