@@ -1,4 +1,4 @@
-import { ChevronUp, ChevronDown, Search, Menu, X } from 'lucide-react';
+import { ChevronUp, ChevronDown, Search, Menu, X, ChevronRight } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Submenu from './Submenu';
@@ -6,6 +6,7 @@ import Submenu from './Submenu';
 const Navbar = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredIndustry, setHoveredIndustry] = useState(null);
   const submenuRef = useRef(null);
   const buttonRef = useRef(null);
   const location = useLocation();
@@ -57,6 +58,11 @@ const Navbar = () => {
       'Social Media Marketing (SMM)',
       'Content Marketing',
       'Email Marketing',
+      'Pay-Per-Click (PPC) Advertising',
+      'Influencer Marketing',
+      'Affiliate Marketing',
+      'App Store Optimization (ASO)',
+      'Online Reputation Management (ORM)',
     ],
     'Customer Experience & Marketing Strategy': [
       'Brand Positioning',
@@ -80,7 +86,7 @@ const Navbar = () => {
       'CRM-Integrated Email Marketing',
       'Web & Mobile Analytics',
       'Product & Content Analytics',
-      'Audience Marketing Analytics',
+      'AI-Driven Marketing Analytics',
       'Performance Tracking & Reporting',
       'A/B Testing & Optimization',
     ],
@@ -97,115 +103,28 @@ const Navbar = () => {
       'Upselling & Cross-selling Strategies',
     ],
     'AI & Automation in Marketing': [
-      'Chatbots & Customer Support',
+      'AI-Powered Chatbots & Customer Support',
       'Predictive Marketing',
       'AI-Driven Personalization',
       'Automated Ad Campaigns',
     ],
-    'Visual & Video Marketing': [
+    'Software Development': [
       'Artificial Intelligence & Machine Learning',
       'AI and Data Science',
-      'Trajectory AI',
+      'Trustworthy AI',
       'Generative AI',
-      'AI Powered Business Intelligence',
-    ],
-    'Traditional & Offline Marketing': [
+      'AI-Powered Business Intelligence',
+
       'Cybersecurity',
       'Influencer Marketing',
       'Affiliate Marketing',
       'App Store Optimization (ASO)',
       'Online Reputation Management (ORM)',
-    ],
-    'Social Media & Community Engagement': [
+
       'Web Development',
-      'Full-stack Development',
-      'Integration with Apps (iOS/Android)',
+      'Full-Stack Development',
+      'Progressive Web Apps (PWA)',
       'Website Optimization & Performance',
-    ],
-    'Software Development': [
-      'Digital Marketing & Online Growth',
-      'Customer Experience & Marketing Strategy',
-      'Integrated Marketing & Brand Communications',
-      'Email & Performance Marketing',
-      'Experiential & Event-Based Marketing',
-      'E-Commerce & Growth Marketing',
-      'AI & Automation in Marketing',
-      'Visual & Video Marketing',
-      'Traditional & Offline Marketing',
-      'Social Media & Community Engagement',
-      'Software Development',
-      'Event Services & Marketing',
-      'Market Analysis and Research',
-      'Legal and Compliance',
-      'Design Services',
-    ],
-    'Event Services & Marketing': [
-      'Digital Marketing & Online Growth',
-      'Customer Experience & Marketing Strategy',
-      'Integrated Marketing & Brand Communications',
-      'Email & Performance Marketing',
-      'Experiential & Event-Based Marketing',
-      'E-Commerce & Growth Marketing',
-      'AI & Automation in Marketing',
-      'Visual & Video Marketing',
-      'Traditional & Offline Marketing',
-      'Social Media & Community Engagement',
-      'Software Development',
-      'Event Services & Marketing',
-      'Market Analysis and Research',
-      'Legal and Compliance',
-      'Design Services',
-    ],
-    'Market Analysis and Research': [
-      'Digital Marketing & Online Growth',
-      'Customer Experience & Marketing Strategy',
-      'Integrated Marketing & Brand Communications',
-      'Email & Performance Marketing',
-      'Experiential & Event-Based Marketing',
-      'E-Commerce & Growth Marketing',
-      'AI & Automation in Marketing',
-      'Visual & Video Marketing',
-      'Traditional & Offline Marketing',
-      'Social Media & Community Engagement',
-      'Software Development',
-      'Event Services & Marketing',
-      'Market Analysis and Research',
-      'Legal and Compliance',
-      'Design Services',
-    ],
-    'Legal and Compliance': [
-      'Digital Marketing & Online Growth',
-      'Customer Experience & Marketing Strategy',
-      'Integrated Marketing & Brand Communications',
-      'Email & Performance Marketing',
-      'Experiential & Event-Based Marketing',
-      'E-Commerce & Growth Marketing',
-      'AI & Automation in Marketing',
-      'Visual & Video Marketing',
-      'Traditional & Offline Marketing',
-      'Social Media & Community Engagement',
-      'Software Development',
-      'Event Services & Marketing',
-      'Market Analysis and Research',
-      'Legal and Compliance',
-      'Design Services',
-    ],
-    'Design Services': [
-      'Digital Marketing & Online Growth',
-      'Customer Experience & Marketing Strategy',
-      'Integrated Marketing & Brand Communications',
-      'Email & Performance Marketing',
-      'Experiential & Event-Based Marketing',
-      'E-Commerce & Growth Marketing',
-      'AI & Automation in Marketing',
-      'Visual & Video Marketing',
-      'Traditional & Offline Marketing',
-      'Social Media & Community Engagement',
-      'Software Development',
-      'Event Services & Marketing',
-      'Market Analysis and Research',
-      'Legal and Compliance',
-      'Design Services',
     ],
   };
 
@@ -238,7 +157,7 @@ const Navbar = () => {
     <>
       {/* Top Bar - Always visible */}
       <div className="w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
-        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-8 md:gap-12 lg:px-10 items-center">
+        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-1.5 md:gap-12 lg:px-10 items-center">
           <a
             href="#"
             className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
@@ -365,7 +284,7 @@ const Navbar = () => {
               <div className="space-y-2">
                 <button
                   onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
-                  className={`w-full flex items-center justify-between px-4 py-2 rounded-md text-base font-medium transition-colors
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded-md text-base font-medium transition-colors
                     hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
                     ${isSubmenuOpen ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
                   `}
@@ -373,70 +292,107 @@ const Navbar = () => {
                   What we do {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                 </button>
                 {isSubmenuOpen && (
-                  <div className="pl-4 space-y-2">
-                    <h3 className="font-semibold text-sm text-gray-500">Services</h3>
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        to={`/what-we-do/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block px-4 py-2 text-base hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md"
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                          setIsSubmenuOpen(false);
-                        }}
-                      >
-                        {service}
-                      </Link>
-                    ))}
-                    <h3 className="font-semibold text-sm text-gray-500 mt-4">Industries</h3>
-                    {industries.map((industry, index) => (
-                      <Link
-                        key={index}
-                        to={`/what-we-do/industries/${industry.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block px-4 py-2 text-base hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md"
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                          setIsSubmenuOpen(false);
-                        }}
-                      >
-                        {industry}
-                      </Link>
-                    ))}
+                  <div className="pl-4 space-y-4 mt-2">
+                    {/* Services Section */}
+                    <div className="space-y-2">
+                      <h3 className="font-semibold text-sm text-gray-500 px-4">Services</h3>
+                      <div className="space-y-1">
+                        {services.map((service, index) => (
+                          <Link
+                            key={index}
+                            to={`/what-we-do/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                            className="block px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md truncate"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setIsSubmenuOpen(false);
+                            }}
+                          >
+                            {service}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Industries Section with Details */}
+                    <div className="space-y-2">
+                      <h3 className="font-semibold text-sm text-gray-500 px-4">Industries</h3>
+                      <div className="space-y-1">
+                        {industries.map((industry, index) => (
+                          <div key={index} className="space-y-1">
+                            <button
+                              onClick={() =>
+                                setHoveredIndustry(industry === hoveredIndustry ? null : industry)
+                              }
+                              className="w-full flex items-center justify-between px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md group"
+                            >
+                              <span className="truncate">{industry}</span>
+                              <ChevronRight
+                                size={16}
+                                className={`transform transition-transform duration-200 ${
+                                  hoveredIndustry === industry ? 'rotate-90' : ''
+                                } text-gray-400 group-hover:text-[#A468DA]`}
+                              />
+                            </button>
+                            {hoveredIndustry === industry && (
+                              <div className="pl-4 space-y-1 bg-gradient-to-r from-[#A468DA]/5 to-[#149BF5]/5 rounded-md p-2 mt-1">
+                                {industryDetailsMap[industry]?.map((detail, idx) => (
+                                  <Link
+                                    key={idx}
+                                    to={`/what-we-do/industries/${industry.toLowerCase().replace(/\s+/g, '-')}/${detail.toLowerCase().replace(/\s+/g, '-')}`}
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:text-[#A468DA] truncate"
+                                    onClick={() => {
+                                      setIsMobileMenuOpen(false);
+                                      setIsSubmenuOpen(false);
+                                    }}
+                                  >
+                                    {detail}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
+
               {/* Other main links for mobile */}
-              <Link
-                to="/about"
-                className={`block px-4 py-2 rounded-md text-base font-medium transition-colors
-                  hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
-                  ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                `}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              <Link
-                to="/careers"
-                className={`block px-4 py-2 rounded-md text-base font-medium transition-colors
-                  hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
-                  ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                `}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Careers
-              </Link>
-              <Link
-                to="/contact"
-                className={`block px-4 py-2 rounded-md text-base font-medium transition-colors
-                  hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
-                  ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                `}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact Us
-              </Link>
-              <button className="flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center">
+              <div className="space-y-1">
+                <Link
+                  to="/about"
+                  className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
+                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                    ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                  `}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About Us
+                </Link>
+                <Link
+                  to="/careers"
+                  className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
+                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                    ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                  `}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Careers
+                </Link>
+                <Link
+                  to="/contact"
+                  className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
+                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                    ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                  `}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact Us
+                </Link>
+              </div>
+
+              <button className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center text-sm mt-4">
                 <Search size={16} />
                 Search
               </button>

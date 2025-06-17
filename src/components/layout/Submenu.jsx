@@ -8,22 +8,24 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
 
   return (
     <div
-      className={`fixed left-0 right-0 top-28 z-50 w-full transition-all duration-200 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
+      className={`fixed left-0 right-0 top-28 z-50 w-full transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
       onMouseLeave={() => {
         setHoveredIndustry(null);
         onClose();
       }}
     >
-      <div className="max-w-screen-xl mx-auto w-full shadow-lg rounded-xl overflow-hidden bg-white font-[Montserrat]">
+      <div className="max-w-screen-xl mx-auto w-full rounded-xl overflow-hidden bg-white font-[Montserrat]">
         {/* What we do heading with white bg */}
         <div className="bg-white px-8 py-4 relative">
           <div className="absolute left-0 top-0 bottom-2 w-1 bg-gradient-to-b from-[#A468DA] to-[#149BF5]"></div>
-          <span className="text-3xl font-[Poppins] font-extrabold text-[#222]">What We Do</span>
+          <span className="text-3xl font-[Poppins] font-extrabold text-[#222] transform transition-all duration-300 ease-in-out hover:scale-105">
+            What We Do
+          </span>
         </div>
         <div className="flex flex-nowrap min-h-[300px] divide-x divide-gray-200">
           {/* Services Section */}
           <div className="flex-1 px-8 py-2">
-            <h3 className="text-lg font-bold text-[#222]">Services</h3>
+            <h3 className="text-2xl font-[Montserrat] mb-4 font-normal text-[#222]">Services</h3>
             <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
@@ -40,7 +42,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
           </div>
           {/* Industries Section */}
           <div className="flex-1 px-8 py-2">
-            <h3 className="text-lg font-bold text-[#222]">Industries</h3>
+            <h3 className="text-2xl font-[Montserrat] mb-4 font-normal text-[#222]">Industries</h3>
             <ul className="space-y-2">
               {industries.map((industry, index) => (
                 <li key={index}>
