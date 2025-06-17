@@ -237,8 +237,8 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar - Always visible */}
-      <div className="w-full bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-4 md:gap-12 items-center">
+      <div className="w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
+        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-8 md:gap-12 lg:px-10 items-center">
           <a
             href="#"
             className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
