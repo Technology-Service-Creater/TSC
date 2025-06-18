@@ -13,17 +13,21 @@ import IndustryDetails from '../pages/WhatWeDo/Industries/IndustryDetails';
 const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Career />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/whatwedo" element={<WhatWeDo />} />
-        <Route path="/services/:serviceId" element={<ServiceDetails />} />
-        <Route path="/industries/:industryId" element={<IndustryDetails />} />
-      </Routes>
-      <Footer />
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Career />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/whatwedo" element={<WhatWeDo />} />
+            <Route path="/services/:serviceId" element={<ServiceDetails />} />
+            <Route path="/industries/:industryId" element={<IndustryDetails />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };

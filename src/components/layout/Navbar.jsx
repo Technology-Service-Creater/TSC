@@ -186,7 +186,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="font-[Montserrat] font-normal w-full my-3 px-4 sm:px-6 lg:px-10 relative border-b border-gray-200 pb-3">
+      <nav className="font-[Montserrat] font-normal w-full my-3 px-4 sm:px-6 lg:px-10 relative border-b border-gray-200 pb-3 bg-white">
         <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
             <img src="/Images/logo.png" alt="logo" className="h-10 w-10" />
