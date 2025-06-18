@@ -1,70 +1,51 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 function Home() {
   return (
-    <div className="p-6 space-y-8">
-      <h1 className="font-[Poppins] font-normal text-2xl">This is Poppins font (h1)</h1>
-      <h2 className="font-[Montserrat] font-normal text-xl">This is Montserrat font (h2)</h2>
-      <p className="font-[inter] font-medium">This is Inter font (p)</p>
+    <>
+      <div>
+        <div className="relative bg-[url('/Images/home_hero.png')] bg-cover bg-center bg-no-repeat h-[500px] sm:h-[550px] lg:h-[616px] overflow-hidden">
+          {/* Dark backdrop overlay */}
+          <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Add more content to test scrolling */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold">Welcome to TSC</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
-        </p>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur.
-        </p>
-      </div>
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
 
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold">Our Services</h3>
-        <p>
-          We provide comprehensive technology solutions and consulting services to help your
-          business grow.
-        </p>
-        <p>
-          From web development to digital marketing, we have the expertise to take your business to
-          the next level.
-        </p>
-      </div>
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-start justify-center gap-4 sm:gap-6 h-full w-full lg:w-[60%] px-6 sm:pl-8 lg:pl-40 text-white">
+            {/* Main heading with enhanced styling */}
+            <div className="font-[Poppins] font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Seamless Services,
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent">
+                Ultimate Convenience!
+              </span>
+            </div>
 
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold">Why Choose Us</h3>
-        <p>
-          With years of experience and a dedicated team of professionals, we deliver results that
-          exceed expectations.
-        </p>
-        <p>
-          Our innovative approach and cutting-edge technology ensure your success in the digital
-          landscape.
-        </p>
-      </div>
+            {/* Subtitle with improved typography */}
+            <div className="font-[Montserrat] font-normal text-base sm:text-lg lg:text-lg text-gray-200 max-w-lg lg:max-w-xl leading-relaxed">
+              We craft innovative digital solutions tailored to your needs. Our expert team ensures
+              seamless execution, top-notch quality, and continuous support to drive your success.
+            </div>
 
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold">Contact Information</h3>
-        <p>
-          Get in touch with us to discuss your project requirements and how we can help you achieve
-          your goals.
-        </p>
-        <p>We're here to provide the best solutions for your business needs.</p>
-      </div>
+            {/* Enhanced CTA button */}
+            <div className="mt-2 sm:mt-4">
+              <button className="font-[Montserrat] font-semibold flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white text-sm sm:text-base hover:shadow-2xl hover:shadow-[#A468DA]/30 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#A468DA] focus:ring-opacity-50 active:scale-95">
+                <span>Get Started</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            </div>
+          </div>
 
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold">Additional Content</h3>
-        <p>
-          This section ensures there's enough content to test scrolling behavior on mobile devices.
-        </p>
-        <p>The footer should remain fixed at the bottom while this content scrolls smoothly.</p>
+          {/* Decorative elements */}
+          <div className="absolute top-10 right-10 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-[#A468DA]/20 to-[#149BF5]/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-[#149BF5]/20 to-[#A468DA]/20 rounded-full blur-xl"></div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
