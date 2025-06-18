@@ -81,10 +81,10 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
           {/* Industry Details Section - Full Width */}
           <div className="flex-1 p-8 flex items-start justify-start">
             <div
-              className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 p-4 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''}`}
+              className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''}`}
             >
               {hoveredIndustry && industryDetailsMap[hoveredIndustry] ? (
-                <>
+                <div className="p-4">
                   <h3 className="text-base font-bold mb-3 text-[#222]">{hoveredIndustry}</h3>
                   <ul className="space-y-1">
                     {industryDetailsMap[hoveredIndustry].map((detail, idx) => (
@@ -93,10 +93,6 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                       </li>
                     ))}
                   </ul>
-                </>
-              ) : hoveredIndustry ? (
-                <div className="text-sm text-gray-500 italic">
-                  No additional details available for {hoveredIndustry}
                 </div>
               ) : null}
             </div>
