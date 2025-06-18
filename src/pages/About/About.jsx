@@ -1,5 +1,6 @@
 import HeroSection from '../../components/common/HeroSection';
 import AboutTextSection from './AboutTextSection';
+import ExploreOurBusinessSection from './ExploreOurBusinessSection';
 import MeetOurExperts from './MeetOurExperts';
 import OurMissionSection from './OurMissionSection';
 import OurVisionSection from './OurVisionSection';
@@ -76,33 +77,67 @@ const experts = [
     image: '/Images/experts.png',
   },
 ];
+
+const businessBranchesInfo = [
+  {
+    heading: 'Technology Education Creater',
+    description:
+      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
+    image: '/Images/TEC Logo.png',
+    link: '/abc',
+  },
+  {
+    heading: 'Technology Agriculture Creater',
+    description:
+      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
+    image: '/Images/TACLogo.png',
+    link: '/abc',
+  },
+  {
+    heading: 'Technology Property Creater',
+    description:
+      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
+    image: '/Images/TPCLogo.png',
+    link: '/abc',
+  },
+  {
+    heading: 'Technology Skills Creater',
+    description:
+      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
+    image: '/Images/TSCLogo.png',
+    link: '/abc',
+  },
+];
 const About = () => (
   <>
-    <HeroSection
-      contentHeading={CenterContent.contentHeading}
-      contentDescription={CenterContent.contentDescription}
-      contentImage={CenterContent.contentImage}
-    />
-    <AboutTextSection
-      heading={aboutTextContent.heading}
-      description={aboutTextContent.description}
-      image={aboutTextContent.image}
-    />
-    <OurMissionSection
-      heading1={ourMissionSection.heading1}
-      description1={ourMissionSection.description1}
-      image={ourMissionSection.image}
-      description2={ourMissionSection.description2}
-      description3={ourMissionSection.description3}
-    />
-    <OurVisionSection
-      heading1={ourVisionSection.heading1}
-      image={ourVisionSection.image}
-      heading2={ourVisionSection.heading2}
-      subheading2={ourVisionSection.subheading2}
-      description2={ourVisionSection.description2}
-    />
-    <MeetOurExperts mapList={experts} />
+    <div className="bg-[#F5FEFF]">
+      <HeroSection
+        contentHeading={CenterContent.contentHeading}
+        contentDescription={CenterContent.contentDescription}
+        contentImage={CenterContent.contentImage}
+      />
+      <AboutTextSection
+        heading={aboutTextContent.heading}
+        description={aboutTextContent.description}
+        image={aboutTextContent.image}
+      />
+      <OurMissionSection
+        heading1={ourMissionSection.heading1}
+        description1={ourMissionSection.description1}
+        image={ourMissionSection.image}
+        description2={ourMissionSection.description2}
+        description3={ourMissionSection.description3}
+      />
+      <OurVisionSection
+        heading1={ourVisionSection.heading1}
+        image={ourVisionSection.image}
+        heading2={ourVisionSection.heading2}
+        subheading2={ourVisionSection.subheading2}
+        description2={ourVisionSection.description2}
+      />
+      <MeetOurExperts mapList={experts} />
+      <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
+    </div>
   </>
 );
 

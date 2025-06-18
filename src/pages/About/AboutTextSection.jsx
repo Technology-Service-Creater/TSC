@@ -3,7 +3,7 @@ import React from 'react';
 const AboutTextSection = ({ heading, description, image }) => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row max-w-[1190px] h-auto lg:h-[687px] mx-6 lg:mx-[125px] my-10 lg:my-14">
+      <div className="flex flex-col lg:flex-row max-w-[1190px] h-auto lg:h-[687px] mx-6 lg:mx-[125px] my-10 lg:my-14 ">
         {/* Left Text Section */}
         <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start mb-8 lg:mb-0">
           <div className="flex flex-col max-w-[586px] px-4 lg:px-0">

@@ -3,7 +3,7 @@ import React from 'react';
 const OurMissionSection = ({ heading1, description1, image, description2, description3 }) => {
   return (
     <>
-      <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 py-6">
+      <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 py-6 ">
         <div className="flex bg-black w-full h-20 md:h-[80px] justify-center items-center mb-8 md:mb-12 rounded-xl">
           <div className="text-white text-2xl md:text-4xl font-bold font-['Poppins'] px-4 md:px-[89px] py-4 md:py-[28px]">
             Our Mission
