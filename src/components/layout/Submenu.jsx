@@ -14,7 +14,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
         onClose();
       }}
     >
-      <div className="max-w-screen-xl mx-auto w-full rounded-xl overflow-hidden bg-white font-[Montserrat]">
+      <div className="max-w-screen-xl mx-auto w-full rounded-xl overflow-hidden bg-white font-[Montserrat] border border-gray-200 shadow-2xl shadow-gray-300/50">
         {/* What we do heading with white bg */}
         <div className="bg-white px-8 py-4 relative">
           <div className="absolute left-0 top-0 bottom-2 w-1 bg-gradient-to-b from-[#A468DA] to-[#149BF5]"></div>
@@ -44,28 +44,44 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
           <div className="flex-1 px-8 py-2">
             <h3 className="text-2xl font-[Montserrat] mb-4 font-normal text-[#222]">Industries</h3>
             <ul className="space-y-2">
-              {industries.map((industry, index) => (
-                <li key={index}>
-                  <button
-                    type="button"
-                    onMouseEnter={() => setHoveredIndustry(industry)}
-                    onFocus={() => setHoveredIndustry(industry)}
-                    className="flex items-center w-full text-left text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA] group"
-                  >
-                    <span className="flex-1">{industry}</span>
-                    <ChevronRight
-                      size={16}
-                      className="ml-2 text-gray-400 group-hover:text-[#A468DA]"
-                    />
-                  </button>
-                </li>
-              ))}
+              {industries.map((industry, index) => {
+                const hasDetails =
+                  industryDetailsMap[industry] && industryDetailsMap[industry].length > 0;
+                return (
+                  <li key={index}>
+                    {hasDetails ? (
+                      <button
+                        type="button"
+                        onMouseEnter={() => setHoveredIndustry(industry)}
+                        onFocus={() => setHoveredIndustry(industry)}
+                        className="flex items-center w-full text-left text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA] group"
+                      >
+                        <span className="flex-1">{industry}</span>
+                        <ChevronRight
+                          size={16}
+                          className="ml-2 text-gray-400 group-hover:text-[#A468DA]"
+                        />
+                      </button>
+                    ) : (
+                      <Link
+                        to={`/what-we-do/industries/${industry.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA]"
+                        onClick={onClose}
+                        onMouseEnter={() => setHoveredIndustry(industry)}
+                        onMouseLeave={() => setHoveredIndustry(null)}
+                      >
+                        {industry}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
-          {/* Industry Details Section */}
-          <div className="flex-1 p-8 min-w-[220px] flex items-start justify-start">
+          {/* Industry Details Section - Full Width */}
+          <div className="flex-1 p-8 flex items-start justify-start">
             <div
-              className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 p-4 flex flex-col justify-start items-start shadow-inner ${!hoveredIndustry ? 'hidden' : ''}`}
+              className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 p-4 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''}`}
             >
               {hoveredIndustry && industryDetailsMap[hoveredIndustry] ? (
                 <>
@@ -78,9 +94,11 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                     ))}
                   </ul>
                 </>
-              ) : (
-                <></>
-              )}
+              ) : hoveredIndustry ? (
+                <div className="text-sm text-gray-500 italic">
+                  No additional details available for {hoveredIndustry}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
