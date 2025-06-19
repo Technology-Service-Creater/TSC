@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Twitter } from 'lucide-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,13 +14,13 @@ const Footer = () => {
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start justify-between py-8 lg:py-14 px-4 sm:px-6 relative z-10">
           {/* Company Info Section */}
           <div className="flex flex-col gap-4 w-full lg:w-auto mb-8 lg:mb-0">
-            <div className="flex items-center gap-2 group">
+            <Link to={'/'} className="flex items-center gap-2 group">
               <img
                 src="/Images/logo.png"
                 alt="logo"
                 className="max-w-full md:max-w-[350px] w-full h-auto lg:max-w-[300px] transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
+            </Link>
             <div className="flex items-center justify-start gap-3 lg:gap-4 text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer group">
               <Mail className="w-4 h-4 lg:w-5 lg:h-5 group-hover:text-[#A468DA] transition-colors duration-300" />
               <span className="font-[Montserrat] text-xs lg:text-sm">
