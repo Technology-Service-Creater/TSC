@@ -1,6 +1,7 @@
 import HeroSection from '../../components/common/HeroSection';
 import AboutTextSection from './AboutTextSection';
 import ExploreOurBusinessSection from './ExploreOurBusinessSection';
+import ExploreTSC from './ExploreTSC';
 import MeetOurExperts from './MeetOurExperts';
 import OurMissionSection from './OurMissionSection';
 import OurVisionSection from './OurVisionSection';
@@ -108,9 +109,16 @@ const businessBranchesInfo = [
     link: '/abc',
   },
 ];
+
+const exploreContent = [
+  { heading: 'Explore career', link: '/career' },
+  { heading: 'Explore Services', link: '/services' },
+  { heading: 'Explore Events', link: '/events' },
+  { heading: 'Explore Blogs', link: '/blogs' },
+];
 const About = () => (
   <>
-    <div className="bg-[#F5FEFF]">
+    <div className="bg-[#F5FEFF] ">
       <HeroSection
         contentHeading={CenterContent.contentHeading}
         contentDescription={CenterContent.contentDescription}
@@ -137,6 +145,7 @@ const About = () => (
       />
       <MeetOurExperts mapList={experts} />
       <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
+      <ExploreTSC headings={exploreContent} />
     </div>
   </>
 );

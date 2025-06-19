@@ -3,7 +3,7 @@ import React from 'react';
 const MeetOurExperts = ({ mapList }) => {
   return (
     <>
-      <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 py-6 rounded-[20px] mb-8">
+      <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 py-6 rounded-[20px] mb-12">
         <div className="flex bg-black w-full h-14 sm:h-[56px] justify-center items-center mb-8 sm:mb-12 rounded-xl">
           <div className="text-white text-2xl sm:text-3xl font-medium leading-[40px] sm:leading-[50px] tracking-wide">
             Meet Our Experts
