@@ -1,6 +1,5 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Twitter } from 'lucide-react';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -18,14 +17,8 @@ const Footer = () => {
               <img
                 src="/Images/logo.png"
                 alt="logo"
-                className="h-16 w-14 lg:h-24 lg:w-20 transition-transform duration-300 group-hover:scale-105"
+                className="max-w-full md:max-w-[350px] w-full h-auto lg:max-w-[300px] transition-transform duration-300 group-hover:scale-105"
               />
-              <Link
-                to="/"
-                className="font-[Poppins] font-bold text-xl lg:text-2xl xl:text-6xl transition-all duration-300 hover:text-[#A468DA] hover:drop-shadow-lg"
-              >
-                TSC
-              </Link>
             </div>
             <div className="flex items-center justify-start gap-3 lg:gap-4 text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer group">
               <Mail className="w-4 h-4 lg:w-5 lg:h-5 group-hover:text-[#A468DA] transition-colors duration-300" />
@@ -134,10 +127,10 @@ const Footer = () => {
                 <input
                   type="text"
                   placeholder="Enter your email"
-                  className="w-full p-2 lg:p-3 font-[Montserrat] font-medium rounded-lg bg-[#2A2F2F] text-white border border-gray-600 focus:border-[#A468DA] focus:outline-none focus:ring-2 focus:ring-[#A468DA] focus:ring-opacity-30 transition-all duration-300 placeholder-gray-400 hover:border-gray-500 text-sm lg:text-base"
+                  className="w-40 lg:w-full  p-2 lg:p-3 font-[Montserrat] font-medium rounded-lg bg-[#2A2F2F] text-white border border-gray-600 focus:border-[#A468DA] focus:outline-none focus:ring-2 focus:ring-[#A468DA] focus:ring-opacity-30 transition-all duration-300 placeholder-gray-400 hover:border-gray-500 text-sm lg:text-base"
                 />
               </div>
-              <button className="font-[Montserrat] font-medium flex items-center gap-2 px-3 lg:px-4 py-2 lg:py-3 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center text-xs lg:text-sm mt-2 lg:mt-4 hover:shadow-xl hover:shadow-[#A468DA]/25 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#A468DA] focus:ring-opacity-50 active:scale-95">
+              <button className="font-[Montserrat] font-medium flex items-center gap-2 px-3 lg:px-4 py-2 lg:py-3 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-40 lg:w-full justify-center text-xs lg:text-sm mt-2 lg:mt-4 hover:shadow-xl hover:shadow-[#A468DA]/25 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#A468DA] focus:ring-opacity-50 active:scale-95">
                 Follow Us
               </button>
             </div>
@@ -150,8 +143,7 @@ const Footer = () => {
         {/* Copyright section */}
         <div className="max-w-screen-xl mx-auto py-3 lg:py-6 px-4 sm:px-6 text-center">
           <p className="text-gray-400 font-[Montserrat] text-xs lg:text-sm">
-            © {new Date().getFullYear()} TSC All rights reserved | NextGen Technology World Creater
-            Private Limited
+            © {new Date().getFullYear()} | NextGen Technology World Creater Private Limited
           </p>
         </div>
       </div>

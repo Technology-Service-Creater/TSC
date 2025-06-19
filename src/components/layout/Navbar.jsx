@@ -186,17 +186,14 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="font-[Montserrat] font-normal w-full px-2 sm:px-4 lg:px-6 relative border-b border-gray-200 pb-2 bg-white">
+      <nav className="font-[Montserrat] font-normal w-full px-2 sm:px-4 lg:px-6 sticky top-0 z-50 bg-white border-b border-gray-200 py-1.5">
         <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
-            <img src="/Images/logo.png" alt="logo" className="h-10 w-10" />
-            <Link to="/" className="font-[Poppins] font-extrabold text-2xl md:text-3xl">
-              TSC
-            </Link>
+            <img src="/Images/logo.png" alt="logo" className="h-14 max-w-full w-auto" />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-5 lg:gap-8">
+          <div className="hidden md:flex items-center gap-3 md:gap-4 lg:gap-8 whitespace-nowrap">
             <div className="relative">
               <button
                 ref={buttonRef}
