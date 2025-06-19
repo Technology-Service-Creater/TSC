@@ -150,7 +150,8 @@ const Footer = () => {
         {/* Copyright section */}
         <div className="max-w-screen-xl mx-auto py-3 lg:py-6 px-4 sm:px-6 text-center">
           <p className="text-gray-400 font-[Montserrat] text-xs lg:text-sm">
-            © {new Date().getFullYear()} TSC. All rights reserved. | Technology World Creater
+            © {new Date().getFullYear()} TSC All rights reserved | NextGen Technology World Creater
+            Private Limited
           </p>
         </div>
       </div>
