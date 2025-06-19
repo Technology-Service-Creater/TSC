@@ -1,17 +1,11 @@
-import HeroSection from '../../components/common/HeroSection';
+import React from 'react';
+import PageHeroSection from '../../components/common/PageHeroSection';
 import AboutTextSection from './SubComponents/AboutTextSection';
 import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
 import OurMissionSection from './SubComponents/OurMissionSection';
 import OurVisionSection from './SubComponents/OurVisionSection';
-
-const CenterContent = {
-  contentHeading: 'About Us',
-  contentDescription:
-    'We deliver innovative solutions tailored to your needs, combining expertise, technology, and creativity to drive success and growth for your business. ',
-  contentImage: '/Images/InnonateBg.png',
-};
 
 const aboutTextContent = {
   heading: 'We are Technology Service Creater',
@@ -37,7 +31,7 @@ const ourVisionSection = {
   heading2: 'Hear from our CEO',
   subheading2: 'Mr. Sahil Vaidya',
   description2:
-    'Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis et. ',
+    'Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor ',
 };
 
 const experts = [
@@ -122,14 +116,15 @@ const exploreContent = [
   { heading: 'Explore Events', link: '/events' },
   { heading: 'Explore Blogs', link: '/blogs' },
 ];
+
 const About = () => (
   <>
-    <HeroSection
-      contentHeading={CenterContent.contentHeading}
-      contentDescription={CenterContent.contentDescription}
-      contentImage={CenterContent.contentImage}
+    <PageHeroSection
+      title="About Us"
+      description="We deliver innovative solutions tailored to your needs, combining expertise, technology, and creativity to drive success and growth for your business."
+      bgImage="/Images/aboutHero.png"
     />
-    <div className="bg-[#F5FEFF] px-4 md:px-0 ">
+    <div className="bg-[#F5FEFF] px-4 md:px-0">
       <AboutTextSection
         heading={aboutTextContent.heading}
         description={aboutTextContent.description}
