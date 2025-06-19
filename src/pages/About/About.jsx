@@ -1,10 +1,10 @@
 import HeroSection from '../../components/common/HeroSection';
-import AboutTextSection from './AboutTextSection';
-import ExploreOurBusinessSection from './ExploreOurBusinessSection';
-import ExploreTSC from './ExploreTSC';
-import MeetOurExperts from './MeetOurExperts';
-import OurMissionSection from './OurMissionSection';
-import OurVisionSection from './OurVisionSection';
+import AboutTextSection from './SubComponents/AboutTextSection';
+import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
+import ExploreTSC from './SubComponents/ExploreTSC';
+import MeetOurExperts from './SubComponents/MeetOurExperts';
+import OurMissionSection from './SubComponents/OurMissionSection';
+import OurVisionSection from './SubComponents/OurVisionSection';
 
 const CenterContent = {
   contentHeading: 'About Us',
@@ -46,36 +46,42 @@ const experts = [
     position: 'CTO/Developer',
     description: 'Mauris fringilla convallis sit auctor',
     image: '/Images/experts.png',
+    linkedinUrl: '/abc',
   },
   {
     name: 'Mr. Martin bankar',
     position: 'CTO/Developer',
     description: 'Mauris fringilla convallis sit auctor',
     image: '/Images/experts.png',
+    linkedinUrl: '/abc',
   },
   {
     name: 'Mr. Martin bankar',
     position: 'CTO/Developer',
     description: 'Mauris fringilla convallis sit auctor',
     image: '/Images/experts.png',
+    linkedinUrl: '/abc',
   },
   {
     name: 'Mr. Martin bankar',
     position: 'CTO/Developer',
     description: 'Mauris fringilla convallis sit auctor',
     image: '/Images/experts.png',
+    linkedinUrl: '/abc',
   },
   {
     name: 'Mr. Martin bankar',
     position: 'CTO/Developer',
     description: 'Mauris fringilla convallis sit auctor',
     image: '/Images/experts.png',
+    linkedinUrl: '/abc',
   },
   {
     name: 'Mr. Martin bankar',
     position: 'CTO/Developer',
     description: 'Mauris fringilla convallis sit auctor',
     image: '/Images/experts.png',
+    linkedinUrl: '/abc',
   },
 ];
 
@@ -118,12 +124,12 @@ const exploreContent = [
 ];
 const About = () => (
   <>
-    <div className="bg-[#F5FEFF] ">
-      <HeroSection
-        contentHeading={CenterContent.contentHeading}
-        contentDescription={CenterContent.contentDescription}
-        contentImage={CenterContent.contentImage}
-      />
+    <HeroSection
+      contentHeading={CenterContent.contentHeading}
+      contentDescription={CenterContent.contentDescription}
+      contentImage={CenterContent.contentImage}
+    />
+    <div className="bg-[#F5FEFF] px-4 md:px-0 ">
       <AboutTextSection
         heading={aboutTextContent.heading}
         description={aboutTextContent.description}

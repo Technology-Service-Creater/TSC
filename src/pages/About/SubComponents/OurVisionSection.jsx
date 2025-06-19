@@ -41,37 +41,6 @@ const OurVisionSection = ({ heading1, image, heading2, subheading2, description2
           </div>
         </div>
       </div>
-      {/* <div className="flex flex-col w-[1200px] h-[330px] mx-auto">
-        <div className="flex bg-black w-[1196px] h-[80px] mx-auto  justify-center items-center mb-12">
-          <div className="text-[#FFFFFF] text-4xl font-bold font-['Poppins'] px-[89px] py-[28px]">
-            Our Vision
-          </div>
-        </div>
-        <div className="flex flex-row h-[330px] mx-auto gap-10">
-          <div className="flex flex-col max-w-[285px] h-[144px] my-auto">
-            <div className="flex text-neutral-800 text-3xl font-bold font-['Montserrat'] leading-[48px] tracking-wide">
-              {heading1}
-            </div>
-          </div>
-          <div
-            className="flex w-[400px] h-[500px] bg-cover bg-center rounded-3xl "
-            style={{ backgroundImage: `url(${image})` }}
-          ></div>
-          <div className="flex w-[407px] h-[460px] items-end">
-            <div className="flex flex-col w-[407px] h-[265px] ">
-              <div className="flex text-black text-3xl font-bold font-['Poppins'] leading-10 mb-[25px]">
-                {heading2}
-              </div>
-              <div className="flex text-black text-xl font-medium font-['Montserrat'] leading-loose tracking-wide mb-6">
-                {subheading2}
-              </div>
-              <div className="flex text-neutral-800 text-2xl font-medium font-['Montserrat'] leading-9 tracking-wider">
-                {description2}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };

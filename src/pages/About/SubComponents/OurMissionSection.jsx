@@ -35,36 +35,6 @@ const OurMissionSection = ({ heading1, description1, image, description2, descri
           </div>
         </div>
       </div>
-
-      {/* <div className="flex flex-col w-[1200px] h-[330px] mx-auto">
-        <div className="flex bg-black w-[1196px] h-[80px] mx-auto  justify-center items-center mb-12">
-          <div className="text-[#FFFFFF] text-4xl font-bold font-['Poppins'] px-[89px] py-[28px]">
-            Our Mission
-          </div>
-        </div>
-        <div className="flex flex-row h-[330px] mx-auto gap-4">
-          <div className="flex flex-col max-w-[320px] h-[292px]">
-            <div className="flex text-black text-2xl font-bold font-['Poppins'] leading-7 mb-8">
-              {heading1}
-            </div>
-            <div className="flex text-black text-base font-medium font-['Montserrat'] leading-loose tracking-wide">
-              {description1}
-            </div>
-          </div>
-          <div
-            className="flex w-[424px] h-[330px] bg-cover bg-center rounded-3xl "
-            style={{ backgroundImage: `url(${image})` }}
-          ></div>
-          <div className="flex h-[330px] items-end ">
-            <div className="w-[411px] h-[120px] pl-10">
-              <ul className="list-disc">
-                <li>{description2}</li>
-                <li>{description3}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };
