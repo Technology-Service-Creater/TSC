@@ -562,6 +562,35 @@ function Home() {
             </div>
           </div>
         </div>
+        {/* Section5 */}
+        <div className="bg-white pt-0">
+          {/* Testimonial Header */}
+          <div className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold font-[Poppins] p-10 bg-[#1E2222] text-white">
+            Our Testimonials
+          </div>
+          {/* Rating & Review Row */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 mt-8 flex items-center justify-between">
+            <div className="flex items-end gap-2">
+              <span className="text-lg font-[Poppins] font-bold text-[#222]">Rating & Review</span>
+            </div>
+          </div>
+          {/* Testimonial Carousel */}
+          <TestimonialCarousel />
+          {/* Career at TSC Section */}
+          <div className="max-w-4xl mx-auto mt-16 mb-12 px-4">
+            <div className="border border-[#1E2222] rounded-xl py-10 px-4 sm:px-12 flex flex-col items-center text-center">
+              <h1 className="font-[Poppins] font-bold text-3xl sm:text-4xl mb-4">Career at TSC</h1>
+              <h2 className="font-[Montserrat] font-normal text-lg sm:text-xl mb-8">
+                We invite you to supercharge your potential. Find your inspires and drives you. Find
+                your Spark
+              </h2>
+              <button className="uppercase font-[Montserrat] font-normal bg-[#1E2222] text-white px-8 py-2 rounded-full flex items-center gap-3 text-base sm:text-md hover:bg-[#333] transition">
+                Visit a career page{' '}
+                <ArrowUp className="size-6 text-black transform rotate-45 bg-white rounded-full" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
