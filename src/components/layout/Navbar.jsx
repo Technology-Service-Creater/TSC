@@ -155,9 +155,9 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Bar - Always visible */}
-      <div className="w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
-        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-1.5 md:gap-12 lg:px-10 items-center">
+      {/* Top Bar - Only visible on tablet and desktop */}
+      <div className="hidden sm:block w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
+        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-1.5 md:gap-8 lg:px-10 items-center">
           <a
             href="#"
             className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
@@ -186,7 +186,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="font-[Montserrat] font-normal w-full my-3 px-4 sm:px-6 lg:px-10 relative border-b border-gray-200 pb-3 bg-white">
+      <nav className="font-[Montserrat] font-normal w-full px-2 sm:px-4 lg:px-6 relative border-b border-gray-200 pb-2 bg-white">
         <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
             <img src="/Images/logo.png" alt="logo" className="h-10 w-10" />
@@ -196,7 +196,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-12">
+          <div className="hidden md:flex items-center gap-5 lg:gap-8">
             <div className="relative">
               <button
                 ref={buttonRef}
