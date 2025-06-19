@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ArrowLeft, ArrowUp } from 'lucide-react';
-import ImageCard from './ImageCard';
-import ServicePill from './ServicePill';
+import { ArrowRight, ArrowUp } from 'lucide-react';
 import TestimonialCarousel from './TestimonialCarousel';
+import ServicesSection from './ServicesSection';
+import ImageCarousel from '../../components/common/ImageCarousel';
 
 const images = [
   {
@@ -106,13 +106,11 @@ function Home() {
   const totalSteps = images.length - visibleCount + 1;
   const progress = totalSteps > 1 ? (startIdx / (totalSteps - 1)) * 100 : 0;
 
-  const visibleImages = images.slice(startIdx, startIdx + visibleCount);
-
   return (
     <>
       <div>
         {/* Section1 */}
-        <div className="relative bg-[url('/Images/home_hero.png')] bg-cover bg-center bg-no-repeat h-[500px] sm:h-[550px] lg:h-[616px] overflow-hidden">
+        <div className="relative bg-[url('/Images/home_hero.png')] bg-cover bg-center bg-no-repeat h-[600px] sm:h-[600px] lg:h-[700px] overflow-hidden">
           {/* Dark backdrop overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
 
@@ -120,7 +118,7 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center gap-4 sm:gap-6 h-full w-full lg:w-[60%] px-6 sm:pl-8 lg:pl-40 text-white">
+          <div className="relative z-10 flex flex-col items-start justify-center gap-4 sm:gap-6 h-full w-full lg:w-[70%] px-6 sm:pl-8 lg:pl-40 text-white">
             {/* Main heading with enhanced styling */}
             <div className="font-[Poppins] font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -140,7 +138,10 @@ function Home() {
 
             {/* Enhanced CTA button */}
             <div className="mt-2 sm:mt-4">
-              <button className="font-[Montserrat] font-semibold flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white text-sm sm:text-base hover:shadow-2xl hover:shadow-[#A468DA]/30 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#A468DA] focus:ring-opacity-50 active:scale-95">
+              <button
+                aria-label="Get Started"
+                className="font-[Montserrat] font-semibold flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white text-sm sm:text-base hover:shadow-2xl hover:shadow-[#A468DA]/30 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#A468DA] focus:ring-opacity-50 active:scale-95"
+              >
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -148,10 +149,16 @@ function Home() {
           </div>
 
           {/* Decorative elements */}
-          <div className="absolute top-10 right-10 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-[#A468DA]/20 to-[#149BF5]/20 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-[#149BF5]/20 to-[#A468DA]/20 rounded-full blur-xl"></div>
+          <div
+            className="absolute top-10 right-10 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-[#A468DA]/20 to-[#149BF5]/20 rounded-full blur-xl"
+            aria-hidden="true"
+          ></div>
+          <div
+            className="absolute bottom-20 right-20 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-[#149BF5]/20 to-[#A468DA]/20 rounded-full blur-xl"
+            aria-hidden="true"
+          ></div>
         </div>
-        {/* Section2 */}
+        {/* Section2 - Innovate Section with Carousel */}
         <div className="py-16 px-6 sm:px-8 lg:px-16 bg-white">
           <div className="max-w-7xl mx-auto">
             {/* Header Section */}
@@ -170,114 +177,33 @@ function Home() {
                 prioritize quality and ongoing support to ensure your success.
               </div>
             </div>
-
             {/* Image Carousel Section */}
-            <div className="flex flex-col items-center">
-              {/* Images Row */}
-              <div
-                className={`flex gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto ${visibleCount === 1 ? 'justify-center' : ''}`}
-              >
-                {visibleImages.map(img => (
-                  <ImageCard key={img.src} img={img} visibleCount={visibleCount} />
-                ))}
-              </div>
-              <div className="flex items-center w-full max-w-6xl mx-auto mt-8">
-                <div className="flex-1 relative h-2 rounded-full bg-gray-200 overflow-hidden">
-                  <div
-                    className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#A468DA] to-[#149BF5] transition-all duration-500"
-                    style={{ width: `${progress}%` }}
-                  ></div>
-                </div>
-                <div className="flex gap-3 ml-6">
-                  <button
-                    onClick={handlePrev}
-                    disabled={!canGoLeft}
-                    className="p-3 rounded-full bg-gray-900 text-white shadow-lg hover:bg-[#A468DA] transition disabled:opacity-40 disabled:cursor-not-allowed"
-                  >
-                    <ArrowLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    disabled={!canGoRight}
-                    className="p-3 rounded-full bg-gray-900 text-white shadow-lg hover:bg-[#149BF5] transition disabled:opacity-40 disabled:cursor-not-allowed"
-                  >
-                    <ArrowRight className="w-6 h-6" />
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ImageCarousel
+              images={images}
+              visibleCount={visibleCount}
+              startIdx={startIdx}
+              handlePrev={handlePrev}
+              handleNext={handleNext}
+              canGoLeft={canGoLeft}
+              canGoRight={canGoRight}
+              progress={progress}
+            />
           </div>
         </div>
-        {/* Section3 */}
-        <div className="py-16 px-6 sm:px-8 lg:px-16 bg-white">
-          <div className="max-w-7xl mx-auto">
-            {/* Header Section */}
-            <div className="text-center mb-12 lg:mb-16">
-              <div className="font-[Poppins] font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent text-xl sm:text-2xl lg:text-3xl mb-4">
-                Our Services
-              </div>
-              <div className="font-[Poppins] font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-6 leading-tight">
-                Comprehensive Development <br className="hidden sm:block" />
-                <span className="bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent">
-                  Solutions Tailored for You
-                </span>
-              </div>
-              <div className="font-[Montserrat] font-normal text-base sm:text-lg lg:text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
-                Our services encompass a wide range of development solutions tailored to your needs.
-                From web to mobile. We ensure your projects are executed with precision and
-                creativity.
-              </div>
-            </div>
-
-            {/* Services Pills */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-12">
-              {services.map((service, idx) => (
-                <ServicePill
-                  key={idx}
-                  title={service.title}
-                  selected={selectedService === idx}
-                  onClick={() => setSelectedService(idx)}
-                />
-              ))}
-            </div>
-
-            {/* Image Carousel Section */}
-            <div className="flex flex-col items-center">
-              {/* Images Row */}
-              <div
-                className={`flex gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto ${visibleCount === 1 ? 'justify-center' : ''}`}
-              >
-                {visibleImages.map(img => (
-                  <ImageCard key={img.src} img={img} visibleCount={visibleCount} />
-                ))}
-              </div>
-              <div className="flex items-center w-full max-w-6xl mx-auto mt-8">
-                <div className="flex-1 relative h-2 rounded-full bg-gray-200 overflow-hidden">
-                  <div
-                    className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#A468DA] to-[#149BF5] transition-all duration-500"
-                    style={{ width: `${progress}%` }}
-                  ></div>
-                </div>
-                <div className="flex gap-3 ml-6">
-                  <button
-                    onClick={handlePrev}
-                    disabled={!canGoLeft}
-                    className="p-3 rounded-full bg-gray-900 text-white shadow-lg hover:bg-[#A468DA] transition disabled:opacity-40 disabled:cursor-not-allowed"
-                  >
-                    <ArrowLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    disabled={!canGoRight}
-                    className="p-3 rounded-full bg-gray-900 text-white shadow-lg hover:bg-[#149BF5] transition disabled:opacity-40 disabled:cursor-not-allowed"
-                  >
-                    <ArrowRight className="w-6 h-6" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Section3 - Services Section (now a component) */}
+        <ServicesSection
+          services={services}
+          selectedService={selectedService}
+          setSelectedService={setSelectedService}
+          images={images}
+          visibleCount={visibleCount}
+          startIdx={startIdx}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+          canGoLeft={canGoLeft}
+          canGoRight={canGoRight}
+          progress={progress}
+        />
         {/* Section4 */}
         <div className="py-12 px-3 sm:px-8 lg:px-16 bg-white">
           <div className="max-w-7xl mx-auto">
@@ -325,7 +251,7 @@ function Home() {
               <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0 order-1 lg:order-2">
                 <img
                   src="/Images/img6.png"
-                  alt="img6"
+                  alt="Team working on digital solutions"
                   className="rounded-xl object-cover w-full max-w-xs sm:max-w-sm lg:max-w-md"
                 />
               </div>
@@ -335,7 +261,7 @@ function Home() {
               <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0">
                 <img
                   src="/Images/img7.jpg"
-                  alt="img7"
+                  alt="Celebrating project achievements"
                   className="rounded-xl object-cover w-full max-w-xs sm:max-w-sm lg:max-w-md"
                 />
               </div>
@@ -402,7 +328,10 @@ function Home() {
                 We invite you to supercharge your potential. Find what inspires and drives you. Find
                 your Spark.
               </h2>
-              <button className="uppercase font-[Montserrat] font-normal bg-[#1E2222] text-white px-6 sm:px-8 py-2 rounded-full flex items-center gap-2 sm:gap-3 text-sm sm:text-base hover:bg-[#333] transition">
+              <button
+                aria-label="Visit career page"
+                className="uppercase font-[Montserrat] font-normal bg-[#1E2222] text-white px-6 sm:px-8 py-2 rounded-full flex items-center gap-2 sm:gap-3 text-sm sm:text-base hover:bg-[#333] transition"
+              >
                 Visit a career page{' '}
                 <ArrowUp className="size-5 sm:size-6 text-black transform rotate-45 bg-white rounded-full" />
               </button>
@@ -413,5 +342,7 @@ function Home() {
     </>
   );
 }
+
+Home.propTypes = {};
 
 export default Home;
