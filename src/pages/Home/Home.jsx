@@ -1,10 +1,211 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, ArrowLeft, ArrowUp } from 'lucide-react';
+
+const images = [
+  {
+    src: '/Images/img1.png',
+    title: 'Graphics Design',
+    desc: 'Creative visual solutions for your brand. Stand out with unique graphics.',
+  },
+  {
+    src: '/Images/img2.png',
+    title: 'Ui/Ux Design',
+    desc: 'User-centered interfaces for web and mobile. Enhance user experience.',
+  },
+  {
+    src: '/Images/img3.png',
+    title: 'Digital Marketing',
+    desc: 'Grow your business online with targeted campaigns and analytics.',
+  },
+  {
+    src: '/Images/img4.png',
+    title: 'Motion Graphics',
+    desc: 'Engaging animations to tell your story and captivate your audience.',
+  },
+  {
+    src: '/Images/img5.png',
+    title: 'Web Development',
+    desc: 'Robust, scalable websites tailored to your business needs.',
+  },
+];
+
+const services = [
+  {
+    title: 'Digital Marketing ',
+  },
+  {
+    title: 'Customer Experience',
+  },
+
+  {
+    title: 'Email& Performance Marketing',
+  },
+  {
+    title: 'Integrated M. & Brand Strategy',
+  },
+
+  {
+    title: 'E-Commerce Marketing',
+  },
+  {
+    title: 'Software Development ',
+  },
+  {
+    title: 'Market Analysis & Research',
+  },
+
+  {
+    title: 'Event-Based Marketing',
+  },
+  {
+    title: 'AI & Automation Marketing',
+  },
+
+  {
+    title: 'Design Services',
+  },
+];
+
+function TestimonialCarousel() {
+  const testimonials = [
+    {
+      name: 'Name Surname',
+      position: 'Position, Company name',
+      rating: 4.9,
+      review:
+        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
+      img: '/Images/photo.png',
+    },
+    {
+      name: 'Name Surname',
+      position: 'Position, Company name',
+      rating: 4.9,
+      review:
+        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
+      img: '/Images/photo.png',
+    },
+    {
+      name: 'Name Surname',
+      position: 'Position, Company name',
+      rating: 4.9,
+      review:
+        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
+      img: '/Images/photo.png',
+    },
+    {
+      name: 'Name Surname',
+      position: 'Position, Company name',
+      rating: 4.9,
+      review:
+        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
+      img: '/Images/photo.png',
+    },
+  ];
+  const [start, setStart] = React.useState(0);
+  const visible = 3;
+
+  // Auto-slide
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setStart(prev => (prev + 1) % testimonials.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  // Get visible testimonials (looping)
+  const getVisible = () => {
+    const arr = [];
+    for (let i = 0; i < visible; i++) {
+      arr.push(testimonials[(start + i) % testimonials.length]);
+    }
+    return arr;
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 mt-8">
+      <div className="flex flex-col sm:flex-row gap-6 justify-center items-stretch">
+        {getVisible().map((t, idx) => (
+          <div
+            key={idx}
+            className="bg-[#222] rounded-lg flex flex-col sm:flex-row items-center sm:items-start p-6 flex-1 min-w-[260px] max-w-md shadow-md relative"
+          >
+            <img
+              src={t.img}
+              alt={t.name}
+              className="w-20 h-20 rounded-full object-cover border-4 border-white -mt-12 sm:mt-0 sm:mr-6 bg-white"
+            />
+            <div className="flex-1 text-left mt-4 sm:mt-0">
+              <div className="flex items-center justify-between">
+                <span className="font-[Poppins] font-bold text-white text-lg">{t.name}</span>
+                <span className="flex items-center gap-1 text-yellow-400 font-[Poppins] font-semibold text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    className="w-5 h-5"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
+                  </svg>
+                  {t.rating}
+                </span>
+              </div>
+              <div className="font-[Montserrat] font-normal text-gray-300 text-sm mb-1">
+                {t.position}
+              </div>
+              <div className="font-[Montserrat] font-normal text-gray-100 text-sm mt-2">
+                {t.review}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Home() {
+  // Responsive visible count: 1 on mobile, 2 on tablet, 3 on desktop
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [startIdx, setStartIdx] = useState(0);
+  const [selectedService, setSelectedService] = useState(0);
+
+  // Update visible count based on screen size
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(1); // Mobile: 1 image
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2); // Tablet: 2 images
+      } else {
+        setVisibleCount(3); // Desktop: 3 images
+      }
+    };
+
+    updateVisibleCount();
+    window.addEventListener('resize', updateVisibleCount);
+    return () => window.removeEventListener('resize', updateVisibleCount);
+  }, []);
+
+  const canGoLeft = startIdx > 0;
+  const canGoRight = startIdx + visibleCount < images.length;
+
+  const handlePrev = () => {
+    if (canGoLeft) setStartIdx(startIdx - 1);
+  };
+  const handleNext = () => {
+    if (canGoRight) setStartIdx(startIdx + 1);
+  };
+
+  // Progress bar calculation
+  const totalSteps = images.length - visibleCount + 1;
+  const progress = totalSteps > 1 ? (startIdx / (totalSteps - 1)) * 100 : 0;
+
+  const visibleImages = images.slice(startIdx, startIdx + visibleCount);
+
   return (
     <>
       <div>
+        {/* Section1 */}
         <div className="relative bg-[url('/Images/home_hero.png')] bg-cover bg-center bg-no-repeat h-[500px] sm:h-[550px] lg:h-[616px] overflow-hidden">
           {/* Dark backdrop overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
