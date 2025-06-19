@@ -1,8 +1,7 @@
 import React from 'react';
 import PageHeroSection from '../../components/common/PageHeroSection';
 import careerHero from '../../../public/Images/careerHero.png';
-import WhyTSCSection from './SubComponents/WhyTSCSection';
-import ConnectAndGrowSection from './SubComponents/ConnectAndGrowSection';
+import AboutTSCSection from './SubComponents/AboutTSCSection';
 import RecentJobsSection from './SubComponents/RecentJobsSection';
 import JobInquiryForm from './SubComponents/JobInquiryForm';
 
@@ -15,8 +14,7 @@ const Career = () => {
         bgImage={careerHero}
       />
       {/* Subcomponents for Why TSC, Connect and Grow, Recent Jobs, and Job Form will go here */}
-      <WhyTSCSection />
-      <ConnectAndGrowSection />
+      <AboutTSCSection />
       <RecentJobsSection />
       <JobInquiryForm />
     </div>

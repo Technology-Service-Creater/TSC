@@ -1,3 +1,5 @@
+// This file has been merged into AboutTSCSection.jsx
+
 import React from 'react';
 import connectImage from '../../../../public/Images/img2.png';
 
