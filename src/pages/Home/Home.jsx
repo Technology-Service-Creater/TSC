@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ArrowLeft, ArrowUp } from 'lucide-react';
+import ImageCard from './ImageCard';
+import ServicePill from './ServicePill';
+import TestimonialCarousel from './TestimonialCarousel';
 
 const images = [
   {
@@ -65,103 +68,6 @@ const services = [
     title: 'Design Services',
   },
 ];
-
-function TestimonialCarousel() {
-  const testimonials = [
-    {
-      name: 'Name Surname',
-      position: 'Position, Company name',
-      rating: 4.9,
-      review:
-        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
-      img: '/Images/photo.png',
-    },
-    {
-      name: 'Name Surname',
-      position: 'Position, Company name',
-      rating: 4.9,
-      review:
-        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
-      img: '/Images/photo.png',
-    },
-    {
-      name: 'Name Surname',
-      position: 'Position, Company name',
-      rating: 4.9,
-      review:
-        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
-      img: '/Images/photo.png',
-    },
-    {
-      name: 'Name Surname',
-      position: 'Position, Company name',
-      rating: 4.9,
-      review:
-        '“Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor morbi mollis.”',
-      img: '/Images/photo.png',
-    },
-  ];
-  const [start, setStart] = React.useState(0);
-  const visible = 3;
-
-  // Auto-slide
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setStart(prev => (prev + 1) % testimonials.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
-
-  // Get visible testimonials (looping)
-  const getVisible = () => {
-    const arr = [];
-    for (let i = 0; i < visible; i++) {
-      arr.push(testimonials[(start + i) % testimonials.length]);
-    }
-    return arr;
-  };
-
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-8 mt-8">
-      <div className="flex flex-col sm:flex-row gap-6 justify-center items-stretch">
-        {getVisible().map((t, idx) => (
-          <div
-            key={idx}
-            className="bg-[#222] rounded-lg flex flex-col sm:flex-row items-center sm:items-start p-6 flex-1 min-w-[260px] max-w-md shadow-md relative"
-          >
-            <img
-              src={t.img}
-              alt={t.name}
-              className="w-20 h-20 rounded-full object-cover border-4 border-white -mt-12 sm:mt-0 sm:mr-6 bg-white"
-            />
-            <div className="flex-1 text-left mt-4 sm:mt-0">
-              <div className="flex items-center justify-between">
-                <span className="font-[Poppins] font-bold text-white text-lg">{t.name}</span>
-                <span className="flex items-center gap-1 text-yellow-400 font-[Poppins] font-semibold text-base">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    className="w-5 h-5"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
-                  </svg>
-                  {t.rating}
-                </span>
-              </div>
-              <div className="font-[Montserrat] font-normal text-gray-300 text-sm mb-1">
-                {t.position}
-              </div>
-              <div className="font-[Montserrat] font-normal text-gray-100 text-sm mt-2">
-                {t.review}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function Home() {
   // Responsive visible count: 1 on mobile, 2 on tablet, 3 on desktop
@@ -272,50 +178,7 @@ function Home() {
                 className={`flex gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto ${visibleCount === 1 ? 'justify-center' : ''}`}
               >
                 {visibleImages.map(img => (
-                  <div
-                    key={img.src}
-                    className={`relative rounded-2xl shadow-xl overflow-hidden flex items-end group cursor-pointer flex-shrink-0 bg-transparent ${
-                      visibleCount === 1
-                        ? 'w-[280px] sm:w-[320px] lg:w-[370px] h-[20em] sm:h-[24em] lg:h-[28em]'
-                        : visibleCount === 2
-                          ? 'w-[280px] sm:w-[320px] lg:w-[370px] h-[20em] sm:h-[24em] lg:h-[28em]'
-                          : 'w-[280px] sm:w-[320px] lg:w-[370px] h-[20em] sm:h-[24em] lg:h-[28em]'
-                    }`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.title}
-                      className="absolute inset-0 w-full h-full object-cover object-center rounded-2xl z-0 transition-transform duration-300 group-hover:scale-105"
-                      style={{ objectPosition: 'center' }}
-                    />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
-                      <div className="flex justify-between items-start px-4 sm:px-6 pt-4 sm:pt-6">
-                        <div></div>
-                        <button className="bg-white hover:bg-[#A468DA] text-[#222] hover:text-white rounded-full p-2 transition-all duration-300 shadow-md pointer-events-auto">
-                          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                        </button>
-                      </div>
-                      <div className="bg-white/95 rounded-2xl mx-2 mb-2">
-                        <div className="px-4 sm:px-6 pb-6 sm:pb-8 pt-2">
-                          <div className="font-[Poppins] font-bold text-lg sm:text-xl lg:text-2xl mb-2 text-[#222] drop-shadow-lg">
-                            {img.title}
-                          </div>
-                          <div className="font-[Montserrat] text-sm sm:text-base text-gray-700 leading-snug drop-shadow-lg">
-                            {img.desc.split('. ').map((line, i) => (
-                              <div key={i}>{line.trim()}</div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Always show title at bottom when not hovered */}
-                    <div className="relative z-10 w-full bg-gradient-to-t from-black/80 to-transparent px-3 sm:px-4 py-2 sm:py-3 flex items-end rounded-b-2xl group-hover:opacity-0 transition-opacity duration-300">
-                      <span className="font-[Poppins] font-semibold text-base sm:text-lg text-white w-full text-left">
-                        {img.title}
-                      </span>
-                    </div>
-                  </div>
+                  <ImageCard key={img.src} img={img} visibleCount={visibleCount} />
                 ))}
               </div>
               <div className="flex items-center w-full max-w-6xl mx-auto mt-8">
@@ -369,20 +232,12 @@ function Home() {
             {/* Services Pills */}
             <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-12">
               {services.map((service, idx) => (
-                <button
+                <ServicePill
                   key={idx}
-                  type="button"
+                  title={service.title}
+                  selected={selectedService === idx}
                   onClick={() => setSelectedService(idx)}
-                  className={
-                    `font-[Montserrat] font-medium text-xs sm:text-base px-4 sm:px-8 py-3 rounded-full border transition-all duration-200 w-fit max-w-full text-center break-words ` +
-                    (selectedService === idx
-                      ? 'bg-zinc-800 text-white border-zinc-800 shadow-sm'
-                      : 'bg-white text-zinc-800 border-zinc-400 hover:bg-zinc-100')
-                  }
-                  style={{ outline: 'none' }}
-                >
-                  {service.title}
-                </button>
+                />
               ))}
             </div>
 
@@ -393,50 +248,7 @@ function Home() {
                 className={`flex gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto ${visibleCount === 1 ? 'justify-center' : ''}`}
               >
                 {visibleImages.map(img => (
-                  <div
-                    key={img.src}
-                    className={`relative rounded-2xl shadow-xl overflow-hidden flex items-end group cursor-pointer flex-shrink-0 bg-transparent ${
-                      visibleCount === 1
-                        ? 'w-[280px] sm:w-[320px] lg:w-[370px] h-[20em] sm:h-[24em] lg:h-[28em]'
-                        : visibleCount === 2
-                          ? 'w-[280px] sm:w-[320px] lg:w-[370px] h-[20em] sm:h-[24em] lg:h-[28em]'
-                          : 'w-[280px] sm:w-[320px] lg:w-[370px] h-[20em] sm:h-[24em] lg:h-[28em]'
-                    }`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.title}
-                      className="absolute inset-0 w-full h-full object-cover object-center rounded-2xl z-0 transition-transform duration-300 group-hover:scale-105"
-                      style={{ objectPosition: 'center' }}
-                    />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
-                      <div className="flex justify-between items-start px-4 sm:px-6 pt-4 sm:pt-6">
-                        <div></div>
-                        <button className="bg-white hover:bg-[#A468DA] text-[#222] hover:text-white rounded-full p-2 transition-all duration-300 shadow-md pointer-events-auto">
-                          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                        </button>
-                      </div>
-                      <div className="bg-white/95 rounded-2xl mx-2 mb-2">
-                        <div className="px-4 sm:px-6 pb-6 sm:pb-8 pt-2">
-                          <div className="font-[Poppins] font-bold text-lg sm:text-xl lg:text-2xl mb-2 text-[#222] drop-shadow-lg">
-                            {img.title}
-                          </div>
-                          <div className="font-[Montserrat] text-sm sm:text-base text-gray-700 leading-snug drop-shadow-lg">
-                            {img.desc.split('. ').map((line, i) => (
-                              <div key={i}>{line.trim()}</div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Always show title at bottom when not hovered */}
-                    <div className="relative z-10 w-full bg-gradient-to-t from-black/80 to-transparent px-3 sm:px-4 py-2 sm:py-3 flex items-end rounded-b-2xl group-hover:opacity-0 transition-opacity duration-300">
-                      <span className="font-[Poppins] font-semibold text-base sm:text-lg text-white w-full text-left">
-                        {img.title}
-                      </span>
-                    </div>
-                  </div>
+                  <ImageCard key={img.src} img={img} visibleCount={visibleCount} />
                 ))}
               </div>
               <div className="flex items-center w-full max-w-6xl mx-auto mt-8">
@@ -565,28 +377,34 @@ function Home() {
         {/* Section5 */}
         <div className="bg-white pt-0">
           {/* Testimonial Header */}
-          <div className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold font-[Poppins] p-10 bg-[#1E2222] text-white">
+          <div className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold font-[Poppins] p-6 sm:p-10 bg-[#1E2222] text-white">
             Our Testimonials
           </div>
           {/* Rating & Review Row */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 mt-8 flex items-center justify-between">
+          <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-8 mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-between gap-2">
             <div className="flex items-end gap-2">
-              <span className="text-lg font-[Poppins] font-bold text-[#222]">Rating & Review</span>
+              <span className="text-base sm:text-lg font-[Poppins] font-bold text-[#222]">
+                Rating & Review
+              </span>
             </div>
           </div>
           {/* Testimonial Carousel */}
-          <TestimonialCarousel />
+          <div className="px-2 sm:px-8 md:px-16">
+            <TestimonialCarousel />
+          </div>
           {/* Career at TSC Section */}
-          <div className="max-w-4xl mx-auto mt-16 mb-12 px-4">
-            <div className="border border-[#1E2222] rounded-xl py-10 px-4 sm:px-12 flex flex-col items-center text-center">
-              <h1 className="font-[Poppins] font-bold text-3xl sm:text-4xl mb-4">Career at TSC</h1>
-              <h2 className="font-[Montserrat] font-normal text-lg sm:text-xl mb-8">
-                We invite you to supercharge your potential. Find your inspires and drives you. Find
-                your Spark
+          <div className="max-w-2xl md:max-w-4xl mx-auto mt-12 mb-8 px-2 sm:px-4">
+            <div className="border border-[#1E2222] rounded-xl py-8 sm:py-10 px-2 sm:px-12 flex flex-col items-center text-center">
+              <h1 className="font-[Poppins] font-bold text-2xl sm:text-3xl mb-2 sm:mb-4">
+                Career at TSC
+              </h1>
+              <h2 className="font-[Montserrat] font-normal text-base sm:text-lg mb-6 sm:mb-8">
+                We invite you to supercharge your potential. Find what inspires and drives you. Find
+                your Spark.
               </h2>
-              <button className="uppercase font-[Montserrat] font-normal bg-[#1E2222] text-white px-8 py-2 rounded-full flex items-center gap-3 text-base sm:text-md hover:bg-[#333] transition">
+              <button className="uppercase font-[Montserrat] font-normal bg-[#1E2222] text-white px-6 sm:px-8 py-2 rounded-full flex items-center gap-2 sm:gap-3 text-sm sm:text-base hover:bg-[#333] transition">
                 Visit a career page{' '}
-                <ArrowUp className="size-6 text-black transform rotate-45 bg-white rounded-full" />
+                <ArrowUp className="size-5 sm:size-6 text-black transform rotate-45 bg-white rounded-full" />
               </button>
             </div>
           </div>
