@@ -9,9 +9,9 @@ const MeetOurExperts = ({ mapList }) => {
         </div>
       </div>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8">
-        {mapList.map(expert => (
+        {mapList.map((expert, idx) => (
           <div
-            key={expert.name}
+            key={expert.name + idx}
             className="flex flex-col w-full max-w-[400px] h-auto mx-auto bg-white rounded-2xl shadow-lg border border-neutral-100 overflow-hidden"
           >
             {/* Profile Image */}
