@@ -1,11 +1,17 @@
 import React from 'react';
+import DigitalSubPageHeroSection from '../../../../../components/common/DigitalSubPageHeroSection';
+
+const contentHeading = 'Search Engine Optimization (SEO)';
+const contentDescription = 'Discover the power of expert SEO with TSC! Our innovative strategies and proven techniques are designed to enhance your online presence and drive organic traffic.';
+const contentImage = '/Images/SEO.jpg'; // Replace with the actual path to your
 
 const SearchEngineOptimizationSEO = () => (
   <div>
-    <h2>Search Engine Optimization (SEO)</h2>
-    <p>
-      This is the Search Engine Optimization (SEO) subpage under Digital Marketing & Online Growth.
-    </p>
+    <DigitalSubPageHeroSection
+      title={contentHeading}
+      description={contentDescription}
+      bgImage={contentImage}
+    />
   </div>
 );
 
