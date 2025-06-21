@@ -1,6 +1,6 @@
 import React from 'react';
-import DigitalSubPageHeroSection from '../../../../../components/common/DigitalSubPageHeroSection';
-import SEOCompanyBanner from '../../../../../components/common/SEOCompanyBanner';
+import PageHeroSection from '../../../../../components/common/PageHeroSection';
+import CommonBanner from '../../../../../components/common/CommonBanner';
 
 const contentHeading = 'Search Engine Optimization (SEO)';
 const contentDescription =
@@ -9,12 +9,12 @@ const contentImage = '/Images/SEO.jpg'; // Replace with the actual path to your
 
 const SearchEngineOptimizationSEO = () => (
   <div>
-    <DigitalSubPageHeroSection
+    <PageHeroSection
       title={contentHeading}
       description={contentDescription}
       bgImage={contentImage}
     />
-    <SEOCompanyBanner
+    <CommonBanner
       SEOCompanyImage={'/Images/Unlock-Success-with-an-Expert-SEO-Company.jpg'}
       SEOCompanyTitle={'Unlock Success with an Expert SEO Company'}
       SEOCompanyDescription={
