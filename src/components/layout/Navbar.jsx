@@ -371,26 +371,51 @@ const Navbar = () => {
                       <div className="space-y-1">
                         {industries.map((industry, index) => (
                           <div key={index} className="space-y-1">
-                            <button
-                              onClick={() =>
-                                setHoveredIndustry(industry === hoveredIndustry ? null : industry)
-                              }
-                              className="w-full flex items-center justify-between px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md group"
-                            >
-                              <span className="truncate">{industry}</span>
-                              <ChevronRight
-                                size={16}
-                                className={`transform transition-transform duration-200 ${
-                                  hoveredIndustry === industry ? 'rotate-90' : ''
-                                } text-gray-400 group-hover:text-[#A468DA]`}
-                              />
-                            </button>
+                            <div className="flex items-center">
+                              <Link
+                                to={`/industries/${industry
+                                  .toLowerCase()
+                                  .replace(/[^a-z0-9]+/g, '-')
+                                  .replace(/(^-|-$)/g, '')}`}
+                                className="flex-1 px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md truncate"
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  setIsSubmenuOpen(false);
+                                }}
+                              >
+                                {industry}
+                              </Link>
+                              {industryDetailsMap[industry] &&
+                                industryDetailsMap[industry].length > 0 && (
+                                  <button
+                                    onClick={() =>
+                                      setHoveredIndustry(
+                                        industry === hoveredIndustry ? null : industry
+                                      )
+                                    }
+                                    className="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-[#A468DA] transition-colors"
+                                  >
+                                    <ChevronRight
+                                      size={16}
+                                      className={`transform transition-transform duration-200 ${
+                                        hoveredIndustry === industry ? 'rotate-90' : ''
+                                      }`}
+                                    />
+                                  </button>
+                                )}
+                            </div>
                             {hoveredIndustry === industry && (
                               <div className="pl-4 space-y-1 bg-gradient-to-r from-[#A468DA]/5 to-[#149BF5]/5 rounded-md p-2 mt-1">
                                 {industryDetailsMap[industry]?.map((detail, idx) => (
                                   <Link
                                     key={idx}
-                                    to={`/what-we-do/industries/${industry.toLowerCase().replace(/\s+/g, '-')}/${detail.toLowerCase().replace(/\s+/g, '-')}`}
+                                    to={`/industries/${industry
+                                      .toLowerCase()
+                                      .replace(/[^a-z0-9]+/g, '-')
+                                      .replace(/(^-|-$)/g, '')}/${detail
+                                      .toLowerCase()
+                                      .replace(/[^a-z0-9]+/g, '-')
+                                      .replace(/(^-|-$)/g, '')}`}
                                     className="block px-4 py-2 text-sm text-gray-700 hover:text-[#A468DA] truncate"
                                     onClick={() => {
                                       setIsMobileMenuOpen(false);
