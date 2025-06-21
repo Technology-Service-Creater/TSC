@@ -1,26 +1,15 @@
 import React from 'react';
 
-export default function Introinfo({
-  title = 'Our Approach to Sponsorship Activation',
-  description = `A successful sponsorship isn’t just about putting your name on an event—it’s about creating
-  real engagement. The key? Delivering value to your audience while meeting the expectations
-  of the sponsored event or brand.`,
-  dividerColor = 'purple-500',
-  gradientFrom = 'from-purple-500/10',
-  gradientTo = 'to-sky-500/10',
-}) {
+export default function IntroInfo({ title, description }) {
   return (
     <div
-      className={`w-full max-w-[1200px]
- my-10 mx-auto px-6 py-8 bg-gradient-to-b ${gradientFrom} ${gradientTo} rounded-3xl flex flex-col justify-center items-center gap-6`}
+      className={`max-w-7xl mx-auto my-10 px-6 py-10 md:px-8 md:py-12 bg-gradient-to-r from-purple-100 to-blue-100 rounded-3xl flex flex-col justify-center items-center gap-6 shadow-sm`}
     >
-      <h2 className="text-center text-black text-3xl font-bold font-['Poppins']  leading-10">
+      <h2 className="text-center text-gray-800 text-2xl md:text-3xl lg:text-4xl font-bold font-['Poppins'] leading-tight">
         {title}
       </h2>
-
-      <div className={`w-full max-w-4xl border-t-4 border-${dividerColor}`}></div>
-
-      <p className="text-center text-black text-m font-['Montserrat']  leading-relaxed tracking-wide max-w-3xl">
+      <div className={`w-full h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full`}></div>
+      <p className="text-center text-gray-600 text-base md:text-lg font-['Montserrat'] leading-relaxed tracking-wide">
         {description}
       </p>
     </div>
