@@ -1,9 +1,15 @@
 import React from 'react';
+import PageHeroSection from '../../../../../components/common/PageHeroSection';
 
 const SponsorshipActivation = () => (
   <div>
-    <h2>Sponsorship Activation</h2>
-    <p>This is the Sponsorship Activation subpage under Experiential & Event-Based Marketing.</p>
+    <PageHeroSection
+      title={'Sponsorship Activation'}
+      description={
+        'We help brands maximize their sponsorship investments through strategic activation and engagement.'
+      }
+      bgImage={'/Images/Sponrshipactivation.jpg'}
+    />
   </div>
 );
 
