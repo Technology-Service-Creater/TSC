@@ -33,6 +33,7 @@ const industryComponents = {
   'experiential-event-based-marketing': ExperientialEventBasedMarketing,
   'e-commerce-growth-marketing': ECommerceGrowthMarketing,
   'ai-automation-marketing': AIAutomationMarketing,
+  'ai-automation-in-marketing': AIAutomationMarketing,
   'visual-video-marketing': VisualVideoMarketing,
   'traditional-offline-marketing': TraditionalOfflineMarketing,
   'social-media-community-engagement': SocialMediaCommunityEngagement,
@@ -40,6 +41,7 @@ const industryComponents = {
   'event-services-marketing': EventServicesMarketing,
   'marketing-analysis-research': MarketingAnalysisResearch,
   'legal-compliance': LegalCompliance,
+  'legal-and-compliance': LegalCompliance,
   'design-services': DesignServices,
 };
 
@@ -85,6 +87,18 @@ const subPageFileMap = {
     'regulatory-compliance': 'RegulatoryCompliance',
     'intellectual-property-protection': 'IntellectualPropertyProtection',
   },
+  'legal-and-compliance': {
+    'financial-regulatory-risk': 'FinancialRegulatoryRisk',
+    'governance-risk-compliance-grc': 'GovernanceRiskComplianceGRC',
+    'cybersecurity-data-privacy': 'CybersecurityDataPrivacy',
+    'legal-advisory-business-risk-advisory': 'LegalAdvisoryBusinessRiskAdvisory',
+    'tax-compliance-reporting': 'TaxComplianceReporting',
+    'indirect-taxes': 'IndirectTaxes',
+    'transfer-pricing': 'TransferPricing',
+    'contract-management': 'ContractManagement',
+    'regulatory-compliance': 'RegulatoryCompliance',
+    'intellectual-property-protection': 'IntellectualPropertyProtection',
+  },
   'marketing-analysis-research': {
     'customer-segmentation': 'CustomerSegmentation',
     'competitive-analysis': 'CompetitiveAnalysis',
@@ -117,6 +131,12 @@ const subPageFileMap = {
     'digital-experience-branding': 'DigitalExperienceBranding',
   },
   'ai-automation-marketing': {
+    'ai-powered-chatbots-customer-support': 'AIPoweredChatbotsCustomerSupport',
+    'automated-ad-campaigns': 'AutomatedAdCampaigns',
+    'predictive-marketing': 'PredictiveMarketing',
+    'ai-driven-personalization': 'AIDrivenPersonalization',
+  },
+  'ai-automation-in-marketing': {
     'ai-powered-chatbots-customer-support': 'AIPoweredChatbotsCustomerSupport',
     'automated-ad-campaigns': 'AutomatedAdCampaigns',
     'predictive-marketing': 'PredictiveMarketing',

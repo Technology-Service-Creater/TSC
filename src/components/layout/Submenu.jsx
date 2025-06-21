@@ -75,21 +75,32 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                   return (
                     <li key={index}>
                       {hasDetails ? (
-                        <button
-                          type="button"
-                          onMouseEnter={() => setHoveredIndustry(industry)}
-                          onFocus={() => setHoveredIndustry(industry)}
-                          className="flex items-center w-full text-left text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA] group"
-                        >
-                          <span className="flex-1">{industry}</span>
-                          <ChevronRight
-                            size={16}
-                            className="ml-2 text-gray-400 group-hover:text-[#A468DA]"
-                          />
-                        </button>
+                        <div className="flex items-center">
+                          <Link
+                            to={`/industries/${industry
+                              .toLowerCase()
+                              .replace(/[^a-z0-9]+/g, '-')
+                              .replace(/(^-|-$)/g, '')}`}
+                            className="flex-1 text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA]"
+                            onClick={onClose}
+                          >
+                            {industry}
+                          </Link>
+                          <button
+                            type="button"
+                            onMouseEnter={() => setHoveredIndustry(industry)}
+                            onFocus={() => setHoveredIndustry(industry)}
+                            className="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-[#A468DA] transition-colors"
+                          >
+                            <ChevronRight size={16} />
+                          </button>
+                        </div>
                       ) : (
                         <Link
-                          to={`/what-we-do/industries/${industry.toLowerCase().replace(/\s+/g, '-')}`}
+                          to={`/industries/${industry
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, '-')
+                            .replace(/(^-|-$)/g, '')}`}
                           className="block text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA]"
                           onClick={onClose}
                           onMouseEnter={() => setHoveredIndustry(industry)}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeroSection from '../../components/common/PageHeroSection';
-import ContactForm from './SubComponents/ContactForm';
 import ContactInfo from './SubComponents/ContactInfo';
+import ContactForm from '../../components/common/ContactForm';
 
 const Contact = () => {
   return (
@@ -11,8 +11,8 @@ const Contact = () => {
         description="Need assistance or more information? Our team is here to help! Expect a response within 3-5 working days."
         bgImage="/Images/contactHero.jpg"
       />
-      <ContactForm />
       <ContactInfo />
+      <ContactForm />
     </div>
   );
 };
