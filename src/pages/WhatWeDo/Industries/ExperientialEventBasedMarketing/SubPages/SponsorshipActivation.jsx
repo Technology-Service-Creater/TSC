@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeroSection from '../../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../../components/common/IntroSection';
+import Introinfo from '../../../../../components/common/Introinfo';
 
 const SponsorshipActivation = () => (
   <div>
@@ -19,6 +20,7 @@ const SponsorshipActivation = () => (
         'Sponsorship activation is the key to turning brand partnerships into powerful marketing opportunities. At Pitch, we help brands maximize their sponsorship efforts, ensuring they connect with the right audience and create a lasting impact.'
       }
     />
+    <Introinfo />
   </div>
 );
 
