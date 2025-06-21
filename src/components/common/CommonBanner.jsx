@@ -1,12 +1,13 @@
 import React from 'react';
 
-function SEOCompanyBanner({ SEOCompanyImage, SEOCompanyTitle, SEOCompanyDescription }) {
+function CommonBanner({ SEOCompanyImage, SEOCompanyTitle, SEOCompanyDescription }) {
   return (
-    <section
-      className="w-full relative my-10 max-w-[1194px] h-auto md:h-[408px] mx-auto flex flex-col md:flex-row  gap-4 md:gap-0 overflow-hidden ">
-      <div className=" absolute w-full h-full top-0 left-0  "
+    <section className="w-full relative my-10 max-w-[1194px] h-auto md:h-[408px] mx-auto flex flex-col md:flex-row  gap-4 md:gap-0 overflow-hidden ">
+      <div
+        className=" absolute w-full h-full top-0 left-0  "
         style={{
-         background: 'linear-gradient(96.32deg, rgba(164, 104, 218, 0.1) 0%, rgba(20, 155, 245, 0.2) 100%)'
+          background:
+            'linear-gradient(96.32deg, rgba(164, 104, 218, 0.1) 0%, rgba(20, 155, 245, 0.2) 100%)',
         }}
       />
       <div className="flex-1 flex flex-col  justify-center p-4 md:p-8 gap-4 md:gap-6">
@@ -28,4 +29,4 @@ function SEOCompanyBanner({ SEOCompanyImage, SEOCompanyTitle, SEOCompanyDescript
   );
 }
 
-export default SEOCompanyBanner;
+export default CommonBanner;
