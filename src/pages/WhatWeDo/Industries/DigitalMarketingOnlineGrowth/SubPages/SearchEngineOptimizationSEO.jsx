@@ -15,9 +15,9 @@ const SearchEngineOptimizationSEO = () => (
       bgImage={contentImage}
     />
     <CommonBanner
-      SEOCompanyImage={'/Images/Unlock-Success-with-an-Expert-SEO-Company.jpg'}
-      SEOCompanyTitle={'Unlock Success with an Expert SEO Company'}
-      SEOCompanyDescription={
+      CommonBannerImage={'/Images/Unlock-Success-with-an-Expert-SEO-Company.jpg'}
+      CommonBannerTitle={'Unlock Success with an Expert SEO Company'}
+      CommonBannerDescription={
         'Boost your website`s visibility and search rankings with a top-tier SEO company. Expert strategies optimize your site for Google, driving organic traffic, enhancing user engagement, and fueling business growth. Whether you need comprehensive SEO solutions or targeted services, partnering with professionals ensures a powerful online presence.g you achieve success effortlessly.'
       }
     />
