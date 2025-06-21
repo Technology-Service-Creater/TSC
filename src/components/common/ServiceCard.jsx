@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ title, description, listItems, link }) => {
   const cardContent = (
-    <div className="relative overflow-hidden bg-gradient-to-b from-purple-100 to-blue-100 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 h-full border border-gray-100">
-      {/* Gradient Blob */}
-      <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-purple-200 via-blue-200 to-transparent rounded-full opacity-30 blur-2xl"></div>
-
+    <div
+      className="relative overflow-hidden bg-gradient-to-b  p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 h-full "
+      style={{
+        background:
+          'linear-gradient(180deg, rgba(164, 104, 218, 0.1) 0%, rgba(20, 155, 245, 0.1) 100%)',
+      }}
+    >
       <div className="relative z-10">
         <h3
-          className="text-xl font-bold text-gray-800 mb-2"
+          className="text-xl  font-bold text-gray-800 mb-2"
           style={{ fontFamily: 'Poppins, sans-serif' }}
         >
           {title}
