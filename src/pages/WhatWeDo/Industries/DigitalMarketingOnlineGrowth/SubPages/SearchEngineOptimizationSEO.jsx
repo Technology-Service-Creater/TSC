@@ -1,6 +1,6 @@
 import React from 'react';
 import PageHeroSection from '../../../../../components/common/PageHeroSection';
-import IntoSection from '../../../../../components/common/IntoSection';
+import IntroSection from '../../../../../components/common/IntroSection';
 
 const contentHeading = 'Search Engine Optimization (SEO)';
 const contentDescription =
@@ -14,10 +14,10 @@ const SearchEngineOptimizationSEO = () => (
       description={contentDescription}
       bgImage={contentImage}
     />
-    <IntoSection
-      IntoSectionImage={'/Images/Unlock-Success-with-an-Expert-SEO-Company.jpg'}
-      IntoSectionTitle={'Unlock Success with an Expert SEO Company'}
-      IntoSectionDescription={
+    <IntroSection
+      IntroSectionImage={'/Images/Unlock-Success-with-an-Expert-SEO-Company.jpg'}
+      IntroSectionTitle={'Unlock Success with an Expert SEO Company'}
+      IntroSectionDescription={
         'Boost your website`s visibility and search rankings with a top-tier SEO company. Expert strategies optimize your site for Google, driving organic traffic, enhancing user engagement, and fueling business growth. Whether you need comprehensive SEO solutions or targeted services, partnering with professionals ensures a powerful online presence.g you achieve success effortlessly.'
       }
     />
