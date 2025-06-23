@@ -50,12 +50,12 @@ function IntroSection({
           </div>
 
           {/* Image container */}
-          <div className="flex-1 relative min-h-[200px] sm:min-h-[250px] md:min-h-0">
+          <div className="flex-1 relative min-h-[200px] sm:min-h-[250px] md:min-h-0 flex items-center justify-center lg:h-full">
             {image && (
               <img
                 src={image}
                 alt={imageAlt || 'Section image'}
-                className="w-full h-full object-cover"
+                className="w-full object-cover rounded-2xl max-h-[320px] md:max-h-full lg:h-full"
                 loading="lazy"
               />
             )}

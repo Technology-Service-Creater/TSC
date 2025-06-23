@@ -27,14 +27,14 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
         onClick={onClose}
       />
       <div
-        className={`fixed left-0 right-0 top-28 z-50 w-full transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
+        className={`fixed left-0 right-0 top-[104px] z-50 w-full transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
         style={{ borderRadius: '0 0 1rem 1rem' }} // rounded-b-xl for bottom corners only
         onMouseLeave={() => {
           setHoveredIndustry(null);
           onClose();
         }}
       >
-        <div className="max-w-screen-xl mx-auto w-full rounded-xl overflow-visible bg-white font-[Montserrat] border border-gray-200 shadow-2xl shadow-gray-300/50">
+        <div className="max-w-screen-xl mx-auto w-full rounded-xl overflow-visible bg-white font-[Montserrat] border border-gray-200 shadow-2xl shadow-gray-300/50 overflow-y-auto max-h-[80vh]">
           {/* What we do heading with white bg */}
           <div className="bg-white px-8 py-4 rounded-xl relative overflow-hidden rounded-t-xl">
             <div
@@ -117,7 +117,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
             {/* Industry Details Section - Full Width */}
             <div className="flex-1 p-8 flex items-start justify-start overflow-visible">
               <div
-                className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''}`}
+                className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''} overflow-y-auto max-h-[60vh]`}
               >
                 {hoveredIndustry && industryDetailsMap[hoveredIndustry] ? (
                   <div className="p-4">

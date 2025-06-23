@@ -3,10 +3,11 @@ import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Submenu from './Submenu';
 
+// Navbar improved for sticky/blur/submenu/mobile UX
 const Navbar = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hoveredIndustry, setHoveredIndustry] = useState(null);
+  const [expandedIndustriesMobile, setExpandedIndustriesMobile] = useState([]);
   const submenuRef = useRef(null);
   const buttonRef = useRef(null);
   const location = useLocation();
@@ -205,278 +206,289 @@ const Navbar = () => {
     };
   }, [isSubmenuOpen]);
 
+  // Reset expandedIndustriesMobile when mobile menu closes
+  useEffect(() => {
+    if (!isMobileMenuOpen) setExpandedIndustriesMobile([]);
+  }, [isMobileMenuOpen]);
+
   // Helper for active route
   const isActive = path => location.pathname === path;
 
   return (
     <>
-      {/* Top Bar - Only visible on tablet and desktop */}
-      <div className="hidden sm:block w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
-        <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-1.5 md:gap-8 lg:px-10 items-center">
-          <a
-            href="#"
-            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
-          >
-            For Companies
-          </a>
-          <a
-            href="#"
-            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
-          >
-            Events
-          </a>
-          <a
-            href="#"
-            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
-          >
-            Become a master
-          </a>
-          <a
-            href="#"
-            className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
-          >
-            Blogs
-          </a>
-        </div>
-      </div>
-
-      {/* Main Navbar */}
-      <nav className="font-[Montserrat] font-normal w-full px-2 sm:px-4 lg:px-6 sticky top-0 z-50 bg-white border-b border-gray-200 py-1.5">
-        <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16">
-          <Link to={'/'} className="flex items-center gap-2">
-            <img src="/Images/logo.png" alt="logo" className="h-14 max-w-full w-auto" />
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-3 md:gap-4 lg:gap-8 whitespace-nowrap">
-            <div className="relative">
-              <button
-                ref={buttonRef}
-                onClick={() => setIsSubmenuOpen(open => !open)}
-                className={`flex items-center cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
-                  hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
-                  ${isSubmenuOpen ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                `}
-                type="button"
-                aria-expanded={isSubmenuOpen}
-                aria-haspopup="true"
-              >
-                What we do {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-              </button>
-              <div ref={submenuRef}>
-                <Submenu
-                  isOpen={isSubmenuOpen}
-                  onClose={() => setIsSubmenuOpen(false)}
-                  services={services}
-                  industries={industries}
-                  industryDetailsMap={industryDetailsMap}
-                />
-              </div>
-            </div>
-            <Link
-              to="/about"
-              className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
-                hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
-                ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-              `}
+      {/* Sticky container for top bar + navbar. Fixes submenu/blur gap issues. */}
+      <div className="sticky top-0 z-50 bg-white">
+        {/* Top Bar - Only visible on tablet and desktop */}
+        <div className="hidden sm:block w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
+          <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-1.5 md:gap-8 lg:px-10 items-center">
+            <a
+              href="#"
+              className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
             >
-              About Us
-            </Link>
-            <Link
-              to="/careers"
-              className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
-                hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
-                ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-              `}
+              For Companies
+            </a>
+            <a
+              href="#"
+              className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
             >
-              Careers
-            </Link>
-            <Link
-              to="/contact"
-              className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
-                hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
-                ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-              `}
+              Events
+            </a>
+            <a
+              href="#"
+              className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
             >
-              Contact Us
-            </Link>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white">
-              <Search size={16} />
-              Search
-            </button>
+              Become a master
+            </a>
+            <a
+              href="#"
+              className="text-sm md:text-base hover:text-[#A468DA] transition-colors whitespace-nowrap"
+            >
+              Blogs
+            </a>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden flex items-center"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
+        {/* Main Navbar */}
+        <nav className="font-[Montserrat] font-normal w-full px-2 sm:px-4 lg:px-6 border-b border-gray-200 py-1.5">
+          <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16">
+            <Link to={'/'} className="flex items-center gap-2">
+              <img src="/Images/logo.png" alt="logo" className="h-14 max-w-full w-auto" />
+            </Link>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-white z-40 p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out">
-            {/* Close Button */}
-            <div className="flex justify-end mb-4">
-              <button
-                className="text-gray-500 hover:text-[#A468DA]"
-                onClick={() => setIsMobileMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                <X size={24} />
-              </button>
-            </div>
-
-            {/* Mobile Menu Content */}
-            <div className="space-y-4">
-              {/* What we do collapsible section */}
-              <div className="space-y-2">
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-3 md:gap-4 lg:gap-8 whitespace-nowrap">
+              <div className="relative">
                 <button
-                  onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded-md text-base font-medium transition-colors
-                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                  ref={buttonRef}
+                  onClick={() => setIsSubmenuOpen(open => !open)}
+                  className={`flex items-center cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                    hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
                     ${isSubmenuOpen ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
                   `}
+                  type="button"
+                  aria-expanded={isSubmenuOpen}
+                  aria-haspopup="true"
                 >
                   What we do {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                 </button>
-                {isSubmenuOpen && (
-                  <div className="pl-4 space-y-4 mt-2">
-                    {/* Services Section */}
-                    <div className="space-y-2">
-                      <h3 className="font-semibold text-sm text-gray-500 px-4">Services</h3>
-                      <div className="space-y-1">
-                        {services.map((service, index) => (
-                          <Link
-                            key={index}
-                            to={`/what-we-do/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
-                            className="block px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md truncate"
-                            onClick={() => {
-                              setIsMobileMenuOpen(false);
-                              setIsSubmenuOpen(false);
-                            }}
-                          >
-                            {service}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Industries Section with Details */}
-                    <div className="space-y-2">
-                      <h3 className="font-semibold text-sm text-gray-500 px-4">Industries</h3>
-                      <div className="space-y-1">
-                        {industries.map((industry, index) => (
-                          <div key={index} className="space-y-1">
-                            <div className="flex items-center">
-                              <Link
-                                to={`/industries/${industry
-                                  .toLowerCase()
-                                  .replace(/[^a-z0-9]+/g, '-')
-                                  .replace(/(^-|-$)/g, '')}`}
-                                className="flex-1 px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md truncate"
-                                onClick={() => {
-                                  setIsMobileMenuOpen(false);
-                                  setIsSubmenuOpen(false);
-                                }}
-                              >
-                                {industry}
-                              </Link>
-                              {industryDetailsMap[industry] &&
-                                industryDetailsMap[industry].length > 0 && (
-                                  <button
-                                    onClick={() =>
-                                      setHoveredIndustry(
-                                        industry === hoveredIndustry ? null : industry
-                                      )
-                                    }
-                                    className="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-[#A468DA] transition-colors"
-                                  >
-                                    <ChevronRight
-                                      size={16}
-                                      className={`transform transition-transform duration-200 ${
-                                        hoveredIndustry === industry ? 'rotate-90' : ''
-                                      }`}
-                                    />
-                                  </button>
-                                )}
-                            </div>
-                            {hoveredIndustry === industry && (
-                              <div className="pl-4 space-y-1 bg-gradient-to-r from-[#A468DA]/5 to-[#149BF5]/5 rounded-md p-2 mt-1">
-                                {industryDetailsMap[industry]?.map((detail, idx) => (
-                                  <Link
-                                    key={idx}
-                                    to={`/industries/${industry
-                                      .toLowerCase()
-                                      .replace(/[^a-z0-9]+/g, '-')
-                                      .replace(/(^-|-$)/g, '')}/${detail
-                                      .toLowerCase()
-                                      .replace(/[^a-z0-9]+/g, '-')
-                                      .replace(/(^-|-$)/g, '')}`}
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:text-[#A468DA] truncate"
-                                    onClick={() => {
-                                      setIsMobileMenuOpen(false);
-                                      setIsSubmenuOpen(false);
-                                    }}
-                                  >
-                                    {detail}
-                                  </Link>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <div ref={submenuRef}>
+                  <Submenu
+                    isOpen={isSubmenuOpen}
+                    onClose={() => setIsSubmenuOpen(false)}
+                    services={services}
+                    industries={industries}
+                    industryDetailsMap={industryDetailsMap}
+                  />
+                </div>
               </div>
-
-              {/* Other main links for mobile */}
-              <div className="space-y-1">
-                <Link
-                  to="/about"
-                  className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
-                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
-                    ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                  `}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-                <Link
-                  to="/careers"
-                  className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
-                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
-                    ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                  `}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Careers
-                </Link>
-                <Link
-                  to="/contact"
-                  className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
-                    hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
-                    ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
-                  `}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
-              </div>
-
-              <button className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center text-sm mt-4">
+              <Link
+                to="/about"
+                className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                  ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+              >
+                About Us
+              </Link>
+              <Link
+                to="/careers"
+                className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                  ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+              >
+                Careers
+              </Link>
+              <Link
+                to="/contact"
+                className={`cursor-pointer active:scale-95 px-4 py-2 rounded-lg transition-colors
+                  hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10
+                  ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                `}
+              >
+                Contact Us
+              </Link>
+              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white">
                 <Search size={16} />
                 Search
               </button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden flex items-center"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-        )}
-      </nav>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden fixed inset-0 bg-white z-40 p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out">
+              {/* Close Button */}
+              <div className="flex justify-end mb-4">
+                <button
+                  className="text-gray-500 hover:text-[#A468DA]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              {/* Mobile Menu Content */}
+              <div className="space-y-4">
+                {/* What we do collapsible section */}
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-md text-base font-medium transition-colors
+                      hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                      ${isSubmenuOpen ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                    `}
+                  >
+                    What we do {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  </button>
+                  {isSubmenuOpen && (
+                    <div className="pl-4 space-y-4 mt-2">
+                      {/* Services Section */}
+                      <div className="space-y-2">
+                        <h3 className="font-semibold text-sm text-gray-500 px-4">Services</h3>
+                        <div className="space-y-1">
+                          {services.map((service, index) => (
+                            <Link
+                              key={index}
+                              to={`/what-we-do/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                              className="block px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md truncate"
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setIsSubmenuOpen(false);
+                              }}
+                            >
+                              {service}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Industries Section with Details */}
+                      <div className="space-y-2">
+                        <h3 className="font-semibold text-sm text-gray-500 px-4">Industries</h3>
+                        <div className="space-y-1">
+                          {industries.map((industry, index) => (
+                            <div key={index} className="space-y-1">
+                              <div className="flex items-center">
+                                <Link
+                                  to={`/industries/${industry
+                                    .toLowerCase()
+                                    .replace(/[^a-z0-9]+/g, '-')
+                                    .replace(/(^-|-$)/g, '')}`}
+                                  className="flex-1 px-4 py-2.5 text-sm hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20 rounded-md truncate"
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setIsSubmenuOpen(false);
+                                  }}
+                                >
+                                  {industry}
+                                </Link>
+                                {industryDetailsMap[industry] &&
+                                  industryDetailsMap[industry].length > 0 && (
+                                    <button
+                                      onClick={() => {
+                                        setExpandedIndustriesMobile(prev =>
+                                          prev.includes(industry)
+                                            ? prev.filter(i => i !== industry)
+                                            : [...prev, industry]
+                                        );
+                                      }}
+                                      className="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-[#A468DA] transition-colors"
+                                    >
+                                      <ChevronRight
+                                        size={16}
+                                        className={`transform transition-transform duration-200 ${
+                                          expandedIndustriesMobile.includes(industry)
+                                            ? 'rotate-90'
+                                            : ''
+                                        }`}
+                                      />
+                                    </button>
+                                  )}
+                              </div>
+                              {expandedIndustriesMobile.includes(industry) && (
+                                <div className="pl-4 space-y-1 bg-gradient-to-r from-[#A468DA]/5 to-[#149BF5]/5 rounded-md p-2 mt-1">
+                                  {industryDetailsMap[industry]?.map((detail, idx) => (
+                                    <Link
+                                      key={idx}
+                                      to={`/industries/${industry
+                                        .toLowerCase()
+                                        .replace(/[^a-z0-9]+/g, '-')
+                                        .replace(/(^-|-$)/g, '')}/${detail
+                                        .toLowerCase()
+                                        .replace(/[^a-z0-9]+/g, '-')
+                                        .replace(/(^-|-$)/g, '')}`}
+                                      className="block px-4 py-2 text-sm text-gray-700 hover:text-[#A468DA] truncate"
+                                      onClick={() => {
+                                        setIsMobileMenuOpen(false);
+                                        setIsSubmenuOpen(false);
+                                      }}
+                                    >
+                                      {detail}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Other main links for mobile */}
+                <div className="space-y-1">
+                  <Link
+                    to="/about"
+                    className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
+                      hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                      ${isActive('/about') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                    `}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    to="/careers"
+                    className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
+                      hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                      ${isActive('/careers') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                    `}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Careers
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors
+                      hover:bg-gradient-to-r hover:from-[#A468DA]/20 hover:to-[#149BF5]/20
+                      ${isActive('/contact') ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}
+                    `}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+
+                <button className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center text-sm mt-4">
+                  <Search size={16} />
+                  Search
+                </button>
+              </div>
+            </div>
+          )}
+        </nav>
+      </div>
     </>
   );
 };
