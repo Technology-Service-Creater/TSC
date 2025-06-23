@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeroSection from '../../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../../components/common/IntroSection';
 import IntroInfo from '../../../../../components/common/IntroInfo';
+import ContactForm from '../../../../../components/common/ContactForm';
 
 const ProductLaunchesBrandActivations = () => (
   <div>
@@ -20,7 +21,7 @@ const ProductLaunchesBrandActivations = () => (
       }
     />
 
-    <section className="text-center py-12 md:py-16 px-4">
+    <section className="text-center ">
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-['Poppins'] text-black leading-tight">
         What We Do
       </h2>
@@ -30,7 +31,7 @@ const ProductLaunchesBrandActivations = () => (
       title={'Strategic Product Launches That Deliver Results'}
       description={
         <>
-          <div className="text-left">
+          <div className="text-left ">
             <p>
               We take a data-driven approach to ensure your launch makes waves. By understanding
               your brand and audience, we design strategic, high-energy campaigns that maximize
@@ -56,7 +57,65 @@ const ProductLaunchesBrandActivations = () => (
         </>
       }
     />
-  </div> // ✅ <-- this was missing
+
+    <IntroInfo
+      title={'Our Process: Creating Memorable Brand Activations'}
+      description={
+        <>
+          <div className="text-left ">
+            <p>
+              Brand activations bring your brand to life by creating hands-on, immersive experiences
+              that leave a lasting impression.
+            </p>
+            <p>
+              ✔ Experiential Brand Activations - Unique, interactive experiences that build
+              emotional connections.
+            </p>
+            <p>
+              ✔ Pop-Ups & Event Activations - Eye-catching pop-up shops & live events that drive
+              engagement.
+            </p>
+            <p>
+              ✔ Digital Activations - Cutting-edge VR, AR, and interactive online experiences that
+              connect audiences worldwide.
+            </p>
+          </div>
+        </>
+      }
+    />
+
+    {/* Intro Section */}
+    <IntroSection
+      IntroSectionImage="/Images/ProductLaunchesBrandActivations_2.jpg"
+      IntroSectionTitle="Why Choose TSC for Product Launches & Activations?"
+      IntroSectionDescription={
+        <>
+          <div className="text-left ">
+            <p>
+              Proven Expertise – Custom strategies designed for maximum impact—no cookie-cutter
+              approaches here!
+            </p>
+            <p>
+              ✔ Innovative Concepts – We’ve worked with brands across industries to create bold,
+              creative activations.
+            </p>
+            <p>
+              ✔ Measurable Results – Data-driven insights to track success and refine your
+              strategy.
+            </p>
+            <p>
+              ✔ End-to-End Solutions – From ideation to execution and post-launch engagement, we
+              handle it all.
+            </p>
+          </div>
+        </>
+      }
+      reverse={true}
+    />
+
+    {/* Contact Form */}
+    <ContactForm />
+  </div>
 );
 
 export default ProductLaunchesBrandActivations;
