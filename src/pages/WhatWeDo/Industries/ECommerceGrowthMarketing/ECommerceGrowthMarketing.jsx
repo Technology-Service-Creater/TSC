@@ -68,18 +68,20 @@ const ECommerceGrowthMarketing = () => (
     />
 
     {/* Service Cards */}
-    <div className="w-full">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-6 px-4 mb-12">
-        {serviceCards.map((card, idx) => (
-          <div
-            key={idx}
-            className="flex justify-center w-full sm:w-[48%] lg:w-[30%] min-w-[260px] max-w-xs"
-          >
-            <ServiceCard {...card} />
-          </div>
-        ))}
+    <section className="py-16 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {serviceCards.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              listItems={service.listItems}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
 
     {/* Intro Section - use only IntroSection pattern */}
     <IntroSection

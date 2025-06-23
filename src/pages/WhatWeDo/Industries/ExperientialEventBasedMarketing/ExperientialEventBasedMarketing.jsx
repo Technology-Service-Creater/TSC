@@ -8,17 +8,17 @@ const serviceCards = [
   {
     title: 'Sponsorship Activation',
     description:
-      'Bring sponsorships to life with interactive experiences, promotions, and activities that boost brand visibility and create memorable moments for both sponsors and audiences.',
+      "Sponsorship activation involves bringing a sponsorship to life by engaging the audience in meaningful ways. It goes beyond just having a logo displayed; it includes activities, promotions, and experiences that enhance the sponsor's brand visibility and interaction with the target audience. Successful sponsorship activation creates memorable moments and adds value for both the sponsor and the event.",
   },
   {
     title: 'Virtual & Hybrid Events',
     description:
-      'Leverage technology to expand your audience reach with a blend of in-person and online experiences. Enjoy flexibility, cost-effectiveness, and measurable engagement.',
+      'Virtual and hybrid events leverage technology to engage audiences remotely or through a combination of in-person and online experiences. Virtual events are fully online, while hybrid events mix physical and virtual elements. These events can include webinars, conferences, trade shows, and live streams. They offer flexibility, wider reach, and cost-effectiveness while maintaining audience engagement.',
   },
   {
     title: 'Product Launches & Brand Activations',
     description:
-      'Generate buzz and excitement with live demonstrations, exclusive previews, and interactive experiences that make your product or brand unforgettable.',
+      'Product launches and brand activations are strategic events designed to introduce new products or enhance brand awareness. These events generate buzz and excitement around the brand or product. They can include live demonstrations, interactive experiences, and exclusive previews, creating an impactful and memorable introduction to the market.',
   },
 ];
 
