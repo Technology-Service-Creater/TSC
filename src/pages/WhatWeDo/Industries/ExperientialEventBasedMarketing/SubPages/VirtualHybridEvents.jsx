@@ -27,25 +27,33 @@ const VirtualHybridEvents = () => {
         bgImage="/Images/VirtualHybridEvent_Hero.jpg"
       />
 
+      {/* Intro Section */}
       <IntroSection
         IntroSectionImage="/Images/VirtualHybridEvent_1.jpg"
         IntroSectionTitle="The Power of Face-to-Face Events"
         IntroSectionDescription={
-          <>
+          <div style={{ fontSize: '0.9rem' }}>
             <p>
-              There’s something special about in-person interactions—they help build trust,
-              strengthen relationships, and create meaningful connections. Whether you’re launching
+              There&apos;s something special about in-person interactions—they help build trust,
+              strengthen relationships, and create meaningful connections. Whether you are launching
               a product, engaging customers, or hosting a team-building event, face-to-face
               communication is a powerful tool.
             </p>
-            <br />
-            ✔ High Costs – Venue rentals, travel, staff, and logistics add up quickly.
-            <br />
-            ✔ Limited Reach – Geographic and time constraints make attendance difficult.
-            <br />
-            ✔ Health & Safety Concerns – Social distancing and safety protocols add complexity.
-            <br />✔ Less Measurable Impact – It’s harder to track real-time engagement and ROI.
-          </>
+            <ul style={{ marginTop: '1rem', marginLeft: '1.5rem', listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '0.5rem' }}>
+                ✔ High Costs – Venue rentals, travel, staff, and logistics add up quickly.
+              </li>
+              <li style={{ marginBottom: '0.5rem' }}>
+                ✔ Limited Reach – Geographic and time constraints make attendance difficult.
+              </li>
+              <li style={{ marginBottom: '0.5rem' }}>
+                ✔ Health & Safety Concerns – Social distancing and safety protocols add complexity.
+              </li>
+              <li>
+                ✔ Less Measurable Impact – It&apos;s harder to track real-time engagement and ROI.
+              </li>
+            </ul>
+          </div>
         }
       />
 
