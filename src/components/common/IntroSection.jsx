@@ -5,6 +5,7 @@ function IntroSection({
   IntroSectionImage,
   IntroSectionTitle,
   IntroSectionDescription,
+
   // New prop names
   imageSrc,
   title,
