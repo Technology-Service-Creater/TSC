@@ -34,7 +34,7 @@ function IntroSection({
         <div
           className={`relative z-10 flex flex-col ${
             reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
-          } min-h-[300px]`}
+          } min-h-[300px] lg:min-h-400px]`}
         >
           {/* Text content */}
           <div className="flex-1 flex flex-col justify-center p-6 md:p-8 lg:p-12 space-y-4 md:space-y-6">
@@ -51,12 +51,12 @@ function IntroSection({
           </div>
 
           {/* Image container */}
-          <div className="flex-1 relative">
+          <div className="flex-1 relative flex items-stretch">
             {image && (
               <img
                 src={image}
                 alt={imageAlt || 'Section image'}
-                className="w-full h-full object-cover object-center rounded-2xl min-h-[250px] md:min-h-[400px]"
+                className="w-full h-[30em] object-cover object-center rounded-2xl"
                 loading="lazy"
               />
             )}
