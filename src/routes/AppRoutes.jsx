@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams, useLocation } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import Home from '../pages/Home/Home';
@@ -235,25 +235,33 @@ function IndustrySubPageWrapper() {
   );
 }
 
+// ScrollToTop component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/careers" element={<Career />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/whatwedo" element={<WhatWeDo />} />
-            <Route path="/services/:serviceId" element={<ServiceDetails />} />
-            <Route path="/industries/:industryId" element={<IndustryPageWrapper />} />
-            <Route path="/industries/:industryId/:subPageId" element={<IndustrySubPageWrapper />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <ScrollToTop />
+      <Navbar />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Career />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/whatwedo" element={<WhatWeDo />} />
+          <Route path="/services/:serviceId" element={<ServiceDetails />} />
+          <Route path="/industries/:industryId" element={<IndustryPageWrapper />} />
+          <Route path="/industries/:industryId/:subPageId" element={<IndustrySubPageWrapper />} />
+        </Routes>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
 };
