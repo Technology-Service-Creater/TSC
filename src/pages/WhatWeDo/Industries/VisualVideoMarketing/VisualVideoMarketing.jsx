@@ -4,39 +4,45 @@ import IntroSection from '../../../../components/common/IntroSection';
 import ServiceCard from '../../../../components/common/ServiceCard';
 import ContactForm from '../../../../components/common/ContactForm';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'visual-video-marketing';
+
 const VisualVideoMarketing = () => {
   const services = [
     {
       title: 'Corporate Films & Promotional Videos',
       description:
         "Corporate films and promotional videos are professional videos produced to showcase a company's brand, products, or services. They are used for marketing, training, and internal communications, helping to convey a company's message effectively and memorably.",
-      link: '/what-we-do/visual-video-marketing/corporate-films-promotional-videos',
     },
     {
       title: 'Aerial Photography & Videography',
       description:
         'Aerial photography and videography involves capturing images and videos from an elevated perspective. This unique and innovative technique is used to create stunning visuals for real estate, events, and promotional materials, offering captivating views that ground-level photography cannot achieve.',
-      link: '/what-we-do/visual-video-marketing/aerial-photography-videography',
     },
     {
       title: 'Digital Experience & Branding',
       description:
         "Digital experience and branding focus on creating cohesive and engaging online experiences that reflect a company's brand identity through website design, user interface (UI) and user experience (UX) design, and multimedia content that enhances the overall perception of the brand in the digital space.",
-      link: '/what-we-do/visual-video-marketing/digital-experience-branding',
     },
     {
       title: 'Graphics & Creative Design',
       description:
         "Graphics and creative design involve creating visually appealing and effective designs for marketing materials, branding elements, social media posts, and advertisements. Skilled graphic designers combine typography, imagery, and layout to communicate a brand's message and capture the audience's attention.",
-      link: '/what-we-do/visual-video-marketing/graphics-creative-design',
     },
     {
       title: 'Storytelling & Branding Videos',
       description:
         "Storytelling and branding videos use narrative techniques to convey a brand's story, values, and mission, creating an emotional connection with the audience, making the brand more relatable and memorable. Effective storytelling helps differentiate a brand and fosters customer loyalty.",
-      link: '/what-we-do/visual-video-marketing/storytelling-branding-videos',
     },
-  ];
+  ].map(service => ({
+    ...service,
+    link: `/industries/${industryPath}/${toKebabCase(service.title)}`,
+  }));
 
   return (
     <div className="min-h-screen">
@@ -55,9 +61,9 @@ const VisualVideoMarketing = () => {
 
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {services.map(service => (
             <ServiceCard
-              key={index}
+              key={service.title}
               title={service.title}
               description={service.description}
               link={service.link}

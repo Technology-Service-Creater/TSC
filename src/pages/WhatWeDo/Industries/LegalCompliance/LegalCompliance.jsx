@@ -4,6 +4,14 @@ import PageHeroSection from '../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../components/common/IntroSection';
 import ContactForm from '../../../../components/common/ContactForm';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'legal-compliance';
+
 const legalTrends = [
   {
     title: 'Intellectual Property Protection',
@@ -65,7 +73,10 @@ const legalTrends = [
     description:
       'Fraud and forensic risk services focus on detecting, investigating, and preventing fraud, misconduct, and litigation support.',
   },
-];
+].map(trend => ({
+  ...trend,
+  link: `/industries/${industryPath}/${toKebabCase(trend.title)}`,
+}));
 
 const LegalCompliance = () => (
   <div className="bg-[#F5F5F5]">
@@ -87,8 +98,13 @@ const LegalCompliance = () => (
         Industry Trends and Forecasting
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {legalTrends.map((trend, idx) => (
-          <ServiceCard key={idx} title={trend.title} description={trend.description} />
+        {legalTrends.map(trend => (
+          <ServiceCard
+            key={trend.title}
+            title={trend.title}
+            description={trend.description}
+            link={trend.link}
+          />
         ))}
       </div>
     </section>

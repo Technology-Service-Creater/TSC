@@ -8,6 +8,14 @@ const heroImg = '/Images/E-CommerceGrowthMarketing_Hero.jpg';
 const img1 = '/Images/E-CommerceGrowthMarketing-1.jpg';
 const img2 = '/Images/E-CommerceGrowthMarketing-2.jpg';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'e-commerce-growth-marketing';
+
 const serviceCards = [
   {
     title: 'Conversion Rate Optimization (CRO)',
@@ -48,7 +56,10 @@ const serviceCards = [
       'Personalized Recommendations: Using customer data to provide tailored product suggestions.',
     ],
   },
-];
+].map(service => ({
+  ...service,
+  link: `/industries/${industryPath}/${toKebabCase(service.title)}`,
+}));
 
 const ECommerceGrowthMarketing = () => (
   <div className="bg-[#F8F8FF] pb-12">
@@ -71,12 +82,13 @@ const ECommerceGrowthMarketing = () => (
     <section className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {serviceCards.map((service, index) => (
+          {serviceCards.map(service => (
             <ServiceCard
-              key={index}
+              key={service.title}
               title={service.title}
               description={service.description}
               listItems={service.listItems}
+              link={service.link}
             />
           ))}
         </div>

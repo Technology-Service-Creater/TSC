@@ -8,6 +8,14 @@ const heroImg = '/Images/SoftwareDevelopment_Hero.jpg';
 const introImg = '/Images/SoftwareDevelopment-1.jpg';
 const contentImg = '/Images/SoftwareDevelopment-2.jpg';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'software-development';
+
 const infoCards = [
   {
     title: 'Software Engineering & Development',
@@ -66,7 +74,10 @@ const infoCards = [
       'Ensuring UI & usability best practices: Ensuring digital products are accessible to all users and easy to use.',
     ],
   },
-];
+].map(card => ({
+  ...card,
+  link: `/industries/${industryPath}/${toKebabCase(card.title)}`,
+}));
 
 const SoftwareDevelopment = () => (
   <div className="bg-[#F7FAFF]">
@@ -92,12 +103,13 @@ const SoftwareDevelopment = () => (
     <section className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {infoCards.map((card, idx) => (
+          {infoCards.map(card => (
             <ServiceCard
-              key={idx}
+              key={card.title}
               title={card.title}
               description={card.description}
               listItems={card.listItems}
+              link={card.link}
             />
           ))}
         </div>

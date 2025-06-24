@@ -8,6 +8,14 @@ const heroImg = '/Images/AIAutomationMarketing_Hero.jpg';
 const img1 = '/Images/AIAutomationMarketing-1.jpg';
 const img2 = '/Images/AIAutomationMarketing-2.png';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'ai-automation-marketing';
+
 const serviceCards = [
   {
     title: 'AI-Powered Chatbots & Customer Support',
@@ -44,7 +52,10 @@ const serviceCards = [
       'Performance Monitoring: Continuously analysing ad performance and making real-time adjustments to improve results.',
     ],
   },
-];
+].map(service => ({
+  ...service,
+  link: `/industries/${industryPath}/${toKebabCase(service.title)}`,
+}));
 
 const AIAutomationMarketing = () => (
   <div className="bg-[#F8F8FF] pb-12">
@@ -67,9 +78,9 @@ const AIAutomationMarketing = () => (
     <section className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
-          {serviceCards.map((service, index) => (
+          {serviceCards.map(service => (
             <ServiceCard
-              key={index}
+              key={service.title}
               title={service.title}
               description={service.description}
               listItems={service.listItems}

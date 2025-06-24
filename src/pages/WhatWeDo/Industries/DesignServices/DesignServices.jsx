@@ -4,6 +4,14 @@ import IntroSection from '../../../../components/common/IntroSection';
 import ServiceCard from '../../../../components/common/ServiceCard';
 import ContactForm from '../../../../components/common/ContactForm';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'design-services';
+
 const designTrends = [
   {
     title: 'Logo / Redesign and Refresh',
@@ -30,7 +38,10 @@ const designTrends = [
     description:
       'Fashion design is the art of creating clothing and accessories that reflect trends, culture, and personal style. It involves concept development, fabric selection, pattern making, and garment construction. Fashion designers create collections for runway shows, lookbooks, or digital platforms.',
   },
-];
+].map(trend => ({
+  ...trend,
+  link: `/industries/${industryPath}/${toKebabCase(trend.title)}`,
+}));
 
 const DesignServices = () => (
   <div className="bg-[#F5F5F5]">
@@ -53,7 +64,12 @@ const DesignServices = () => (
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {designTrends.map(trend => (
-          <ServiceCard key={trend.title} title={trend.title} description={trend.description} />
+          <ServiceCard
+            key={trend.title}
+            title={trend.title}
+            description={trend.description}
+            link={trend.link}
+          />
         ))}
       </div>
     </section>
