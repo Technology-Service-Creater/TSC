@@ -8,14 +8,14 @@ const services = [
   {
     title: 'SEO',
     subtitle: 'Driven Content Marketing',
-    listItems: [
+    description: [
       'Creating thought leadership content is no easy feat. It requires expert content creators with deep domain knowledge and a solid grasp of SEO. At TSC, we excel at both. Our content marketing strategies are designed to produce high-value, engaging assets that help brands across industries stand out, attract the right audience, and drive conversions.',
     ],
   },
   {
     title: 'Digital PR',
     subtitle: 'Amplify Your Brand’s Reach.',
-    listItems: [
+    description: [
       'Build a strong online presence with our Digital PR services, designed to secure strategic media placements that enhance your brand’s visibility, credibility, and influence. Our approach ensures measurable growth in brand awareness and trust.',
     ],
   },
@@ -23,7 +23,7 @@ const services = [
   {
     title: 'Quora Marketing',
     subtitle: 'Leverage the Power of Q&A',
-    listItems: [
+    description: [
       'Boost your brand’s authority and drive targeted referral traffic with our Quora marketing services. By crafting insightful, well-optimized answers, we help you establish credibility, improve SEO rankings, and increase influence on one of the world’s largest knowledge-sharing platforms.',
     ],
   },
@@ -52,7 +52,7 @@ const ContentMarketing = () => (
             <ServiceCard
               key={index}
               title={service.title}
-              listItems={service.listItems}
+              description={service.description}
               subtitle={service.subtitle}
             />
           ))}
