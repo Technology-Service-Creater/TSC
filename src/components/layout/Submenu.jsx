@@ -73,7 +73,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                   const hasDetails =
                     industryDetailsMap[industry] && industryDetailsMap[industry].length > 0;
                   return (
-                    <li key={index}>
+                    <li key={index} onMouseLeave={() => setHoveredIndustry(null)}>
                       {hasDetails ? (
                         <div className="flex items-center">
                           <Link
@@ -83,6 +83,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                               .replace(/(^-|-$)/g, '')}`}
                             className="flex-1 text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA]"
                             onClick={onClose}
+                            onMouseEnter={() => setHoveredIndustry(industry)}
                           >
                             {industry}
                           </Link>
