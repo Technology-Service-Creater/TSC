@@ -4,6 +4,14 @@ import IntroSection from '../../../../components/common/IntroSection';
 import ContactForm from '../../../../components/common/ContactForm';
 import ServiceCard from '../../../../components/common/ServiceCard';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'customer-experience-marketing-strategy';
+
 const CustomerExperienceMarketingStrategy = () => {
   const services = [
     {
@@ -36,7 +44,10 @@ const CustomerExperienceMarketingStrategy = () => {
       description:
         'Pricing strategy involves determining the optimal price for your products or services to achieve business objectives. This strategy considers factors such as production costs, competitor pricing, market conditions, and perceived value. An effective pricing strategy can attract customers, maximize revenue, and ensure profitability.',
     },
-  ];
+  ].map(service => ({
+    ...service,
+    link: `/industries/${industryPath}/${toKebabCase(service.title)}`,
+  }));
 
   return (
     <div className="bg-white">
@@ -55,8 +66,13 @@ const CustomerExperienceMarketingStrategy = () => {
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} />
+            {services.map(service => (
+              <ServiceCard
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                link={service.link}
+              />
             ))}
           </div>
         </div>

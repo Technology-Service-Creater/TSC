@@ -8,6 +8,14 @@ const heroImg = '/Images/EmailPerformance_Hero.jpg';
 const introImg = '/Images/EmailPerformance-1.jpg';
 const secondaryImg = '/Images/EmailPerformance-2.jpg';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'email-performance-marketing';
+
 const serviceCards = [
   {
     title: 'Campaign Automation',
@@ -54,7 +62,10 @@ const serviceCards = [
     description:
       'Performance tracking and reporting involve monitoring the effectiveness of marketing campaigns and activities. This includes measuring key performance indicators (KPIs) such as click-through rates, conversion rates, and ROI. Regular reporting helps assess campaign success and identify areas for improvement.',
   },
-];
+].map(card => ({
+  ...card,
+  link: `/industries/${industryPath}/${toKebabCase(card.title)}`,
+}));
 
 const EmailPerformanceMarketing = () => (
   <div className="bg-[#f8fafc]">
@@ -84,8 +95,13 @@ const EmailPerformanceMarketing = () => (
 
     {/* Service Cards Grid */}
     <section className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {serviceCards.map((card, idx) => (
-        <ServiceCard key={idx} title={card.title} description={card.description} />
+      {serviceCards.map(card => (
+        <ServiceCard
+          key={card.title}
+          title={card.title}
+          description={card.description}
+          link={card.link}
+        />
       ))}
     </section>
 

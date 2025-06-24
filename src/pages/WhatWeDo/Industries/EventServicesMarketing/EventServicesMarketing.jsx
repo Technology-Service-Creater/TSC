@@ -8,6 +8,14 @@ const heroImg = '/Images/EventServicesMarketing_Hero.jpg';
 const introImg = '/Images/EventServicesMarketing-1.jpg';
 const contentImg = '/Images/EventServicesMarketing-2.jpg';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'event-services-marketing';
+
 const serviceCards = [
   {
     title: 'Brand Acts',
@@ -54,7 +62,10 @@ const serviceCards = [
     description:
       'Trade show displays and experiences focus on creating engaging and interactive booths, exhibits, and demonstrations that attract and engage attendees.',
   },
-];
+].map(card => ({
+  ...card,
+  link: `/industries/${industryPath}/${toKebabCase(card.title)}`,
+}));
 
 const eventTypes = [
   {
@@ -102,7 +113,10 @@ const eventTypes = [
     description:
       'Experiential marketing focuses on creating immersive brand experiences that engage the senses. This may include pop-up shops, interactive installations, and live demonstrations.',
   },
-];
+].map(event => ({
+  ...event,
+  link: `/industries/${industryPath}/${toKebabCase(event.title)}`,
+}));
 
 const EventServicesMarketing = () => (
   <div className="bg-[#F7FAFF]">
@@ -128,8 +142,13 @@ const EventServicesMarketing = () => (
     <section className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {serviceCards.map((card, idx) => (
-            <ServiceCard key={idx} title={card.title} description={card.description} />
+          {serviceCards.map(card => (
+            <ServiceCard
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              link={card.link}
+            />
           ))}
         </div>
       </div>
@@ -142,8 +161,13 @@ const EventServicesMarketing = () => (
           Types of Events
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {eventTypes.map((event, idx) => (
-            <ServiceCard key={idx} title={event.title} description={event.description} />
+          {eventTypes.map(event => (
+            <ServiceCard
+              key={event.title}
+              title={event.title}
+              description={event.description}
+              link={event.link}
+            />
           ))}
         </div>
       </div>
