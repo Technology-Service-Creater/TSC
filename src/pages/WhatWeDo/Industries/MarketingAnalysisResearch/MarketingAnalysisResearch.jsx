@@ -6,6 +6,14 @@ import ContactForm from '../../../../components/common/ContactForm';
 
 const heroImg = '/Images/MarketAnalysisResearch_Hero.jpg';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'marketing-analysis-research';
+
 const industryCards = [
   {
     title: 'Industry Trends',
@@ -26,7 +34,10 @@ const industryCards = [
       'SWOT Analysis: Identifying strengths, weaknesses, opportunities, and threats.',
     ],
   },
-];
+].map(card => ({
+  ...card,
+  link: `/industries/${industryPath}/${toKebabCase(card.title)}`,
+}));
 
 const MarketingAnalysisResearch = () => (
   <div className="bg-[#F6F9FB]">
@@ -54,6 +65,7 @@ const MarketingAnalysisResearch = () => (
             title={card.title}
             description={card.description}
             listItems={card.itemList}
+            link={card.link}
           />
         ))}
       </div>

@@ -4,6 +4,14 @@ import IntroSection from '../../../../components/common/IntroSection';
 import ServiceCard from '../../../../components/common/ServiceCard';
 import ContactForm from '../../../../components/common/ContactForm';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'integrated-marketing-brand-communications';
+
 const IntegratedMarketingBrandCommunications = () => {
   const services = [
     {
@@ -31,7 +39,10 @@ const IntegratedMarketingBrandCommunications = () => {
       description:
         'Trade show displays and experiences are interactive setups at industry-specific events where businesses showcase their products and services. These displays are designed to attract attendees, generate leads, and build relationships with potential customers. They often include product demonstrations, hands-on experiences, and marketing collateral to engage visitors.',
     },
-  ];
+  ].map(service => ({
+    ...service,
+    link: `/industries/${industryPath}/${toKebabCase(service.title)}`,
+  }));
 
   return (
     <div className="bg-white">
@@ -50,8 +61,13 @@ const IntegratedMarketingBrandCommunications = () => {
       <section className="py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-            {services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} />
+            {services.map(service => (
+              <ServiceCard
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                link={service.link}
+              />
             ))}
           </div>
         </div>

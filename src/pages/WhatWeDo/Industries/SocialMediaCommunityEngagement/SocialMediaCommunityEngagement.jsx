@@ -8,6 +8,14 @@ const heroImg = '/Images/SocialMediaCommunityEngagement_Hero.jpg';
 const introImg = '/Images/SocialMediaCommunityEngagement-1.jpg';
 const contentImg = '/Images/SocialMediaCommunityEngagement-2.jpg';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'social-media-community-engagement';
+
 const infoCards = [
   {
     title: 'Platform-Specific Strategies',
@@ -40,7 +48,10 @@ const infoCards = [
       'Prepared: Having a crisis management plan in place to respond swiftly and effectively when needed.',
     ],
   },
-];
+].map(card => ({
+  ...card,
+  link: `/industries/${industryPath}/${toKebabCase(card.title)}`,
+}));
 
 const SocialMediaCommunityEngagement = () => (
   <div className="bg-[#F7FAFF]">
@@ -66,12 +77,13 @@ const SocialMediaCommunityEngagement = () => (
     <section className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {infoCards.map((card, idx) => (
+          {infoCards.map(card => (
             <ServiceCard
-              key={idx}
+              key={card.title}
               title={card.title}
               description={card.description}
               listItems={card.listItems}
+              link={card.link}
             />
           ))}
         </div>

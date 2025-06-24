@@ -4,6 +4,7 @@ import { ChevronRight } from 'lucide-react';
 
 const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) => {
   const [hoveredIndustry, setHoveredIndustry] = useState(null);
+  const [hoveredDetail, setHoveredDetail] = useState(null);
 
   // Prevent page scroll when submenu is open
   useEffect(() => {
@@ -31,6 +32,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
         style={{ borderRadius: '0 0 1rem 1rem' }} // rounded-b-xl for bottom corners only
         onMouseLeave={() => {
           setHoveredIndustry(null);
+          setHoveredDetail(null);
           onClose();
         }}
       >
@@ -138,11 +140,12 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                         return (
                           <li
                             key={idx}
-                            className="text-sm text-[#222] break-words whitespace-normal max-w-xs"
+                            onMouseEnter={() => setHoveredDetail(detail)}
+                            onMouseLeave={() => setHoveredDetail(null)}
                           >
                             <Link
                               to={`/industries/${industryKebab}/${detailKebab}`}
-                              className="hover:text-[#A468DA] transition-colors break-words whitespace-normal max-w-xs"
+                              className={`hover:text-[#A468DA] transition-colors break-words whitespace-normal max-w-xs ${hoveredDetail === detail ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}`}
                               onClick={onClose}
                             >
                               {detail}

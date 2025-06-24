@@ -8,7 +8,14 @@ const heroImg = '/Images/TraditionalOfflineMarketing_Hero.jpg';
 const introImg = '/Images/TraditionalOfflineMarketing-1.jpg';
 const businessImg = '/Images/TraditionalOfflineMarketing-2.jpg';
 
-// Array of objects for ServiceCard content
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'traditional-offline-marketing';
+
 const services = [
   {
     title: 'Print Advertising',
@@ -35,9 +42,10 @@ const services = [
     description:
       "Product packaging is not just about protecting the product; it's also a powerful marketing tool. Effective packaging design attracts attention, conveys brand identity, and provides essential information. The design, colors, and materials used in packaging can significantly impact consumer perception and purchase decisions.",
   },
-];
-
-// Array of objects for IntroSection content (for contact section)
+].map(service => ({
+  ...service,
+  link: `/industries/${industryPath}/${toKebabCase(service.title)}`,
+}));
 
 const TraditionalOfflineMarketing = () => (
   <div className="bg-[#F7FAFF]">
@@ -63,8 +71,13 @@ const TraditionalOfflineMarketing = () => (
     <section className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} title={service.title} description={service.description} />
+          {services.map(service => (
+            <ServiceCard
+              key={service.title}
+              title={service.title}
+              description={service.description}
+              link={service.link}
+            />
           ))}
         </div>
       </div>

@@ -4,6 +4,14 @@ import IntroSection from '../../../../components/common/IntroSection';
 import ServiceCard from '../../../../components/common/ServiceCard';
 import ContactForm from '../../../../components/common/ContactForm';
 
+const toKebabCase = str =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/(^-|-$)/g, '');
+const industryPath = 'experiential-event-based-marketing';
+
 const serviceCards = [
   {
     title: 'Sponsorship Activation',
@@ -20,7 +28,10 @@ const serviceCards = [
     description:
       'Product launches and brand activations are strategic events designed to introduce new products or enhance brand awareness. These events generate buzz and excitement around the brand or product. They can include live demonstrations, interactive experiences, and exclusive previews, creating an impactful and memorable introduction to the market.',
   },
-];
+].map(card => ({
+  ...card,
+  link: `/industries/${industryPath}/${toKebabCase(card.title)}`,
+}));
 
 const ExperientialEventBasedMarketing = () => (
   <div>
@@ -49,8 +60,13 @@ const ExperientialEventBasedMarketing = () => (
     {/* Service Cards Section */}
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
       <div className="grid md:grid-cols-3 gap-8">
-        {serviceCards.map((card, idx) => (
-          <ServiceCard key={idx} title={card.title} description={card.description} />
+        {serviceCards.map(card => (
+          <ServiceCard
+            key={card.title}
+            title={card.title}
+            description={card.description}
+            link={card.link}
+          />
         ))}
       </div>
     </section>

@@ -7,4 +7,4 @@ const LogoRedesignRefresh = () => (
   </div>
 );
 
-export default LogoRedesignRefresh; 
+export default LogoRedesignRefresh;
