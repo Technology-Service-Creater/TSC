@@ -26,7 +26,6 @@ const ServiceCard = ({
           <ul className="space-y-2 text-sm text-gray-600 font-['Montserrat']">
             {listItems?.map((item, index) => (
               <li key={index} className="flex items-start">
-                <span className="mr-2 text-purple-500 text-2xl leading-none">&middot;</span>
                 <span>{item}</span>
               </li>
             ))}
