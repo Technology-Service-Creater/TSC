@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const ServiceCard = ({
   title = null,
@@ -30,6 +31,16 @@ const ServiceCard = ({
               </li>
             ))}
           </ul>
+        )}
+        {link && (
+          <div className="mt-6 flex-1 flex items-end">
+            <Link
+              to={link}
+              className="inline-block px-5 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white font-semibold font-['Montserrat'] shadow hover:from-[#149BF5] hover:to-[#A468DA] transition-colors duration-200 text-sm"
+            >
+              Explore More <ArrowRight className="inline ml-2 w-4 h-4 align-middle" />
+            </Link>
+          </div>
         )}
       </div>
     </div>
