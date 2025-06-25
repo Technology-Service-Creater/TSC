@@ -31,10 +31,13 @@ const ContactForm = () => {
       <div className="w-full max-w-[1200px] mx-auto px-4 py-12 md:py-16">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Poppins'] text-neutral-800 mb-4">
-            Get In Touch
+            Contact Us
           </h2>
           <p className="text-base sm:text-lg font-medium font-['Montserrat'] text-neutral-600">
-            Our team is here to help! Expect a response within 3-5 working days.
+            Thank you for your interest in TSC&apos;s services. Please provide the following
+            information about your business needs to help us serve you better. This information will
+            enable us to route your request to the appropriate person. You should receive a response
+            within 48 hours.
           </p>
         </div>
 
