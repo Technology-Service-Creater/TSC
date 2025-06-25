@@ -75,7 +75,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                   const hasDetails =
                     industryDetailsMap[industry] && industryDetailsMap[industry].length > 0;
                   return (
-                    <li key={index} onMouseLeave={() => setHoveredIndustry(null)}>
+                    <li key={index}>
                       {hasDetails ? (
                         <div className="flex items-center">
                           <Link
@@ -107,7 +107,6 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                           className="block text-sm text-gray-800 rounded-md transition-colors px-3 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA]"
                           onClick={onClose}
                           onMouseEnter={() => setHoveredIndustry(industry)}
-                          onMouseLeave={() => setHoveredIndustry(null)}
                         >
                           {industry}
                         </Link>
@@ -121,6 +120,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
             <div className="flex-1 p-8 flex items-start justify-start overflow-visible">
               <div
                 className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''} overflow-y-auto max-h-[60vh]`}
+                onMouseEnter={() => setHoveredIndustry(hoveredIndustry)}
               >
                 {hoveredIndustry && industryDetailsMap[hoveredIndustry] ? (
                   <div className="p-4">
@@ -145,7 +145,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                           >
                             <Link
                               to={`/industries/${industryKebab}/${detailKebab}`}
-                              className={`hover:text-[#A468DA] transition-colors break-words whitespace-normal max-w-xs ${hoveredDetail === detail ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}`}
+                              className={`block text-sm text-gray-700 rounded-md transition-all duration-200 px-2 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA] hover:font-medium break-words whitespace-normal max-w-xs ${hoveredDetail === detail ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-medium' : ''}`}
                               onClick={onClose}
                             >
                               {detail}
