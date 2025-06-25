@@ -1,6 +1,6 @@
 import { ChevronUp, ChevronDown, Search, Menu, X, ChevronRight } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Submenu from './Submenu';
 
 // Navbar improved for sticky/blur/submenu/mobile UX
@@ -11,6 +11,11 @@ const Navbar = () => {
   const submenuRef = useRef(null);
   const buttonRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const searchInputRef = useRef(null);
 
   // List of services
   const services = [
@@ -184,6 +189,64 @@ const Navbar = () => {
     ],
   };
 
+  // Build searchable pages list
+  const pages = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Contact Us', path: '/contact' },
+    // Services
+    ...services.map(service => ({
+      name: service,
+      path: `/what-we-do/services/${service.toLowerCase().replace(/\s+/g, '-')}`,
+    })),
+    // Industries and their details
+    ...industries.map(industry => ({
+      name: industry,
+      path: `/industries/${industry
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '')}`,
+    })),
+    ...industries.flatMap(industry =>
+      (industryDetailsMap[industry] || []).map(detail => ({
+        name: `${industry} - ${detail}`,
+        path: `/industries/${industry
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '')}/${detail
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '')}`,
+      }))
+    ),
+  ];
+
+  // Search logic
+  useEffect(() => {
+    if (searchQuery.trim() === '') {
+      setSearchResults([]);
+      return;
+    }
+    const q = searchQuery.toLowerCase();
+    setSearchResults(pages.filter(page => page.name.toLowerCase().includes(q)));
+  }, [searchQuery]);
+
+  // Focus input when search opens
+  useEffect(() => {
+    if (isSearchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchOpen]);
+
+  // Handle navigation
+  const handleResultClick = path => {
+    setIsSearchOpen(false);
+    setSearchQuery('');
+    setSearchResults([]);
+    navigate(path);
+  };
+
   // Close submenu on outside click
   useEffect(() => {
     function handleClickOutside(event) {
@@ -307,10 +370,42 @@ const Navbar = () => {
               >
                 Contact Us
               </Link>
-              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white">
-                <Search size={16} />
-                Search
-              </button>
+              <div className="relative">
+                <button
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white"
+                  onClick={() => setIsSearchOpen(open => !open)}
+                  type="button"
+                >
+                  <Search size={16} />
+                  Search
+                </button>
+                {isSearchOpen && (
+                  <div className="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                    <input
+                      ref={searchInputRef}
+                      type="text"
+                      className="w-full px-5 py-3 text-base border-b border-gray-100 focus:outline-none"
+                      placeholder="Search pages..."
+                      value={searchQuery}
+                      onChange={e => setSearchQuery(e.target.value)}
+                    />
+                    <ul className="max-h-60 overflow-y-auto">
+                      {searchResults.length === 0 && searchQuery && (
+                        <li className="px-4 py-2 text-gray-400">No results found</li>
+                      )}
+                      {searchResults.map((result, idx) => (
+                        <li
+                          key={idx}
+                          className="px-4 py-2 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 cursor-pointer whitespace-normal break-words"
+                          onClick={() => handleResultClick(result.path)}
+                        >
+                          {result.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -480,10 +575,50 @@ const Navbar = () => {
                   </Link>
                 </div>
 
-                <button className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center text-sm mt-4">
+                <button
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white w-full justify-center text-sm mt-4"
+                  onClick={() => setIsSearchOpen(open => !open)}
+                  type="button"
+                >
                   <Search size={16} />
                   Search
                 </button>
+                {isSearchOpen && (
+                  <div className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-start justify-center pt-24">
+                    <div className="bg-white rounded-lg shadow-lg w-11/12 max-w-xl mx-auto p-4">
+                      <div className="flex items-center mb-2">
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          className="w-full px-5 py-3 text-base border border-gray-200 rounded focus:outline-none"
+                          placeholder="Search pages..."
+                          value={searchQuery}
+                          onChange={e => setSearchQuery(e.target.value)}
+                        />
+                        <button
+                          className="ml-2 text-gray-500"
+                          onClick={() => setIsSearchOpen(false)}
+                        >
+                          <X size={20} />
+                        </button>
+                      </div>
+                      <ul className="max-h-60 overflow-y-auto">
+                        {searchResults.length === 0 && searchQuery && (
+                          <li className="px-4 py-2 text-gray-400">No results found</li>
+                        )}
+                        {searchResults.map((result, idx) => (
+                          <li
+                            key={idx}
+                            className="px-4 py-2 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 cursor-pointer whitespace-normal break-words"
+                            onClick={() => handleResultClick(result.path)}
+                          >
+                            {result.name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
