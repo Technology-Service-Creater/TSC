@@ -74,17 +74,7 @@ function OnlineReputationManagementORM() {
       {/* Feature Cards */}
       <section className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {featureCards.slice(0, 3).map((card, idx) => (
-            <ServiceCard key={idx} title={card.title} description={card.description} />
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          {featureCards.slice(3, 6).map((card, idx) => (
-            <ServiceCard key={idx} title={card.title} description={card.description} />
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {featureCards.slice(6).map((card, idx) => (
+          {featureCards.map((card, idx) => (
             <ServiceCard key={idx} title={card.title} description={card.description} />
           ))}
         </div>
