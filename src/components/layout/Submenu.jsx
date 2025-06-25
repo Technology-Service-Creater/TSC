@@ -145,7 +145,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
                           >
                             <Link
                               to={`/industries/${industryKebab}/${detailKebab}`}
-                              className={`hover:text-[#A468DA] transition-colors break-words whitespace-normal max-w-xs ${hoveredDetail === detail ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-bold' : ''}`}
+                              className={`block text-sm text-gray-700 rounded-md transition-all duration-200 px-2 py-1 hover:bg-gradient-to-r hover:from-[#A468DA]/10 hover:to-[#149BF5]/10 hover:text-[#A468DA] hover:font-medium break-words whitespace-normal max-w-xs ${hoveredDetail === detail ? 'bg-gradient-to-r from-[#A468DA]/10 to-[#149BF5]/10 text-[#A468DA] font-medium' : ''}`}
                               onClick={onClose}
                             >
                               {detail}
