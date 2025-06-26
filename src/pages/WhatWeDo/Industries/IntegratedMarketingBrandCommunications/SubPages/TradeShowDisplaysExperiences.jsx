@@ -2,55 +2,46 @@ import React from 'react';
 import PageHeroSection from '../../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../../components/common/IntroSection';
 import Introinfo from '../../../../../components/common/Introinfo';
+import ContactForm from '../../../../../components/common/ContactForm';
+
 const services = [
   {
-    title: 'Search Engine Optimization (SEO)',
-    description: `SEO is about optimizing your website so that it ranks higher on search engine results pages (SERPs). This involves:`,
-    listItems: [
-      'Keyword Research: Identifying the keywords your target audience is searching for.',
-      'On-Page SEO: Optimizing content, meta tags, images, and URL structure.',
-      'Off-Page SEO: Building backlinks to your website.',
-      `Technical SEO: Ensuring your website's infrastructure is search-engine friendly.`,
+    title: 'Ways to Enhance Trade Show Experiences',
+    description: [
+      '✔ Interactive Demos: Let visitors experience your products/services firsthand.',
+      '✔ VR & AR Experiences: Immerse attendees in a digital brand experience they won’t forget.',
+      '✔ Games & Contests: Fun challenges, spin-the-wheel, or scavenger hunts can increase foot traffic and lead generation.',
+      '✔ Live Presentations & Workshops: Share expert insights, host Q&A sessions, or run live product demonstrations.',
+      '✔ Giveaways & Promotions: Offer branded swag, exclusive discounts, or free trials to encourage engagement.',
     ],
   },
   {
-    title: 'Search Engine Marketing (SEM)',
-    description:
-      'SEM involves using paid advertisements that appear on SERPs. It typically includes:',
-    listItems: [
-      'Google Ads: The most popular platform for SEM, where advertisers bid on keywords.',
-      'Pay-Per-Click (PPC): Advertisers pay each time someone clicks on their ad.',
+    title: 'Types of Trade Show Displays',
+    description: [
+      '✔ Popup Displays: Lightweight, portable and easy to set up.',
+      '✔ Modular Displays: Customizable and scalable to your booth space.',
+      '✔ Banner Stands: Cost-effective and attention-grabbing visual tools.',
+      '✔ Digital Kiosks: Offer interactive content and product information.',
     ],
   },
   {
-    title: 'Social Media Marketing (SMM)',
-    description:
-      'SMM focuses on promoting your brand and content on social media platforms. Key components include:',
-    listItems: [
-      'Content Creation: Crafting engaging posts, stories, and videos.',
-      'Social Media Ads: Running targeted ads on platforms like Facebook, Instagram, Twitter, and LinkedIn.',
-      'Community Engagement: Interacting with followers and building a loyal community.',
+    title: 'Key Elements of an Effective Display',
+    description: [
+      '✔ Eye-Catching: Use bold colors, striking graphics, and creative lighting to grab attention.',
+      '✔ Informative: Deliver a clear and concise brand message through compelling visuals and content.',
+      '✔ Interactive: Integrate touchscreens, live demos, and VR experiences to engage attendees.',
+      '✔ Functional: Ensure an organized, welcoming space where visitors can easily interact with your team.',
     ],
   },
+
   {
-    title: 'Content Marketing',
-    description:
-      'Content marketing is about creating valuable content to attract, engage, and retain an audience. This includes:',
-    listItems: [
-      'Blog Posts: Writing informative articles relevant to your audience.',
-      'E-books and Whitepapers: Providing in-depth information on specific topics.',
-      'Infographics: Using visual content to convey information.',
-      'Videos: Creating engaging video content to attract viewers.',
-    ],
-  },
-  {
-    title: 'Email Marketing',
-    description:
-      'Email marketing involves sending targeted messages to potential and existing customers. Key elements are:',
-    listItems: [
-      'Newsletters: Regular updates about your brand and industry.',
-      'Promotional Emails: Sending offers, discounts, and product updates.',
-      'Automated Campaigns: Drip campaigns triggered by user actions.',
+    title: ' Ways to Enhance Trade Show Experiences',
+    description: [
+      '✔ Interactive Demos: Let visitors experience your products/services firsthand.',
+      '✔ VR & AR Experiences: Immerse attendees in a digital brand experience they won’t forget.',
+      '✔ Games & Contests: Fun challenges, spin-the-wheel, or scavenger hunts can increase foot traffic and lead generation.',
+      '✔ Live Presentations & Workshops: Share expert insights, host Q&A sessions, or run live product demonstrations',
+      '✔ Giveaways & Promotions: Offer branded swag, exclusive discounts, or free trials to encourage engagement.',
     ],
   },
 ];
@@ -59,22 +50,68 @@ const TradeShowDisplaysExperiences = () => (
   <div>
     {/* Hero Section */}
     <PageHeroSection
-      title="Trade show display & Experiences "
+      title="Trade Show Display & Experiences"
       description="Captivating Audiences, Maximizing Impact"
       bgImage="/Images/TradeShowDisplaysExperiences_hero.jpg"
     />
+
     {/* Intro Section */}
     <IntroSection
       IntroSectionImage="/Images/TradeShowDisplaysExperiences_1.jpg"
-      IntroSectionTitle="Trade Show Displays: More Than Just a Backdrop "
+      IntroSectionTitle="Trade Show Displays: More Than Just a Backdrop"
       description="Your trade show display serves as the face of your brand, attracting visitors and communicating your message effectively."
     />
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map((service, index) => (
-        <Introinfo key={index} title={service.title} description={service.description} />
-      ))}
-    </div>
+    {/* Content Sections */}
+    {services.map((service, index) => (
+      <Introinfo
+        key={index}
+        title={service.title}
+        description={
+          <div className="space-y-2">
+            {service.description.map((item, idx) => (
+              <p key={idx}>{item}</p>
+            ))}
+          </div>
+        }
+      />
+    ))}
+
+    {/* AI-Driven Section */}
+    <IntroSection
+      reverse
+      title={<span className="text-black">Tips for Winning Trade Show Strategy</span>}
+      description={
+        <div className="space-y-2 text-sm">
+          <p>
+            ✔ Set Clear Objectives: Define your goals—brand awareness, lead generation, or product
+            launch.
+          </p>
+          <p>
+            ✔ Know Your Audience: Tailor your messaging, visuals, and experiences to resonate with
+            attendees.
+          </p>
+          <p>✔ Plan Ahead: Design, build, and promote your display well in advance.</p>
+          <p>
+            ✔ Promote Your Presence: Use social media, email marketing, and direct outreach to
+            attract visitors to your booth.
+          </p>
+          <p>
+            ✔ Train Your Team: Ensure staff is well-prepared to engage visitors and answer
+            questions.
+          </p>
+          <p>
+            ✔ Follow Up Quickly: Reach out to leads after the event to nurture relationships and
+            drive conversions.
+          </p>
+        </div>
+      }
+      imageSrc="/Images/TradeShowDisplaysExperiences_2.jpg"
+      imageAlt="AI Automation for ASO"
+    />
+
+    {/* Contact Us Section */}
+    <ContactForm />
   </div>
 );
 
