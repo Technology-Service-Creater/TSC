@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeroSection from '../../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../../components/common/IntroSection';
-import Introinfo from '../../../../../components/common/Introinfo';
+import IntroInfo from '../../../../../components/common/Introinfo';
 import ContactForm from '../../../../../components/common/ContactForm';
 
 const AIPoweredPersonalization = () => (
@@ -24,7 +24,7 @@ const AIPoweredPersonalization = () => (
     />
 
     {/* How AI-Powered Personalization Works */}
-    <Introinfo
+    <IntroInfo
       title="How AI–Powered Personalization Works"
       description={
         <div className="text-left">
@@ -54,7 +54,7 @@ const AIPoweredPersonalization = () => (
     />
 
     {/* Benefits of AI-Powered Personalization */}
-    <Introinfo
+    <IntroInfo
       title="Benefits of AI–Powered Personalization"
       description={
         <div className="text-left">
@@ -77,7 +77,7 @@ const AIPoweredPersonalization = () => (
     />
 
     {/* Challenges & Considerations */}
-    <Introinfo
+    <IntroInfo
       title="Challenges & Considerations"
       description={
         <div className="text-left">

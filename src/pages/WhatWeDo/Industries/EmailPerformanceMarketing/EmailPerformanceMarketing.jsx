@@ -33,11 +33,6 @@ const serviceCards = [
       'AI-powered personalization leverages artificial intelligence to deliver highly personalized content and experiences to customers. By analyzing customer data and behavior, AI can tailor email content, product recommendations, and interactions to individual preferences.',
   },
   {
-    title: 'Transactional Emails & Newsletters',
-    description:
-      'Transactional emails are automated emails triggered by specific customer actions, such as order confirmations, shipping notifications, and password resets. Newsletters are regular emails sent to subscribers, providing updates, news, and valuable content related to your brand.',
-  },
-  {
     title: 'CRM-Integrated Email Marketing',
     description:
       'CRM (Customer Relationship Management) integration with email marketing allows for seamless management of customer data and interactions. This integration enables personalized and targeted email campaigns based on customer history, preferences, and behavior.',
@@ -61,6 +56,11 @@ const serviceCards = [
     title: 'Performance Tracking & Reporting',
     description:
       'Performance tracking and reporting involve monitoring the effectiveness of marketing campaigns and activities. This includes measuring key performance indicators (KPIs) such as click-through rates, conversion rates, and ROI. Regular reporting helps assess campaign success and identify areas for improvement.',
+  },
+  {
+    title: 'Transactional Emails & Newsletters',
+    description:
+      'Transactional emails are automated emails triggered by specific customer actions, such as order confirmations, shipping notifications, and password resets. Newsletters are regular emails sent to subscribers, providing updates, news, and valuable content related to your brand.',
   },
 ].map(card => ({
   ...card,
