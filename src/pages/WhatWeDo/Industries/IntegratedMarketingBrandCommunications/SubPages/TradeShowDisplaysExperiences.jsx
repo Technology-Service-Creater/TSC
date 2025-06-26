@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeroSection from '../../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../../components/common/IntroSection';
-import Introinfo from '../../../../../components/common/Introinfo';
+import IntroInfo from '../../../../../components/common/Introinfo';
 import ContactForm from '../../../../../components/common/ContactForm';
 
 const services = [
@@ -9,7 +9,7 @@ const services = [
     title: 'Ways to Enhance Trade Show Experiences',
     description: [
       '✔ Interactive Demos: Let visitors experience your products/services firsthand.',
-      '✔ VR & AR Experiences: Immerse attendees in a digital brand experience they won’t forget.',
+      "✔ VR & AR Experiences: Immerse attendees in a digital brand experience they won't forget.",
       '✔ Games & Contests: Fun challenges, spin-the-wheel, or scavenger hunts can increase foot traffic and lead generation.',
       '✔ Live Presentations & Workshops: Share expert insights, host Q&A sessions, or run live product demonstrations.',
       '✔ Giveaways & Promotions: Offer branded swag, exclusive discounts, or free trials to encourage engagement.',
@@ -38,7 +38,7 @@ const services = [
     title: ' Ways to Enhance Trade Show Experiences',
     description: [
       '✔ Interactive Demos: Let visitors experience your products/services firsthand.',
-      '✔ VR & AR Experiences: Immerse attendees in a digital brand experience they won’t forget.',
+      "✔ VR & AR Experiences: Immerse attendees in a digital brand experience they won't forget.",
       '✔ Games & Contests: Fun challenges, spin-the-wheel, or scavenger hunts can increase foot traffic and lead generation.',
       '✔ Live Presentations & Workshops: Share expert insights, host Q&A sessions, or run live product demonstrations',
       '✔ Giveaways & Promotions: Offer branded swag, exclusive discounts, or free trials to encourage engagement.',
@@ -64,7 +64,7 @@ const TradeShowDisplaysExperiences = () => (
 
     {/* Content Sections */}
     {services.map((service, index) => (
-      <Introinfo
+      <IntroInfo
         key={index}
         title={service.title}
         description={
