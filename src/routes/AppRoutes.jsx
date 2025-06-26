@@ -159,6 +159,11 @@ const subPageFileMap = {
     'ai-powered-personalization': 'AIPoweredPersonalization',
     'lead-nurturing-segmentation': 'LeadNurturingSegmentation',
     'campaign-automation': 'CampaignAutomation',
+    'transactional-emails-newsletters': 'TransactionalEmailsNewsletters',
+    'web-mobile-analytics': 'WebMobileAnalytics',
+    'product-content-analytics': 'ProductContentAnalytics',
+    'ai-driven-marketing-analytics': 'AIDrivenMarketingAnalytics',
+    'performance-tracking-reporting': 'PerformanceTrackingReporting',
   },
   'integrated-marketing-brand-communications': {
     'trade-show-displays-experiences': 'TradeShowDisplaysExperiences',
