@@ -164,6 +164,7 @@ const subPageFileMap = {
     'product-content-analytics': 'ProductContentAnalytics',
     'ai-driven-marketing-analytics': 'AIDrivenMarketingAnalytics',
     'performance-tracking-reporting': 'PerformanceTrackingReporting',
+    'a-b-testing-optimization': 'A_BTestingOptimization',
   },
   'integrated-marketing-brand-communications': {
     'trade-show-displays-experiences': 'TradeShowDisplaysExperiences',
