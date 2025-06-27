@@ -46,11 +46,11 @@ function IntroSection({
             {sectionDescription &&
               (typeof sectionDescription === 'string' ? (
                 <p
-                  className="text-lg sm:text-lg md:text-xl lg:text-2xl font-['Montserrat'] text-[#181A1B] leading-relaxed"
+                  className="text-lg sm:text-lg md:text-lg lg:text-lg font-['Montserrat'] text-[#181A1B] leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: sectionDescription }}
                 />
               ) : (
-                <p className="text-lg sm:text-lg md:text-xl lg:text-2xl font-['Montserrat'] text-[#181A1B] leading-relaxed">
+                <p className="text-lg sm:text-lg md:text-lg lg:text-lg font-['Montserrat'] text-[#181A1B] leading-relaxed">
                   {sectionDescription}
                 </p>
               ))}
