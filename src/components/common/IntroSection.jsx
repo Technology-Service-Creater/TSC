@@ -44,9 +44,10 @@ function IntroSection({
               </h2>
             )}
             {sectionDescription && (
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-['Montserrat'] text-[#181A1B] leading-relaxed">
-                {sectionDescription}
-              </p>
+              <p
+                className="text-sm sm:text-base md:text-lg lg:text-xl font-['Montserrat'] text-[#181A1B] leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: sectionDescription }}
+              />
             )}
           </div>
 
