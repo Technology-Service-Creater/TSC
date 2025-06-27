@@ -205,24 +205,26 @@ function IndustryPageWrapper() {
 
 function IndustrySubPageWrapper() {
   const { industryId, subPageId } = useParams();
-  const fileName = subPageFileMap[industryId]?.[subPageId];
+  let fileName = subPageFileMap[industryId]?.[subPageId];
+  if (!fileName && industryId === 'ai-automation-in-marketing') {
+    fileName = subPageFileMap['ai-automation-marketing']?.[subPageId];
+  }
+  if (!fileName && industryId === 'ai-automation-marketing') {
+    fileName = subPageFileMap['ai-automation-in-marketing']?.[subPageId];
+  }
   if (!fileName) {
     return <div style={{ padding: '2rem', textAlign: 'center' }}>Subpage not found.</div>;
   }
-  const industryFolder = industryId
-    .split('-')
-    .map(s => s.charAt(0).toUpperCase() + s.slice(1))
-    .join('');
-  console.log(
-    'industryId:',
-    industryId,
-    'subPageId:',
-    subPageId,
-    'fileName:',
-    fileName,
-    'industryFolder:',
-    industryFolder
-  );
+  // Hardcode folder name for AI Automation Marketing
+  let industryFolder;
+  if (industryId === 'ai-automation-marketing' || industryId === 'ai-automation-in-marketing') {
+    industryFolder = 'AIAutomationMarketing';
+  } else {
+    industryFolder = industryId
+      .split('-')
+      .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+      .join('');
+  }
   const SubPage = React.lazy(() =>
     import(`../pages/WhatWeDo/Industries/${industryFolder}/SubPages/${fileName}.jsx`)
       .then(module => module)
