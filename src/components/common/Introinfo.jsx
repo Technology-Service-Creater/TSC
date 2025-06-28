@@ -8,10 +8,17 @@ export default function IntroInfo({ title, description }) {
           {title}
         </h2>
         <div className="w-full h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
-        <div
-          className="text-left text-gray-600 text-base md:text-lg font-['Montserrat'] leading-relaxed tracking-wide"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
+        {description &&
+          (typeof description === 'string' ? (
+            <div
+              className="text-left text-gray-600 text-base md:text-lg font-['Montserrat'] leading-relaxed tracking-wide"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          ) : (
+            <div className="text-left text-gray-600 text-base md:text-lg font-['Montserrat'] leading-relaxed tracking-wide">
+              {description}
+            </div>
+          ))}
       </div>
     </section>
   );
