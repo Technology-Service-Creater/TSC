@@ -3,7 +3,7 @@ import PageHeroSection from '../../../../../components/common/PageHeroSection';
 import IntroSection from '../../../../../components/common/IntroSection';
 import ServiceCard from '../../../../../components/common/ServiceCard';
 import ContactForm from '../../../../../components/common/ContactForm';
-import IntroInfo from '../../../../../components/common/Introinfo';
+import IntroInfo from '../../../../../components/common/IntroInfo';
 
 const heroImg = '/Images/CorporateFilmsPromotionalVideos_Hero.jpg'; // Replace with the correct hero image if available
 const introImg1 = '/Images/CorporateFilmsPromotionalVideos-1.jpg'; // Replace with the correct intro image if available
