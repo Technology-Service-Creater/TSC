@@ -27,17 +27,6 @@ const infoCards = [
     ],
   },
   {
-    title: 'User-Generated Content (UGC)',
-    description:
-      'UGC refers to content created by your customers or community members. This includes reviews, testimonials, photos, videos, and social media posts.',
-    listItems: [
-      'Authenticity: UGC is perceived as more genuine and trustworthy than branded content.',
-      'Engagement: Encourages community participation and fosters a sense of loyalty.',
-      'Cost-Effectiveness: Reduces the need for constant content creation by the brand itself.',
-      'By effectively utilizing these social media and community engagement strategies.',
-    ],
-  },
-  {
     title: 'Crisis Management & Reputation Handling',
     description:
       'In the digital age, managing crises and maintaining a positive online reputation is vital:',
@@ -46,6 +35,17 @@ const infoCards = [
       'Responding: Addressing negative comments and concerns promptly and professionally.',
       'Communication: Being transparent and providing regular updates during a crisis builds trust with your audience.',
       'Prepared: Having a crisis management plan in place to respond swiftly and effectively when needed.',
+    ],
+  },
+  {
+    title: 'User-Generated Content (UGC)',
+    description:
+      'UGC refers to content created by your customers or community members. This includes reviews, testimonials, photos, videos, and social media posts.',
+    listItems: [
+      'Authenticity: UGC is perceived as more genuine and trustworthy than branded content.',
+      'Engagement: Encourages community participation and fosters a sense of loyalty.',
+      'Cost-Effectiveness: Reduces the need for constant content creation by the brand itself.',
+      'By effectively utilizing these social media and community engagement strategies.',
     ],
   },
 ].map(card => ({
