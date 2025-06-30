@@ -219,6 +219,8 @@ function IndustrySubPageWrapper() {
   let industryFolder;
   if (industryId === 'ai-automation-marketing' || industryId === 'ai-automation-in-marketing') {
     industryFolder = 'AIAutomationMarketing';
+  } else if (industryId === 'marketing-analysis-research') {
+    industryFolder = 'MarketingAnalysisResearch';
   } else {
     industryFolder = industryId
       .split('-')
