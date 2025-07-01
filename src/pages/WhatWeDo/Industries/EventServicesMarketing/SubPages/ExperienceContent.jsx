@@ -33,7 +33,7 @@ const contentTypes = `
 `;
 
 const contentBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Prioritize User Interaction – Let users explore, click, and engage.</li>
   <li>✔ Use Emotion-Driven Storytelling – Create narratives that spark curiosity and connection.</li>
   <li>✔ Leverage Cutting-Edge Tech – AR, AI, and immersive media create memorable moments.</li>

@@ -32,7 +32,7 @@ const eventTypes = `
 `;
 
 const eventBestPractices = `
-<ul class='text-mb '>
+<ul class='text-base '>
   <li>✔ Know Your Audience – Tailor the event experience to their interests and needs.</li>
   <li>✔ Create a Seamless Experience – Ensure smooth execution, from registration to follow-up.</li>
   <li>✔ Leverage Social Media – Promote before, during, and after the event to maximize reach.</li>

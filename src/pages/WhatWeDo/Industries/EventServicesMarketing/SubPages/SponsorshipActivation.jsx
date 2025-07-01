@@ -33,7 +33,7 @@ const sponsorshipStrategies = `
 `;
 
 const sponsorshipBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Define Clear Objectives – Align activation goals with audience expectations.</li>
   <li>✔ Create a Seamless Journey – Integrate brand and sponsor across digital, physical, and social buzz.</li>
   <li>✔ Ensure Authentic Fit – Pick a partner that aligns with your brand values.</li>

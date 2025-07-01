@@ -31,7 +31,7 @@ const corporateTypes = `
 `;
 
 const corporateBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Define Clear Objectives – Align event goals with business strategy.</li>
   <li>✔ Plan with Intent – Ensure logistics, speakers, and activities are well-coordinated.</li>
   <li>✔ Engage Attendees – Create interactive experiences and opportunities for participation.</li>

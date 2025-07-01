@@ -32,7 +32,7 @@ const digitalElements = `
 `;
 
 const digitalBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Simplify User Flows – Reduce friction in navigation, sign-ups, and checkouts.</li>
   <li>✔ Optimize Mobile UX – Ensure mobile-first design and responsiveness.</li>
   <li>✔ Deliver Relevant Content – Match digital experiences to user behavior and intent.</li>
