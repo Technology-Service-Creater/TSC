@@ -32,7 +32,7 @@ const integratedComponents = `
 `;
 
 const integratedBestPractices = `
-<ul class='text-mb '>
+<ul class='text-base '>
   <li>✔ Develop a Core Message – Create a brand narrative that ties all efforts together.</li>
   <li>✔ Use Omnichannel Strategies – Ensure digital, social, and traditional channels complement each other.</li>
   <li>✔ Leverage Automation & AI – Streamline marketing efforts with intelligent tools.</li>

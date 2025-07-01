@@ -30,7 +30,7 @@ const brandActsTypes = `
 `;
 
 const howToCreateImpactful = `
-<ul class='text-mb '>
+<ul class='text-base'> '>
   <li>✔ Stay True to Your Values – Align actions with the brand’s core mission.</li>
   <li>✔ Be Consistent and Transparent – Show long-term vision, not just one-offs.</li>
   <li>✔ Involve Your Audience – Let customers co-create with the brand.</li>

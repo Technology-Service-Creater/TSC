@@ -32,7 +32,7 @@ const broadcastElements = `
 `;
 
 const broadcastBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Maintain Consistency – Keep branding, colors, and typography uniform across all graphics.</li>
   <li>✔ Prioritize Legibility – Clear, high-contrast text ensures easy readability.</li>
   <li>✔ Ensure Visual Hierarchy – Smooth, subtle animations direct attention where it matters.</li>

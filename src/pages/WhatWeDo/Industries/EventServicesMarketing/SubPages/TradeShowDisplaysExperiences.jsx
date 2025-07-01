@@ -5,7 +5,7 @@ import IntroInfo from '../../../../../components/common/IntroInfo';
 import ContactForm from '../../../../../components/common/ContactForm';
 
 const tradeShowWhat = `
-<ul class='text-sm pl-5 space-y-1'>
+<ul class='text-mb'>
   <li>✔ Maximizes Brand Visibility – Stand out in a crowded event with eye-catching design.</li>
   <li>✔ Enhances Customer Engagement – Interactive elements create deeper connections.</li>
   <li>✔ Generates High-Quality Leads – Direct conversations drive sales and partnerships.</li>
@@ -15,7 +15,7 @@ const tradeShowWhat = `
 `;
 
 const tradeShowElements = `
-<ul class='text-sm pl-5 space-y-1'>
+<ul class='text-mb'>
   <li>✔ Striking Booth Design – Bold visuals, sleek layouts, and brand-consistent aesthetics.</li>
   <li>✔ Interactive Touchpoints – AR/VR experiences, product demos, and gamification.</li>
   <li>✔ Seamless Digital Integration – QR codes, mobile engagement, and social media activations.</li>
@@ -26,7 +26,7 @@ const tradeShowElements = `
 `;
 
 const tradeShowBestPractices = `
-<ul class='text-sm pl-5 space-y-1'>
+<ul class='text-base'>
   <li>✔ Design for Impact – Make a strong first impression with booth layout, setup, and messaging.</li>
   <li>✔ Engage Audiences – Use interactive experiences to drive participation.</li>
   <li>✔ Leverage Social Media – Showcase your trade show through immersive content and hashtags.</li>

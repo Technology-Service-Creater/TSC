@@ -30,7 +30,7 @@ const weddingElements = `
 `;
 
 const weddingBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Start with a Vision – Define the theme, color palette, and overall vibe.</li>
   <li>✔ Prioritize Guest Comfort – Smooth logistics and thoughtful details create a welcoming atmosphere.</li>
   <li>✔ Personalize the Experience – Add personal vows, cultural traditions, or unexpected touches.</li>

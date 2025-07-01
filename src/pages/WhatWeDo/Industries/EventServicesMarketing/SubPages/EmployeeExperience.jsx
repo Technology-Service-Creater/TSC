@@ -34,7 +34,7 @@ const employeeElements = `
 `;
 
 const employeeBestPractices = `
-<ul class='text-mb'>
+<ul class='text-base'>
   <li>✔ Listen to Employee Feedback – Regular surveys and open discussions matter.</li>
   <li>✔ Invest in Learning & Development – Upskilling leads to career satisfaction.</li>
   <li>✔ Foster a Culture of Recognition – Appreciation boosts morale and motivation.</li>
