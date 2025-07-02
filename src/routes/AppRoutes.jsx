@@ -76,6 +76,7 @@ const subPageFileMap = {
   },
   'legal-compliance': {
     'financial-regulatory-risk': 'FinancialRegulatoryRisk',
+    'financial-and-regulatory-risk-management': 'FinancialRegulatoryRisk',
     'governance-risk-compliance-grc': 'GovernanceRiskComplianceGRC',
     'governance-risk-and-compliance-grc': 'GovernanceRiskComplianceGRC',
     'cybersecurity-data-privacy': 'CybersecurityDataPrivacy',
