@@ -41,7 +41,6 @@ const industryComponents = {
   'event-services-marketing': EventServicesMarketing,
   'marketing-analysis-research': MarketingAnalysisResearch,
   'legal-compliance': LegalCompliance,
-  'legal-and-compliance': LegalCompliance,
   'design-services': DesignServices,
 };
 
@@ -76,18 +75,6 @@ const subPageFileMap = {
     'graphic-design': 'GraphicDesign',
   },
   'legal-compliance': {
-    'financial-regulatory-risk': 'FinancialRegulatoryRisk',
-    'governance-risk-compliance-grc': 'GovernanceRiskComplianceGRC',
-    'cybersecurity-data-privacy': 'CybersecurityDataPrivacy',
-    'legal-advisory-business-risk-advisory': 'LegalAdvisoryBusinessRiskAdvisory',
-    'tax-compliance-reporting': 'TaxComplianceReporting',
-    'indirect-taxes': 'IndirectTaxes',
-    'transfer-pricing': 'TransferPricing',
-    'contract-management': 'ContractManagement',
-    'regulatory-compliance': 'RegulatoryCompliance',
-    'intellectual-property-protection': 'IntellectualPropertyProtection',
-  },
-  'legal-and-compliance': {
     'financial-regulatory-risk': 'FinancialRegulatoryRisk',
     'governance-risk-compliance-grc': 'GovernanceRiskComplianceGRC',
     'cybersecurity-data-privacy': 'CybersecurityDataPrivacy',
@@ -194,9 +181,17 @@ const subPageFileMap = {
   },
 };
 
+// Add normalization function at the top
+function normalizeIndustryId(industryId) {
+  if (industryId === 'legal-and-compliance') return 'legal-compliance';
+  if (industryId === 'ai-automation-in-marketing') return 'ai-automation-marketing';
+  return industryId;
+}
+
 function IndustryPageWrapper() {
   const { industryId } = useParams();
-  const Component = industryComponents[industryId];
+  const normalizedIndustryId = normalizeIndustryId(industryId);
+  const Component = industryComponents[normalizedIndustryId];
   if (!Component) {
     return <div style={{ padding: '2rem', textAlign: 'center' }}>Industry not found.</div>;
   }
@@ -205,11 +200,9 @@ function IndustryPageWrapper() {
 
 function IndustrySubPageWrapper() {
   const { industryId, subPageId } = useParams();
-  let fileName = subPageFileMap[industryId]?.[subPageId];
-  if (!fileName && industryId === 'ai-automation-in-marketing') {
-    fileName = subPageFileMap['ai-automation-marketing']?.[subPageId];
-  }
-  if (!fileName && industryId === 'ai-automation-marketing') {
+  const normalizedIndustryId = normalizeIndustryId(industryId);
+  let fileName = subPageFileMap[normalizedIndustryId]?.[subPageId];
+  if (!fileName && normalizedIndustryId === 'ai-automation-marketing') {
     fileName = subPageFileMap['ai-automation-in-marketing']?.[subPageId];
   }
   if (!fileName) {
@@ -217,12 +210,14 @@ function IndustrySubPageWrapper() {
   }
   // Hardcode folder name for AI Automation Marketing
   let industryFolder;
-  if (industryId === 'ai-automation-marketing' || industryId === 'ai-automation-in-marketing') {
+  if (normalizedIndustryId === 'ai-automation-marketing') {
     industryFolder = 'AIAutomationMarketing';
-  } else if (industryId === 'marketing-analysis-research') {
+  } else if (normalizedIndustryId === 'marketing-analysis-research') {
     industryFolder = 'MarketingAnalysisResearch';
+  } else if (normalizedIndustryId === 'legal-compliance') {
+    industryFolder = 'LegalCompliance';
   } else {
-    industryFolder = industryId
+    industryFolder = normalizedIndustryId
       .split('-')
       .map(s => s.charAt(0).toUpperCase() + s.slice(1))
       .join('');
