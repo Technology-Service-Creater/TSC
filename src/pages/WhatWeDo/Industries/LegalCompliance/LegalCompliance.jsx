@@ -29,11 +29,6 @@ const legalTrends = [
       'Contract management involves the creation, execution, and monitoring of business contracts to maximize performance and minimize risk. This includes drafting contracts, negotiating terms, ensuring compliance, and managing contract renewals and terminations.',
   },
   {
-    title: 'Corporate & International Tax Advisory',
-    description:
-      'Corporate and international tax advisory services offer compliance on tax planning and guidance for cross-border business activities, transactions, and international tax treaties. This includes structuring, tax consulting, and managing compliance with tax laws.',
-  },
-  {
     title: 'Transfer Pricing',
     description:
       'Transfer pricing refers to the pricing of goods, services, and intangibles between related entities within a business. This ensures compliance with global tax regulations and avoidance of double taxation, and is conducted as per OECD guidelines and local regulations.',
@@ -72,6 +67,11 @@ const legalTrends = [
     title: 'Fraud and Forensic Risk Services',
     description:
       'Fraud and forensic risk services focus on detecting, investigating, and preventing fraud, misconduct, and litigation support.',
+  },
+  {
+    title: 'Corporate & International Tax Advisory',
+    description:
+      'Corporate and international tax advisory services offer compliance on tax planning and guidance for cross-border business activities, transactions, and international tax treaties. This includes structuring, tax consulting, and managing compliance with tax laws.',
   },
 ].map(trend => ({
   ...trend,
