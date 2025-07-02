@@ -79,6 +79,7 @@ const subPageFileMap = {
     'governance-risk-compliance-grc': 'GovernanceRiskComplianceGRC',
     'cybersecurity-data-privacy': 'CybersecurityDataPrivacy',
     'legal-advisory-business-risk-advisory': 'LegalAdvisoryBusinessRiskAdvisory',
+    'legal-advisory-and-business-risk-advisory': 'LegalAdvisoryBusinessRiskAdvisory',
     'tax-compliance-reporting': 'TaxComplianceReporting',
     'indirect-taxes': 'IndirectTaxes',
     'transfer-pricing': 'TransferPricing',
