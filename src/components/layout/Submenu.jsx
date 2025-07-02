@@ -24,11 +24,11 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
     <>
       {/* Blurred background overlay (only below navbar and top bar) */}
       <div
-        className={`fixed left-0 right-0 top-[104px] bottom-0 z-40 bg-white/40 backdrop-blur-sm transition-all duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`w-full h-full z-40 bg-white/40 backdrop-blur-sm transition-all duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={onClose}
       />
       <div
-        className={`fixed left-0 right-0 top-[104px] z-50 w-full transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
+        className={` absolute left-0 right-0 top-[104px] z-50 w-full transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
         style={{ borderRadius: '0 0 1rem 1rem' }} // rounded-b-xl for bottom corners only
         onMouseLeave={() => {
           setHoveredIndustry(null);
@@ -36,7 +36,7 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
           onClose();
         }}
       >
-        <div className="max-w-screen-xl mx-auto w-full rounded-xl overflow-visible bg-white font-[Montserrat] border border-gray-200 shadow-2xl shadow-gray-300/50 overflow-y-auto max-h-[80vh]">
+        <div className="w-full min-h-full scrollNone mx-auto  rounded-xl overflow-visible bg-white font-[Montserrat] border border-gray-200 shadow-2xl shadow-gray-300/50 overflow-y-auto max-h-[80vh]">
           {/* What we do heading with white bg */}
           <div className="bg-white px-8 py-4 rounded-xl relative overflow-hidden rounded-t-xl">
             <div
@@ -117,9 +117,9 @@ const Submenu = ({ isOpen, onClose, services, industries, industryDetailsMap }) 
               </ul>
             </div>
             {/* Industry Details Section - Full Width */}
-            <div className="flex-1 p-8 flex items-start justify-start overflow-visible">
+            <div className="flex-1 relative  p-8 flex items-start justify-start overflow-visible">
               <div
-                className={`w-full rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''} overflow-y-auto max-h-[60vh]`}
+                className={`w-full sticky top-22 scrollNone rounded-xl bg-gradient-to-b from-[#A468DA]/10 to-[#149BF5]/10 flex flex-col justify-start items-start shadow-inner border border-[#A468DA]/20 ${!hoveredIndustry ? 'hidden' : ''} overflow-y-auto max-h-[60vh]`}
                 onMouseEnter={() => setHoveredIndustry(hoveredIndustry)}
               >
                 {hoveredIndustry && industryDetailsMap[hoveredIndustry] ? (
