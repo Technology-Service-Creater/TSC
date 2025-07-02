@@ -85,6 +85,7 @@ const subPageFileMap = {
     'contract-management': 'ContractManagement',
     'regulatory-compliance': 'RegulatoryCompliance',
     'intellectual-property-protection': 'IntellectualPropertyProtection',
+    'indirect-taxes-vat-gst': 'IndirectTaxes',
   },
   'marketing-analysis-research': {
     'customer-segmentation': 'CustomerSegmentation',
