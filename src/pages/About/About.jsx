@@ -4,19 +4,7 @@ import MissionVisionSection from './SubComponents/MissionVisionSection';
 import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
-import OurMissionSection from './SubComponents/OurMissionSection';
 import OurVisionSection from './SubComponents/OurVisionSection';
-
-const ourMissionSection = {
-  heading1: 'Chamath announces brand new SPAC to buy a better basketball team.',
-  description1:
-    'Former Hedgefund worker girlboss. VR headset wearable network effect. Generalist-reading secondary markets buyer. LTV/CAC focused mentally exhausted startup founders.',
-  image: '/Images/OurMission.jpg',
-  description2:
-    'The age-old education model is built on memorization, conformity & indoctrination ',
-  description3:
-    "We want to build a model that's hands-on, rooted in reality & has a high degree of throughput",
-};
 
 const ourVisionSection = {
   heading1: '“Creating a Game Changer Company”',
@@ -115,13 +103,6 @@ const About = () => (
     <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
     <div className="bg-[#F5FEFF] px-4 md:px-0">
       <MissionVisionSection />
-      <OurMissionSection
-        heading1={ourMissionSection.heading1}
-        description1={ourMissionSection.description1}
-        image={ourMissionSection.image}
-        description2={ourMissionSection.description2}
-        description3={ourMissionSection.description3}
-      />
       <OurVisionSection
         heading1={ourVisionSection.heading1}
         image={ourVisionSection.image}
