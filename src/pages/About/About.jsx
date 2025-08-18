@@ -1,6 +1,6 @@
 import React from 'react';
-import PageHeroSection from '../../components/common/PageHeroSection';
 import AboutTextSection from './SubComponents/AboutTextSection';
+import WhatIsTSCSection from './SubComponents/WhatIsTSCSection';
 import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
@@ -119,11 +119,7 @@ const exploreContent = [
 
 const About = () => (
   <>
-    <PageHeroSection
-      title="About Us"
-      description="We deliver innovative solutions tailored to your needs, combining expertise, technology, and creativity to drive success and growth for your business."
-      bgImage="/Images/aboutHero.png"
-    />
+    <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
     <div className="bg-[#F5FEFF] px-4 md:px-0">
       <AboutTextSection
         heading={aboutTextContent.heading}
