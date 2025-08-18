@@ -17,12 +17,16 @@ const WhatIsTSCSection = ({ bgImage }) => {
           <div className="text-white">
             <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold font-['Poppins'] leading-snug lg:leading-[40px] mb-6">
               What is{' '}
-              <span className="relative inline-block">
-                Technology Service Creater
-                <span className="absolute left-0 right-0 -bottom-2 h-2 rounded-full bg-gradient-to-r from-[#6E41F6] via-[#6E41F6] to-[#5AACFF]"></span>
+              <span className="inline-flex flex-col items-start align-top">
+                <span>Technology Service Creater</span>
+                <img
+                  src="/Images/Group_7.png"
+                  alt="underline"
+                  className="relative -top-2 left-0 mt-2 h-full w-full"
+                />
               </span>
             </h2>
-            <p className="text-white/90 text-base sm:text-lg lg:text-lg font-medium font-['Montserrat'] leading-relaxed tracking-tight">
+            <p className="text-white/90 -mt-10 text-base sm:text-lg lg:text-lg font-medium font-['Montserrat'] leading-relaxed tracking-tight">
               Technology Service Creater (TSC) is a dynamic wing of TWC focused on delivering
               innovative, scalable, and intelligent digital services that solve real-world problems.
               We specialize in custom digital solutions, digital platforms, automation, data
@@ -30,7 +34,7 @@ const WhatIsTSCSection = ({ bgImage }) => {
             </p>
           </div>
 
-          <div className="w-[40%]">
+          <div className="w-full">
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.15)]">
               <div className="flex items-center gap-4 md:gap-6">
                 <img

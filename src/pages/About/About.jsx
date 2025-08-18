@@ -1,18 +1,11 @@
 import React from 'react';
-import AboutTextSection from './SubComponents/AboutTextSection';
 import WhatIsTSCSection from './SubComponents/WhatIsTSCSection';
+import MissionVisionSection from './SubComponents/MissionVisionSection';
 import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
 import OurMissionSection from './SubComponents/OurMissionSection';
 import OurVisionSection from './SubComponents/OurVisionSection';
-
-const aboutTextContent = {
-  heading: 'We are Technology Service Creater',
-  description:
-    'We deliver innovative and reliable technology solutions, helping businesses thrive in a dynamic digital world. Our expertise ensures seamless integration, efficiency, and growth across various industries',
-  image: '/Images/imagewearetsc.png',
-};
 
 const ourMissionSection = {
   heading1: 'Chamath announces brand new SPAC to buy a better basketball team.',
@@ -121,11 +114,7 @@ const About = () => (
   <>
     <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
     <div className="bg-[#F5FEFF] px-4 md:px-0">
-      <AboutTextSection
-        heading={aboutTextContent.heading}
-        description={aboutTextContent.description}
-        image={aboutTextContent.image}
-      />
+      <MissionVisionSection />
       <OurMissionSection
         heading1={ourMissionSection.heading1}
         description1={ourMissionSection.description1}
