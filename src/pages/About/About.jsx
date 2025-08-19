@@ -4,6 +4,7 @@ import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection
 import ExploreTSC from './SubComponents/ExploreTSC';
 import TeamSection from './SubComponents/TeamSection';
 import OurCompaniesSection from './SubComponents/OurCompaniesSection';
+import WhyTSCDifferentSection from './SubComponents/WhyTSCDifferentSection';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
@@ -229,6 +230,8 @@ const About = () => (
       />
       <TeamSection teamMembers={teamMembers} />
       <OurCompaniesSection companyData={companyData} />
+      <WhyTSCDifferentSection />
+
       <MeetOurExperts mapList={experts} />
       <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
       <ExploreTSC headings={exploreContent} />
