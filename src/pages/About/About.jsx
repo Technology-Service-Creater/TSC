@@ -7,12 +7,12 @@ import MeetOurExperts from './SubComponents/MeetOurExperts';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
 const ourVisionSection = {
-  heading1: '“Creating a Game Changer Company”',
+  heading1: 'Empowering\nInnovations,\nBeyond Limits!',
   image: '/Images/ceoImage.jpg',
-  heading2: 'Hear from our CEO',
-  subheading2: 'Mr. Sahil Vaidya',
+  heading2: 'Hear From Our Founder & CEO',
+  subheading2: 'Mr. Sahil R. Vaidya',
   description2:
-    'Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor ',
+    "At Technology Service Creater, we don't just deliver services — we create intelligent\nsolutions that drive impact. Our team is united by innovation, purpose, and the belief\nthat technology should empower every step of progress.\n--A division of TWC",
 };
 
 const experts = [
