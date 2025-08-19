@@ -5,6 +5,7 @@ import TeamSection from './SubComponents/TeamSection';
 import OurCompaniesSection from './SubComponents/OurCompaniesSection';
 import WhyTSCDifferentSection from './SubComponents/WhyTSCDifferentSection';
 import TechnologyWorldCreaterSection from './SubComponents/TechnologyWorldCreaterSection';
+import NewsSection from './SubComponents/NewsSection';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
 const ourVisionSection = {
@@ -145,6 +146,7 @@ const About = () => (
       <OurCompaniesSection companyData={companyData} />
       <WhyTSCDifferentSection />
       <TechnologyWorldCreaterSection />
+      <NewsSection />
       <ExploreTSC headings={exploreContent} />
     </div>
   </>
