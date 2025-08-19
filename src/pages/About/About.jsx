@@ -1,8 +1,8 @@
-import React from 'react';
 import WhatIsTSCSection from './SubComponents/WhatIsTSCSection';
 import MissionVisionSection from './SubComponents/MissionVisionSection';
 import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
+import TeamSection from './SubComponents/TeamSection';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
@@ -60,6 +60,50 @@ const experts = [
   },
 ];
 
+const teamMembers = {
+  'Board Of Director': [
+    {
+      name: 'Sahil Vaidya',
+      title: 'Founder & CEO',
+      image: '/Images/ceoImage.jpg',
+      linkedin: 'https://www.linkedin.com/in/sahil-vaidya-7b2565228/',
+    },
+    { name: 'Bharat Wanjari', title: 'Director &', image: '/Images/Bharat.png' },
+    {
+      name: 'Ramchandra Vaidya',
+      title: 'Director & CFO',
+      image: '/Images/Ramachandra.png',
+    },
+    {
+      name: 'Sharda Vaidya',
+      title: 'Managing Director & CMO',
+      image: '/Images/Sharda.png',
+    },
+  ],
+  'Team Member': [
+    {
+      name: 'Rajat Jithakate',
+      title: 'TSC Member',
+      image: '/Images/Rajat.png',
+    },
+    {
+      name: 'Harsh Shambhuwani',
+      title: 'TSC Member',
+      image: '/Images/photo.png',
+    },
+    {
+      name: 'Pranjal Kuhikar',
+      title: 'TSC Member',
+      image: '/Images/pranjal.png',
+    },
+    {
+      name: 'Utkarsh Deshmukh',
+      title: 'TSC Member',
+      image: '/Images/utkarsh.png',
+    },
+  ],
+};
+
 const businessBranchesInfo = [
   {
     heading: 'Technology Education Creater',
@@ -110,6 +154,7 @@ const About = () => (
         subheading2={ourVisionSection.subheading2}
         description2={ourVisionSection.description2}
       />
+      <TeamSection teamMembers={teamMembers} />
       <MeetOurExperts mapList={experts} />
       <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
       <ExploreTSC headings={exploreContent} />
