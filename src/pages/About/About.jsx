@@ -1,11 +1,10 @@
 import WhatIsTSCSection from './SubComponents/WhatIsTSCSection';
 import MissionVisionSection from './SubComponents/MissionVisionSection';
-import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
 import TeamSection from './SubComponents/TeamSection';
 import OurCompaniesSection from './SubComponents/OurCompaniesSection';
 import WhyTSCDifferentSection from './SubComponents/WhyTSCDifferentSection';
-import MeetOurExperts from './SubComponents/MeetOurExperts';
+import TechnologyWorldCreaterSection from './SubComponents/TechnologyWorldCreaterSection';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
 const ourVisionSection = {
@@ -16,51 +15,6 @@ const ourVisionSection = {
   description2:
     "At Technology Service Creater, we don't just deliver services — we create intelligent\nsolutions that drive impact. Our team is united by innovation, purpose, and the belief\nthat technology should empower every step of progress.\n--A division of TWC",
 };
-
-const experts = [
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-];
 
 const teamMembers = {
   'Board Of Director': [
@@ -105,37 +59,6 @@ const teamMembers = {
     },
   ],
 };
-
-const businessBranchesInfo = [
-  {
-    heading: 'Technology Education Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TEC Logo.png',
-    link: '/abc',
-  },
-  {
-    heading: 'Technology Agriculture Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TACLogo.png',
-    link: '/abc',
-  },
-  {
-    heading: 'Technology Property Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TPCLogo.png',
-    link: '/abc',
-  },
-  {
-    heading: 'Technology Skills Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TSCLogo.png',
-    link: '/abc',
-  },
-];
 
 const exploreContent = [
   { heading: 'Explore career', link: '/career' },
@@ -231,9 +154,7 @@ const About = () => (
       <TeamSection teamMembers={teamMembers} />
       <OurCompaniesSection companyData={companyData} />
       <WhyTSCDifferentSection />
-
-      <MeetOurExperts mapList={experts} />
-      <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
+      <TechnologyWorldCreaterSection />
       <ExploreTSC headings={exploreContent} />
     </div>
   </>

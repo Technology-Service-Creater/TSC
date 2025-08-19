@@ -13,6 +13,7 @@ const WhyTSCDifferentSection = () => {
             Why Technology Service Creater (TSC)?
             <br />
             Building Responsibly
+            <img src="/Images/Vector1.png" className="-mt-4" alt="" />
           </h1>
         </div>
 
