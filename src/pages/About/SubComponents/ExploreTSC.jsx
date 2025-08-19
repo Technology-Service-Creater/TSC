@@ -2,8 +2,8 @@ import ExploreButton from './ExploreButton';
 
 const ExploreTSC = ({ headings }) => {
   return (
-    <div className="relative flex flex-col mb-12 w-full max-w-3xl mx-auto px-2 sm:px-4">
-      <div className="absolute -left-[20em] w-[220em]">
+    <div className="relative flex flex-col mb-12 w-full max-w-full mx-auto px-2 sm:px-4">
+      <div className="absolute -left-[20em] w-[220em] hidden md:block">
         <img src="/Images/explore.png" alt="" />
       </div>
       <div className="z-50 flex max-w-[314px] h-[60px] sm:max-w-md md:max-w-lg text-neutral-800 text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins'] leading-tight tracking-wide mx-auto mb-8 sm:mb-12 text-center">

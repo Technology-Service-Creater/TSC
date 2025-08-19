@@ -1,5 +1,3 @@
-import React from 'react';
-
 const OurVisionSection = ({ heading1, image, heading2, subheading2, description2 }) => {
   return (
     <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto px-4 py-8 lg:justify-between gap-8 md:gap-12">
@@ -25,7 +23,7 @@ const OurVisionSection = ({ heading1, image, heading2, subheading2, description2
       {/* Middle Image */}
       <div className="w-full lg:w-[25%] flex justify-center items-center">
         <div
-          className="w-full max-w-[300px] h-96 bg-no-repeat bg-cover bg-center rounded-3xl shadow-lg border border-gray-100"
+          className="w-full max-w-full h-64 sm:h-80 lg:h-96 bg-no-repeat bg-cover bg-center rounded-3xl shadow-lg border border-gray-100"
           style={{ backgroundImage: `url(${image})` }}
         ></div>
       </div>
@@ -33,7 +31,7 @@ const OurVisionSection = ({ heading1, image, heading2, subheading2, description2
       {/* Right Content Card */}
       <div className="flex flex-col w-full lg:w-[50%] items-start lg:items-end lg:justify-end">
         <div className="bg-[#E8EFEF] p-6 rounded-lg shadow-lg relative w-full h-56">
-          <div className="absolute -top-5 right-8 text-gray-300 text-[10em] font-bold font-['Poppins']">
+          <div className="absolute top-5 md:-top-5 right-8 text-gray-300 text-[10em] font-bold font-['Poppins']">
             ”
           </div>
           <div className="text-black text-xl sm:text-2xl md:text-2xl font-bold font-['Poppins'] leading-8 mb-4">

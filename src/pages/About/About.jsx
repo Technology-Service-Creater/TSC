@@ -127,16 +127,6 @@ const companyData = [
     buttonText: 'Explore',
     buttonLink: '#',
   },
-  {
-    tab: 'Partners',
-    heading: 'Our Valued Partners',
-    description:
-      'We foster affiliations and collaborations with renowned institutions, companies, brands, academic experts, and industry leaders, creating a diverse network that elevates your learning and provides you with the best opportunities.',
-    image: '',
-    contentImage: '',
-    buttonText: 'Learn More',
-    buttonLink: '#',
-  },
 ];
 
 const About = () => (

@@ -9,7 +9,7 @@ const WhyTSCDifferentSection = () => {
             </span>{' '}
             EMPOWERING SERVICES, BEYOND LIMITS!
           </p>
-          <h1 className="text-4xl text-left font-bold font-['Poppins'] leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-left font-bold font-['Poppins'] leading-tight">
             Why Technology Service Creater (TSC)?
             <br />
             Building Responsibly
@@ -37,8 +37,8 @@ const WhyTSCDifferentSection = () => {
               property, agriculture, and more.
             </p>
           </div>
-          <div className="lg:w-1/2 flex justify-center">
-            <img src="/Images/team.png" alt="TSC Team" className="w-full max-w-md" />
+          <div className="lg:w-1/2 flex justify-center items-center">
+            <img src="/Images/team.png" alt="TSC Team" className="w-full h-auto max-w-md" />
           </div>
         </div>
 

@@ -10,9 +10,9 @@ const ExploreButton = ({ element }) => {
   return (
     <div
       onClick={() => navigate(link)}
-      className="relative group w-full max-w-xs sm:max-w-md md:max-w-[314px] h-16 sm:h-[70px] md:h-[84px]
+      className="relative group max-w-xs sm:max-w-md md:max-w-[314px] h-16 sm:h-[70px] md:h-[84px]
                  flex items-center justify-center cursor-pointer rounded-[20px]
-                  transition-shadow hover:shadow-lg bg-white text-black border-2 border-[#A468DA] border-r-[#149BF5] border-l-[#149BF5]"
+                  transition-shadow hover:shadow-lg bg-white text-black border-2 border-[#A468DA] border-r-[#149BF5] border-l-[#149BF5] w-full sm:w-auto"
     >
       {/* Animated overlay from bottom to top */}
       <div className="absolute inset-0 z-0">

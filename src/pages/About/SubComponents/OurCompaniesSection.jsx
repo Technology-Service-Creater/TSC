@@ -24,11 +24,11 @@ const OurCompaniesSection = ({ companyData }) => {
         </p>
       </div>
 
-      <div className="bg-[#383838] rounded-full p-2 flex justify-around mb-8">
-        {companyData.map(company => (
+      <div className="bg-[#383838] rounded-full p-2 flex flex-wrap justify-center gap-2 mb-8">
+        {companyData.map((company, index) => (
           <button
-            key={company.tab}
-            className={`py-2 px-6 rounded-full text-lg font-semibold ${activeTab === company.tab ? 'font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent' : 'text-gray-300 hover:text-white'}`}
+            key={index}
+            className={`py-2 px-4 sm:px-6 rounded-full text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap ${activeTab === company.tab ? 'font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent' : 'text-gray-300 hover:text-white'}`}
             onClick={() => setActiveTab(company.tab)}
           >
             {company.tab}
@@ -37,10 +37,14 @@ const OurCompaniesSection = ({ companyData }) => {
       </div>
 
       {activeCompany && (
-        <div className="flex flex-col h-[30em] lg:flex-row items-center justify-between gap-8 bg-white p-8 rounded-lg shadow-lg">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-white p-8 rounded-lg shadow-lg h-auto lg:h-[30em]">
           <div className="flex flex-col items-start lg:w-1/2">
             {activeCompany.image && (
-              <img src={activeCompany.image} alt={activeCompany.tab} className="h-16 mb-4" />
+              <img
+                src={activeCompany.image}
+                alt={activeCompany.tab}
+                className="h-12 sm:h-16 mb-4"
+              />
             )}
             <h3 className="text-neutral-800 text-3xl font-bold font-['Poppins'] leading-tight mb-4">
               {activeCompany.heading}
@@ -62,7 +66,7 @@ const OurCompaniesSection = ({ companyData }) => {
               <img
                 src={activeCompany.contentImage}
                 alt="Content"
-                className="w-full max-w-md rounded-lg shadow-md"
+                className="w-full h-auto max-w-full lg:max-w-md rounded-lg shadow-md"
               />
             )}
             {activeCompany.downloadButton && (

@@ -54,11 +54,11 @@ const MissionVisionSection = ({ mission, vision }) => {
           </div>
 
           {/* Center image */}
-          <div className="order-2">
+          <div className="order-2 flex justify-center">
             <img
               src={content.image}
               alt={`${activeTab} visual`}
-              className="w-full h-80 rounded-xl object-cover"
+              className="w-full h-auto max-h-80 rounded-xl object-cover"
             />
           </div>
 

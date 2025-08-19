@@ -22,8 +22,8 @@ const TechnologyWorldCreaterSection = () => {
               Explore More <span className="ml-2">→</span>
             </button>
           </div>
-          <div className="lg:w-1/2 flex justify-center">
-            <img src="/Images/team.png" alt="TSC Team" className="w-full max-w-md" />
+          <div className="lg:w-1/2 flex justify-center items-center">
+            <img src="/Images/team.png" alt="TSC Team" className="w-full h-auto max-w-md" />
           </div>
         </div>
       </div>
