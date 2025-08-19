@@ -6,7 +6,7 @@ const OurCompaniesSection = ({ companyData }) => {
   const activeCompany = companyData.find(company => company.tab === activeTab);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
+    <div className="w-full max-w-7xl mx-auto px-4 py-8 mt-14">
       <div className="mb-8">
         <span className="flex items-center text-gray-500 text-sm font-medium font-['Montserrat'] tracking-tight">
           <span className="text-2xl mr-2">
@@ -37,7 +37,7 @@ const OurCompaniesSection = ({ companyData }) => {
       </div>
 
       {activeCompany && (
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-white p-8 rounded-lg shadow-lg">
+        <div className="flex flex-col h-[30em] lg:flex-row items-center justify-between gap-8 bg-white p-8 rounded-lg shadow-lg">
           <div className="flex flex-col items-start lg:w-1/2">
             {activeCompany.image && (
               <img src={activeCompany.image} alt={activeCompany.tab} className="h-16 mb-4" />
@@ -48,9 +48,14 @@ const OurCompaniesSection = ({ companyData }) => {
             <p className="text-gray-600 text-base font-semibold font-['Montserrat'] leading-relaxed mb-6">
               {activeCompany.description}
             </p>
-            <button className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300">
+            <a
+              href={activeCompany.buttonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
+            >
               {activeCompany.buttonText} <span className="ml-2">→</span>
-            </button>
+            </a>
           </div>
           <div className="lg:w-1/2 flex justify-center items-center relative">
             {activeCompany.contentImage && (

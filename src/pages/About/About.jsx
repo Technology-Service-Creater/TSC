@@ -168,44 +168,40 @@ const companyData = [
     heading: 'Empowering Agriculture, Beyond Limits',
     description:
       "At TAC, Born from a deep understanding of the challenges in traditional farming ecosystems, we've built a digital marketplace where transparency, fairness, and efficiency thrive.",
-    image: '/Images/TACLogo.png',
-    contentImage: '/Images/AIAutomationMarketing-1.jpg',
+    image: '/Images/TAC.png',
+    contentImage: '/Images/TACC.png',
     buttonText: 'Explore',
     buttonLink: 'https://technologyagriculturecreater.com/',
-    downloadButton: true,
   },
   {
     tab: 'Technology Education Creater',
     heading: 'Empowering Education, Beyond Limits',
     description:
       "Technology Education Creater is revolutionizing learning with the world's first global education framework built on the Analytics-Driven AI model that focuses on personalized understanding, critical thinking, and real-world application",
-    image: '/Images/TEC Logo.png',
-    contentImage: '/Images/AIAutomationMarketing-2.png',
-    buttonText: 'Visit site',
+    image: '/Images/TEC.png',
+    contentImage: '/Images/TECC.png',
+    buttonText: 'Explore',
     buttonLink: '#',
-    downloadButton: false,
   },
   {
     tab: 'Technology Property Creater',
     heading: 'Revolutionizing Real Estate Through Digital Property Tech',
     description:
       'Technology Property Creater is transforming the property landscape with smart, secure, and scalable digital solutions. From property listing and virtual site visits to digital documentation and blockchain- based land records.',
-    image: '/Images/TPCLogo.png',
-    contentImage: '/Images/A_BTestingOptimization-1.jpg',
-    buttonText: 'Visit site',
+    image: '/Images/TPC.png',
+    contentImage: '/Images/TPCC.png',
+    buttonText: 'Explore',
     buttonLink: '#',
-    downloadButton: false,
   },
   {
     tab: 'Technology Skill Creater',
     heading: 'Empowering Skills, Beyond Limits..',
     description:
       'Technology Skill Creater is dedicated to bridging the skill gap by offering protocol, industry-aligned training in emerging technologies. TSC helps individuals and professionals gain hands-on experience and certifications to thrive in the digital economy.',
-    image: '/Images/TSCLogo.png',
-    contentImage: '/Images/A_BTestingOptimization-2.jpg',
+    image: '/Images/TSC1.png',
+    contentImage: '/Images/TSCC.png',
     buttonText: 'Explore',
     buttonLink: '#',
-    downloadButton: false,
   },
   {
     tab: 'Partners',
@@ -216,7 +212,6 @@ const companyData = [
     contentImage: '',
     buttonText: 'Learn More',
     buttonLink: '#',
-    downloadButton: false,
   },
 ];
 
