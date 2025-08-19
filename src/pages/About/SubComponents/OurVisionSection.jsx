@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurVisionSection = ({ heading1, image, heading2, subheading2, description2 }) => {
   return (
-    <div className="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto px-4 py-8 lg:justify-between gap-8 md:gap-12">
+    <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto px-4 py-8 lg:justify-between gap-8 md:gap-12">
       {/* Left Section */}
       <div className="flex flex-col items-start justify-start text-left lg:w-[25%]">
         <div className="flex items-center justify-center lg:justify-start mb-4">

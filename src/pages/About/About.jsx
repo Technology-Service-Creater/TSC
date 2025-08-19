@@ -3,6 +3,7 @@ import MissionVisionSection from './SubComponents/MissionVisionSection';
 import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
 import TeamSection from './SubComponents/TeamSection';
+import OurCompaniesSection from './SubComponents/OurCompaniesSection';
 import MeetOurExperts from './SubComponents/MeetOurExperts';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
@@ -141,12 +142,89 @@ const exploreContent = [
   { heading: 'Explore Events', link: '/events' },
   { heading: 'Explore Blogs', link: '/blogs' },
 ];
+const mission = {
+  heading:
+    'To empower businesses and individuals with next-generation technology services that are scalable, reliable, and future-ready.',
+  image: '/Images/OurMission.jpg',
+  bullets: [
+    'We aim to bridge the digital divide by delivering affordable IT solutions, cloud systems, AI-driven platforms, and end-to-end digital transformation services.',
+    'Our solutions help organizations unlock growth and innovation while improving efficiency and customer experience.',
+  ],
+};
+
+const vision = {
+  heading:
+    'To become a global leader in technology services, driving the digital economy through innovation, talent, and customer-centric solutions that seamlessly adopt cutting-edge technologies.',
+  image: '/Images/AIDrivenMarketAnalytics-2.png',
+  bullets: [
+    'We envision TSC as a trusted innovation partner that empowers individuals, businesses, governments, and communities to build a smarter, connected, and sustainable future.',
+    'We will continuously push boundaries while staying grounded in real-world impact and inclusivity.',
+  ],
+};
+
+const companyData = [
+  {
+    tab: 'Technology Agriculture Creater',
+    heading: 'Empowering Agriculture, Beyond Limits',
+    description:
+      "At TAC, Born from a deep understanding of the challenges in traditional farming ecosystems, we've built a digital marketplace where transparency, fairness, and efficiency thrive.",
+    image: '/Images/TACLogo.png',
+    contentImage: '/Images/AIAutomationMarketing-1.jpg',
+    buttonText: 'Explore',
+    buttonLink: 'https://technologyagriculturecreater.com/',
+    downloadButton: true,
+  },
+  {
+    tab: 'Technology Education Creater',
+    heading: 'Empowering Education, Beyond Limits',
+    description:
+      "Technology Education Creater is revolutionizing learning with the world's first global education framework built on the Analytics-Driven AI model that focuses on personalized understanding, critical thinking, and real-world application",
+    image: '/Images/TEC Logo.png',
+    contentImage: '/Images/AIAutomationMarketing-2.png',
+    buttonText: 'Visit site',
+    buttonLink: '#',
+    downloadButton: false,
+  },
+  {
+    tab: 'Technology Property Creater',
+    heading: 'Revolutionizing Real Estate Through Digital Property Tech',
+    description:
+      'Technology Property Creater is transforming the property landscape with smart, secure, and scalable digital solutions. From property listing and virtual site visits to digital documentation and blockchain- based land records.',
+    image: '/Images/TPCLogo.png',
+    contentImage: '/Images/A_BTestingOptimization-1.jpg',
+    buttonText: 'Visit site',
+    buttonLink: '#',
+    downloadButton: false,
+  },
+  {
+    tab: 'Technology Skill Creater',
+    heading: 'Empowering Skills, Beyond Limits..',
+    description:
+      'Technology Skill Creater is dedicated to bridging the skill gap by offering protocol, industry-aligned training in emerging technologies. TSC helps individuals and professionals gain hands-on experience and certifications to thrive in the digital economy.',
+    image: '/Images/TSCLogo.png',
+    contentImage: '/Images/A_BTestingOptimization-2.jpg',
+    buttonText: 'Explore',
+    buttonLink: '#',
+    downloadButton: false,
+  },
+  {
+    tab: 'Partners',
+    heading: 'Our Valued Partners',
+    description:
+      'We foster affiliations and collaborations with renowned institutions, companies, brands, academic experts, and industry leaders, creating a diverse network that elevates your learning and provides you with the best opportunities.',
+    image: '',
+    contentImage: '',
+    buttonText: 'Learn More',
+    buttonLink: '#',
+    downloadButton: false,
+  },
+];
 
 const About = () => (
   <>
     <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
     <div className="bg-[#F5FEFF] px-4 md:px-0">
-      <MissionVisionSection />
+      <MissionVisionSection mission={mission} vision={vision} />
       <OurVisionSection
         heading1={ourVisionSection.heading1}
         image={ourVisionSection.image}
@@ -155,6 +233,7 @@ const About = () => (
         description2={ourVisionSection.description2}
       />
       <TeamSection teamMembers={teamMembers} />
+      <OurCompaniesSection companyData={companyData} />
       <MeetOurExperts mapList={experts} />
       <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
       <ExploreTSC headings={exploreContent} />

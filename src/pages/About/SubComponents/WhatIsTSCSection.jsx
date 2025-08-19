@@ -13,7 +13,7 @@ const WhatIsTSCSection = ({ bgImage }) => {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 z-10 pointer-events-none"></div>
 
-        <div className="relative z-20 max-w-[1190px] h-full mx-4 md:mx-8 lg:mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="relative z-20 max-w-7xl h-full mx-4 md:mx-8 lg:mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="text-white">
             <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold font-['Poppins'] leading-snug lg:leading-[40px] mb-6">
               What is{' '}

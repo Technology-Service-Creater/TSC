@@ -1,29 +1,9 @@
 import React, { useState } from 'react';
 
-const MissionVisionSection = () => {
+const MissionVisionSection = ({ mission, vision }) => {
   const [activeTab, setActiveTab] = useState('mission');
 
   const isMission = activeTab === 'mission';
-
-  const mission = {
-    heading:
-      'To empower businesses and individuals with next-generation technology services that are scalable, reliable, and future-ready.',
-    image: '/Images/OurMission.jpg',
-    bullets: [
-      'We aim to bridge the digital divide by delivering affordable IT solutions, cloud systems, AI-driven platforms, and end-to-end digital transformation services.',
-      'Our solutions help organizations unlock growth and innovation while improving efficiency and customer experience.',
-    ],
-  };
-
-  const vision = {
-    heading:
-      'To become a global leader in technology services, driving the digital economy through innovation, talent, and customer-centric solutions that seamlessly adopt cutting-edge technologies.',
-    image: '/Images/AIDrivenMarketAnalytics-2.png',
-    bullets: [
-      'We envision TSC as a trusted innovation partner that empowers individuals, businesses, governments, and communities to build a smarter, connected, and sustainable future.',
-      'We will continuously push boundaries while staying grounded in real-world impact and inclusivity.',
-    ],
-  };
 
   const content = isMission ? mission : vision;
 
@@ -31,7 +11,7 @@ const MissionVisionSection = () => {
     <section
       className={`w-full ${isMission ? 'bg-[#F5FEFF]' : 'bg-[#1f2423]'} py-10 md:py-14 lg:py-16`}
     >
-      <div className="max-w-[1190px] mx-4 md:mx-8 lg:mx-auto">
+      <div className="max-w-7xl mx-4 md:mx-8 lg:mx-auto">
         {/* Tabs */}
         <div className="flex items-center justify-center mb-10">
           <div className="relative inline-flex bg-[#F5FEFF] rounded-full p-1">

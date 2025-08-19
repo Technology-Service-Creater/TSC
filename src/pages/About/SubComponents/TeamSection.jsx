@@ -5,7 +5,7 @@ const TeamSection = ({ teamMembers }) => {
   const [activeTab, setActiveTab] = useState('Board Of Director');
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-4 py-8">
+    <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="bg-[#383838] rounded-full p-2 flex justify-around mb-8">
         {Object.keys(teamMembers).map(tab => (
           <button
