@@ -9,19 +9,19 @@ const MissionVisionSection = ({ mission, vision }) => {
 
   return (
     <section
-      className={`w-full ${isMission ? 'bg-[#F5FEFF]' : 'bg-[#1f2423]'} py-10 md:py-14 lg:py-16`}
+      className={`w-full ${isMission ? 'bg-white' : 'bg-[#1f2423]'} py-10 md:py-14 lg:py-16`}
     >
       <div className="max-w-7xl mx-4 md:mx-8 lg:mx-auto">
         {/* Tabs */}
         <div className="flex items-center justify-center mb-10">
-          <div className="relative inline-flex bg-[#F5FEFF] rounded-full p-1">
+          <div className="relative inline-flex rounded-full px-0 border-2 border-[#A468DA] border-r-[#149BF5] border-l-[#149BF5]">
             <button
               type="button"
               onClick={() => setActiveTab('mission')}
-              className={`px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold font-['Poppins'] ${
+              className={`px-6 md:px-20 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold font-['Poppins'] ${
                 isMission
                   ? 'bg-gradient-to-r from-[#6E41F6] to-[#5AACFF] text-white shadow'
-                  : 'text-[#2A2A2A]'
+                  : 'font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent'
               }`}
             >
               Mission
@@ -29,10 +29,10 @@ const MissionVisionSection = ({ mission, vision }) => {
             <button
               type="button"
               onClick={() => setActiveTab('vision')}
-              className={`px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold font-['Poppins'] ${
+              className={`px-6 md:px-20 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold font-['Poppins'] ${
                 !isMission
                   ? 'bg-gradient-to-r from-[#6E41F6] to-[#5AACFF] text-white shadow'
-                  : 'text-[#2A2A2A]'
+                  : 'font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent'
               }`}
             >
               Vision

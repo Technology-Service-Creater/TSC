@@ -21,12 +21,14 @@ const TeamSection = ({ teamMembers }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {teamMembers[activeTab].map((member, index) => (
           <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-80 sm:h-56 md:h-64 object-cover object-top bg-[#D6E8F6]"
-            />
-            <div className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <div>
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-80 sm:h-56 md:h-40 object-contain object-top bg-[#D6E8F6]"
+              />
+            </div>
+            <div className="p-4 mt-2 flex flex-col sm:flex-row justify-between items-start sm:items-center">
               <div className="mb-2 sm:mb-0">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-800">{member.name}</h3>
                 <p className="text-sm sm:text-base text-gray-600 font-['Poppins'] font-bold">

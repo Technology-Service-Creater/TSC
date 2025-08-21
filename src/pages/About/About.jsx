@@ -22,7 +22,7 @@ const teamMembers = {
     {
       name: 'Sahil Vaidya',
       title: 'Founder & CEO',
-      image: '/Images/ceoImage.jpg',
+      image: '/Images/ceo.png',
       linkedin: 'https://www.linkedin.com/in/sahil-vaidya-7b2565228/',
     },
     { name: 'Bharat Wanjari', title: 'Director &', image: '/Images/Bharat.png' },
@@ -133,7 +133,7 @@ const companyData = [
 const About = () => (
   <>
     <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
-    <div className="bg-[#F5FEFF] px-4 md:px-0">
+    <div className="bg-white px-0 md:px-0">
       <MissionVisionSection mission={mission} vision={vision} />
       <OurVisionSection
         heading1={ourVisionSection.heading1}
