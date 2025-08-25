@@ -1,114 +1,65 @@
-import React from 'react';
-import PageHeroSection from '../../components/common/PageHeroSection';
-import AboutTextSection from './SubComponents/AboutTextSection';
-import ExploreOurBusinessSection from './SubComponents/ExploreOurBusinessSection';
+import WhatIsTSCSection from './SubComponents/WhatIsTSCSection';
+import MissionVisionSection from './SubComponents/MissionVisionSection';
 import ExploreTSC from './SubComponents/ExploreTSC';
-import MeetOurExperts from './SubComponents/MeetOurExperts';
-import OurMissionSection from './SubComponents/OurMissionSection';
+import TeamSection from './SubComponents/TeamSection';
+import OurCompaniesSection from './SubComponents/OurCompaniesSection';
+import WhyTSCDifferentSection from './SubComponents/WhyTSCDifferentSection';
+import TechnologyWorldCreaterSection from './SubComponents/TechnologyWorldCreaterSection';
+import NewsSection from './SubComponents/NewsSection';
 import OurVisionSection from './SubComponents/OurVisionSection';
 
-const aboutTextContent = {
-  heading: 'We are Technology Service Creater',
-  description:
-    'We deliver innovative and reliable technology solutions, helping businesses thrive in a dynamic digital world. Our expertise ensures seamless integration, efficiency, and growth across various industries',
-  image: '/Images/imagewearetsc.png',
-};
-
-const ourMissionSection = {
-  heading1: 'Chamath announces brand new SPAC to buy a better basketball team.',
-  description1:
-    'Former Hedgefund worker girlboss. VR headset wearable network effect. Generalist-reading secondary markets buyer. LTV/CAC focused mentally exhausted startup founders.',
-  image: '/Images/OurMission.jpg',
-  description2:
-    'The age-old education model is built on memorization, conformity & indoctrination ',
-  description3:
-    "We want to build a model that's hands-on, rooted in reality & has a high degree of throughput",
-};
-
 const ourVisionSection = {
-  heading1: '“Creating a Game Changer Company”',
+  heading1: 'Empowering\nInnovations,\nBeyond Limits!',
   image: '/Images/ceoImage.jpg',
-  heading2: 'Hear from our CEO',
-  subheading2: 'Mr. Sahil Vaidya',
+  heading2: 'Hear From Our Founder & CEO',
+  subheading2: 'Mr. Sahil R. Vaidya',
   description2:
-    'Lorem ipsum dolor sit amet consectetur. Dui eget nulla odio tempus risus. Mauris fringilla convallis sit auctor ',
+    "At Technology Service Creater, we don't just deliver services — we create intelligent\nsolutions that drive impact. Our team is united by innovation, purpose, and the belief\nthat technology should empower every step of progress.\n--A division of TWC",
 };
 
-const experts = [
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-  {
-    name: 'Mr. Martin bankar',
-    position: 'CTO/Developer',
-    description: 'Mauris fringilla convallis sit auctor',
-    image: '/Images/experts.png',
-    linkedinUrl: '/abc',
-  },
-];
-
-const businessBranchesInfo = [
-  {
-    heading: 'Technology Education Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TEC Logo.png',
-    link: '/abc',
-  },
-  {
-    heading: 'Technology Agriculture Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TACLogo.png',
-    link: '/abc',
-  },
-  {
-    heading: 'Technology Property Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TPCLogo.png',
-    link: '/abc',
-  },
-  {
-    heading: 'Technology Skills Creater',
-    description:
-      'Empowers learners with innovative, tech-driven educational solutions. We bridge the gap between education and industry through interactive platforms and skill-based training, fostering continuous growth in the evolving tech landscape. ',
-    image: '/Images/TSCLogo.png',
-    link: '/abc',
-  },
-];
+const teamMembers = {
+  'Board Of Director': [
+    {
+      name: 'Sahil Vaidya',
+      title: 'Founder & CEO',
+      image: '/Images/ceo.png',
+      linkedin: 'https://www.linkedin.com/in/sahil-vaidya-7b2565228/',
+    },
+    { name: 'Bharat Wanjari', title: 'Director &', image: '/Images/Bharat.png' },
+    {
+      name: 'Ramchandra Vaidya',
+      title: 'Director & CFO',
+      image: '/Images/Ramachandra.png',
+    },
+    {
+      name: 'Sharda Vaidya',
+      title: 'Managing Director & CMO',
+      image: '/Images/Sharda.png',
+    },
+  ],
+  'Team Member': [
+    {
+      name: 'Rajat Jithakate',
+      title: 'TSC Member',
+      image: '/Images/Rajat.png',
+    },
+    {
+      name: 'Harsh Shambhuwani',
+      title: 'TSC Member',
+      image: '/Images/photo.png',
+    },
+    {
+      name: 'Pranjal Kuhikar',
+      title: 'TSC Member',
+      image: '/Images/pranjal.png',
+    },
+    {
+      name: 'Utkarsh Deshmukh',
+      title: 'TSC Member',
+      image: '/Images/utkarsh.png',
+    },
+  ],
+};
 
 const exploreContent = [
   { heading: 'Explore career', link: '/career' },
@@ -116,27 +67,74 @@ const exploreContent = [
   { heading: 'Explore Events', link: '/events' },
   { heading: 'Explore Blogs', link: '/blogs' },
 ];
+const mission = {
+  heading:
+    'To empower businesses and individuals with next-generation technology services that are scalable, reliable, and future-ready.',
+  image: '/Images/OurMission.jpg',
+  bullets: [
+    'We aim to bridge the digital divide by delivering affordable IT solutions, cloud systems, AI-driven platforms, and end-to-end digital transformation services.',
+    'Our solutions help organizations unlock growth and innovation while improving efficiency and customer experience.',
+  ],
+};
+
+const vision = {
+  heading:
+    'To become a global leader in technology services, driving the digital economy through innovation, talent, and customer-centric solutions that seamlessly adopt cutting-edge technologies.',
+  image: '/Images/AIDrivenMarketAnalytics-2.png',
+  bullets: [
+    'We envision TSC as a trusted innovation partner that empowers individuals, businesses, governments, and communities to build a smarter, connected, and sustainable future.',
+    'We will continuously push boundaries while staying grounded in real-world impact and inclusivity.',
+  ],
+};
+
+const companyData = [
+  {
+    tab: 'Technology Agriculture Creater',
+    heading: 'Empowering Agriculture, Beyond Limits',
+    description:
+      "At TAC, Born from a deep understanding of the challenges in traditional farming ecosystems, we've built a digital marketplace where transparency, fairness, and efficiency thrive.",
+    image: '/Images/TAC.png',
+    contentImage: '/Images/TACC.png',
+    buttonText: 'Explore',
+    buttonLink: 'https://technologyagriculturecreater.com/',
+  },
+  {
+    tab: 'Technology Education Creater',
+    heading: 'Empowering Education, Beyond Limits',
+    description:
+      "Technology Education Creater is revolutionizing learning with the world's first global education framework built on the Analytics-Driven AI model that focuses on personalized understanding, critical thinking, and real-world application",
+    image: '/Images/TEC.png',
+    contentImage: '/Images/TECC.png',
+    buttonText: 'Explore',
+    buttonLink: '#',
+  },
+  {
+    tab: 'Technology Property Creater',
+    heading: 'Revolutionizing Real Estate Through Digital Property Tech',
+    description:
+      'Technology Property Creater is transforming the property landscape with smart, secure, and scalable digital solutions. From property listing and virtual site visits to digital documentation and blockchain- based land records.',
+    image: '/Images/TPC.png',
+    contentImage: '/Images/TPCC.png',
+    buttonText: 'Explore',
+    buttonLink: '#',
+  },
+  {
+    tab: 'Technology Skill Creater',
+    heading: 'Empowering Skills, Beyond Limits..',
+    description:
+      'Technology Skill Creater is dedicated to bridging the skill gap by offering protocol, industry-aligned training in emerging technologies. TSC helps individuals and professionals gain hands-on experience and certifications to thrive in the digital economy.',
+    image: '/Images/TSC1.png',
+    contentImage: '/Images/TSCC.png',
+    buttonText: 'Explore',
+    buttonLink: '#',
+  },
+];
 
 const About = () => (
   <>
-    <PageHeroSection
-      title="About Us"
-      description="We deliver innovative solutions tailored to your needs, combining expertise, technology, and creativity to drive success and growth for your business."
-      bgImage="/Images/aboutHero.png"
-    />
-    <div className="bg-[#F5FEFF] px-4 md:px-0">
-      <AboutTextSection
-        heading={aboutTextContent.heading}
-        description={aboutTextContent.description}
-        image={aboutTextContent.image}
-      />
-      <OurMissionSection
-        heading1={ourMissionSection.heading1}
-        description1={ourMissionSection.description1}
-        image={ourMissionSection.image}
-        description2={ourMissionSection.description2}
-        description3={ourMissionSection.description3}
-      />
+    <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
+    <div className="bg-white px-0 md:px-0">
+      <MissionVisionSection mission={mission} vision={vision} />
       <OurVisionSection
         heading1={ourVisionSection.heading1}
         image={ourVisionSection.image}
@@ -144,8 +142,11 @@ const About = () => (
         subheading2={ourVisionSection.subheading2}
         description2={ourVisionSection.description2}
       />
-      <MeetOurExperts mapList={experts} />
-      <ExploreOurBusinessSection mapInfo={businessBranchesInfo} />
+      <TeamSection teamMembers={teamMembers} />
+      <OurCompaniesSection companyData={companyData} />
+      <WhyTSCDifferentSection />
+      <TechnologyWorldCreaterSection />
+      <NewsSection />
       <ExploreTSC headings={exploreContent} />
     </div>
   </>

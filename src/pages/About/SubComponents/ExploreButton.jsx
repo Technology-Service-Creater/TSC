@@ -10,13 +10,13 @@ const ExploreButton = ({ element }) => {
   return (
     <div
       onClick={() => navigate(link)}
-      className="relative group w-full max-w-xs sm:max-w-md md:max-w-[314px] h-16 sm:h-[70px] md:h-[84px]
+      className="relative group max-w-xs sm:max-w-md md:max-w-[314px] h-16 sm:h-[70px] md:h-[84px]
                  flex items-center justify-center cursor-pointer rounded-[20px]
-                  transition-shadow hover:shadow-lg  bg-white text-black"
+                  transition-shadow hover:shadow-lg bg-white text-black border-2 border-[#A468DA] border-r-[#149BF5] border-l-[#149BF5] w-full sm:w-auto"
     >
       {/* Animated overlay from bottom to top */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute -bottom-1 left-0 w-full h-full bg-black scale-y-0  scale-x-0 group-hover:scale-y-105 group-hover:scale-x-105 rounded-full group-hover:rounded-[20px] origin-bottom transition-transform duration-500 ease-in-out" />
+        <div className="absolute -bottom-1 left-0 w-full h-full bg-gradient-to-r from-[#A468DA] to-[#149BF5] scale-y-0  scale-x-0 group-hover:scale-y-105 group-hover:scale-x-105 rounded-full group-hover:rounded-[20px] origin-bottom transition-transform duration-500 ease-in-out" />
       </div>
 
       {/* Content */}
@@ -25,7 +25,10 @@ const ExploreButton = ({ element }) => {
           {heading}
         </div>
         <div className="flex-shrink-0 ml-2">
-          <FaCircleArrowRight className=" -rotate-45 rounded-2xl w-6 h-6 transition-transform duration-300 group-hover:rotate-0" />
+          <FaCircleArrowRight
+            className=" -rotate-45 rounded-2xl w-6 h-6 transition-transform duration-300 group-hover:rotate-0"
+            color="bg-gradient-to-r from-[#A468DA] to-[#149BF5]"
+          />
         </div>
       </div>
     </div>
