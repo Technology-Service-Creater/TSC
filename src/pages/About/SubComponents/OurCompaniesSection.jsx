@@ -14,8 +14,15 @@ const OurCompaniesSection = ({ companyData }) => {
           </span>{' '}
           UNMATCHED OPPORTUNITIES
         </span>
-        <h2 className="text-neutral-800 text-4xl font-bold font-['Poppins'] leading-tight">
+        <h2 className="text-neutral-800 z-50 text-4xl font-bold font-['Poppins'] leading-tight inline-flex flex-col items-start align-top relative">
           Our Companies
+          <div className="-z-10 w-full">
+            <img
+              src="/Images/Line.png"
+              alt="underline"
+              className="relative -top-8 left-10 mt-2 h-10 sm:max-w-full"
+            />
+          </div>
         </h2>
         <p className="text-gray-600 text-base font-normal font-['Montserrat'] leading-relaxed">
           We foster affiliations and collaborations with renowned institutions, companies, brands,
@@ -24,7 +31,7 @@ const OurCompaniesSection = ({ companyData }) => {
         </p>
       </div>
 
-      <div className="bg-[#383838] rounded-full p-2 flex flex-wrap justify-center gap-2 mb-8">
+      <div className="bg-[#383838] rounded-full p-2 mt-20 flex flex-wrap justify-center gap-2 mb-8">
         {companyData.map((company, index) => (
           <button
             key={index}
@@ -56,7 +63,7 @@ const OurCompaniesSection = ({ companyData }) => {
               href={activeCompany.buttonLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
+              className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
             >
               {activeCompany.buttonText} <span className="ml-2">→</span>
             </a>
@@ -66,7 +73,7 @@ const OurCompaniesSection = ({ companyData }) => {
               <img
                 src={activeCompany.contentImage}
                 alt="Content"
-                className="w-full h-auto max-w-full lg:max-w-md rounded-lg shadow-md"
+                className="w-full h-auto max-w-full lg:max-w-md rounded-lg"
               />
             )}
             {activeCompany.downloadButton && (

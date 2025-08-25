@@ -1,6 +1,6 @@
 const WhyTSCDifferentSection = () => {
   return (
-    <div className="bg-[#1A1A1A] text-white py-16 px-4">
+    <div className="bg-[#1A1A1A] text-white py-16 px-4 mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-gray-400 flex items-center text-sm font-medium font-['Montserrat'] tracking-tight mb-2">
@@ -9,7 +9,7 @@ const WhyTSCDifferentSection = () => {
             </span>{' '}
             EMPOWERING SERVICES, BEYOND LIMITS!
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-left font-bold font-['Poppins'] leading-tight">
+          <h1 className="text-4xl sm:text-3xl lg:text-3xl text-left font-bold font-['Poppins'] leading-tight">
             Why Technology Service Creater (TSC)?
             <br />
             Building Responsibly
