@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser'; // Import emailjs
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const ContactForm = () => {
     message: '',
     privacyPolicy: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
@@ -20,10 +23,46 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      // Replace with your EmailJS Service ID, Template ID, and Public Key
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
+
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        to_name: 'TSC', // Or your name/company name
+        message: formData.message,
+        organization: formData.organization,
+        jobTitle: formData.jobTitle,
+        phoneNumber: formData.phoneNumber,
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      setSubmitMessage('Your message has been sent successfully!');
+      setFormData({
+        // Clear form after successful submission
+        firstName: '',
+        lastName: '',
+        email: '',
+        organization: '',
+        jobTitle: '',
+        phoneNumber: '',
+        message: '',
+        privacyPolicy: false,
+      });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitMessage('Failed to send your message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -156,11 +195,19 @@ const ContactForm = () => {
               <button
                 type="submit"
                 className="w-full sm:w-auto px-8 py-3 bg-black text-white font-['Montserrat'] font-semibold rounded-lg hover:bg-neutral-800 transition-colors"
+                disabled={isSubmitting}
               >
-                CONNECT NOW
+                {isSubmitting ? 'Sending...' : 'CONNECT NOW'}
               </button>
             </div>
           </div>
+          {submitMessage && (
+            <p
+              className={`text-center mt-4 ${submitMessage.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}
+            >
+              {submitMessage}
+            </p>
+          )}
         </form>
       </div>
     </section>
