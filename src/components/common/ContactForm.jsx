@@ -31,13 +31,13 @@ const ContactForm = () => {
     try {
       // Replace with your EmailJS Service ID, Template ID, and Public Key
       const serviceId = 'service_0bcnwtt';
-      const templateId = 'template_uig70ej';
+      const templateId = 'template_epccjzi';
       const publicKey = 'KGIfXKJD-n6ERc7-g';
 
       const templateParams = {
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        from_email: formData.email,
-        to_name: 'TSC', // Or your name/company name
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
         message: formData.message,
         organization: formData.organization,
         jobTitle: formData.jobTitle,
@@ -59,7 +59,7 @@ const ContactForm = () => {
       });
     } catch (error) {
       console.error('Failed to send email:', error);
-      setSubmitMessage('Failed to send your message. Please try again later.');
+      setSubmitMessage(`Failed to send your message. Please try again later.`);
     } finally {
       setIsSubmitting(false);
     }
