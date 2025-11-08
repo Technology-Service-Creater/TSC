@@ -57,7 +57,7 @@ const jobs = [
   },
 ];
 
-const RecentJobsSection = () => {
+const RecentJobsSection = ({ scrollToJobInquiryForm }) => {
   const [search, setSearch] = useState('');
 
   const filteredJobs = jobs.filter(job => {
@@ -116,7 +116,10 @@ const RecentJobsSection = () => {
                 <div className="text-xs font-['Montserrat'] text-gray-600 mb-4">
                   {job.description}
                 </div>
-                <button className="mt-auto bg-[#181A1B] text-white px-6 py-2 rounded-lg font-semibold hover:bg-neutral-800 transition">
+                <button
+                  onClick={scrollToJobInquiryForm}
+                  className="mt-auto bg-[#181A1B] text-white px-6 py-2 rounded-lg font-semibold hover:bg-neutral-800 transition"
+                >
                   APPLY NOW
                 </button>
               </div>
