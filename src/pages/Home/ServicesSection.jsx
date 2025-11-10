@@ -57,7 +57,45 @@ function ServicesSection({
           canGoRight={canGoRight}
           progress={progress}
         />
+
+        {/* Services */}
       </div>
+      {/* Achievements Section */}
+      <section className="py-10 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-60">
+          <div className="flex flex-col lg:flex-row items-center justify-around text-center space-y-8 lg:space-y-0 lg:space-x-8">
+            {/* Years of Excellence */}
+            <div className="flex items-center gap-4">
+              <p className="text-3xl sm:text-4xl p-4 sm:p-6 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100">
+                5+
+              </p>
+              <p className="text-lg sm:text-2xl max-w-[8rem] text-gray-600">Years of Excellence</p>
+            </div>
+            {/* Success Rate */}
+            <div className="flex items-center gap-4">
+              <p className="text-3xl sm:text-4xl p-4 sm:p-6 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100">
+                100%
+              </p>
+              <p className="text-lg sm:text-2xl max-w-[8rem] text-gray-600">Success Rate</p>
+            </div>
+
+            {/* Thriving Projects */}
+            <div className="flex items-center gap-4">
+              <p className="text-3xl sm:text-4xl p-4 sm:p-6 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100">
+                200+
+              </p>
+              <p className="text-lg sm:text-2xl max-w-[8rem] text-gray-600">Thriving Projects</p>
+            </div>
+
+            {/* Let's Talk Button */}
+            <div className="mt-8 lg:mt-0">
+              <button className="bg-gradient-to-b from-purple-500 to-blue-500 text-white px-6 py-3 w-auto rounded-full text-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition duration-300">
+                LET&apos;S TALK
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
