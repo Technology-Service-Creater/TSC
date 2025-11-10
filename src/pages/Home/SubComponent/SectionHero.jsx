@@ -17,10 +17,20 @@ const SectionHero = () => {
   }, [images.length]);
 
   return (
-    <div
-      className="relative bg-cover bg-center bg-no-repeat h-[600px] sm:h-[600px] lg:h-[700px] overflow-hidden transition-all duration-1000 ease-in-out"
-      style={{ backgroundImage: `url('${images[currentImageIndex]}')` }}
-    >
+    <div className="relative h-[600px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+      <div
+        className="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
+        style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt="Hero Background"
+            className="w-full h-full object-cover flex-shrink-0"
+          />
+        ))}
+      </div>
       {/* Dark backdrop overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
       {/* Gradient overlay for better text readability */}
