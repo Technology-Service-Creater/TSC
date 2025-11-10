@@ -35,6 +35,39 @@ const SectionTestimonials = () => (
         </button>
       </div>
     </div>
+    <div className="relative py-16 px-6 sm:px-8 lg:px-16 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          Join our newsletter to get the latest guides!
+        </h2>
+        <div className="flex justify-center">
+          <div className="relative flex items-center w-full max-w-md">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full py-3 pl-12 pr-4 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-400 absolute left-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 4v7a2 2 0 002 2h14a2 2 0 002-2v-7m-18 0l-2 2m20-2l2 2"
+              />
+            </svg>
+            <button className="absolute right-2 bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 );
 
