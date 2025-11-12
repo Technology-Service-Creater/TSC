@@ -24,6 +24,7 @@ import MarketingAnalysisResearch from '../pages/WhatWeDo/Industries/MarketingAna
 import LegalCompliance from '../pages/WhatWeDo/Industries/LegalCompliance/LegalCompliance';
 import DesignServices from '../pages/WhatWeDo/Industries/DesignServices/DesignServices';
 import ErrorBoundary from '../components/common/ErrorBoundary';
+import NotFound from '../pages/NotFound/NotFound';
 
 const industryComponents = {
   'digital-marketing-online-growth': DigitalMarketingOnlineGrowth,
@@ -276,6 +277,7 @@ const AppRoutes = () => {
           <Route path="/services/:serviceId" element={<ServiceDetails />} />
           <Route path="/industries/:industryId" element={<IndustryPageWrapper />} />
           <Route path="/industries/:industryId/:subPageId" element={<IndustrySubPageWrapper />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
