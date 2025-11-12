@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const cardData = [
   {
-    imageSrc: '/Images/AffiliateMarketing-2.jpg',
+    imageSrc: '/Images/AIML.png',
     altText: 'Integrating AI & ML in Software Development',
     students: '40+ Clients',
     duration: '10+ Services',
@@ -12,7 +12,7 @@ const cardData = [
     author: 'Integrating',
   },
   {
-    imageSrc: '/Images/AIAutomationMarketing-2.png',
+    imageSrc: '/Images/security.png',
     altText: 'Secure Software Development Life Cycle (SDLC)',
     students: '40+ Clients',
     duration: '10+ Services',
@@ -20,7 +20,7 @@ const cardData = [
     author: 'Integrating',
   },
   {
-    imageSrc: '/Images/AIAutomationMarketing-1.jpg',
+    imageSrc: '/Images/web.png',
     altText: 'Web Development',
     students: '1,611 students',
     duration: '1h 42m',
@@ -28,7 +28,7 @@ const cardData = [
     author: '10+ Services',
   },
   {
-    imageSrc: '/Images/AIDrivenMarketAnalytics-1.png',
+    imageSrc: '/Images/mobile.png',
     altText: 'Mobile Application Development',
     students: '5,282 students',
     duration: '16h 8m',
@@ -36,7 +36,7 @@ const cardData = [
     author: 'Daniel Scott',
   },
   {
-    imageSrc: '/Images/img6.png',
+    imageSrc: '/Images/chat.png',
     altText: 'ChatGPT for Creatives',
     students: '16,267 students',
     duration: '1h 18m',
@@ -44,7 +44,7 @@ const cardData = [
     author: 'Peggy Dean',
   },
   {
-    imageSrc: '/Images/Weddings_1.jpg',
+    imageSrc: '/Images/Draw.png',
     altText: "How to Draw: A Beginner's Guide",
     students: '14,312 students',
     duration: '5h 57m',
@@ -52,7 +52,7 @@ const cardData = [
     author: 'Brent Eviston',
   },
   {
-    imageSrc: '/Images/img7.jpg',
+    imageSrc: '/Images/photo1.png',
     altText: 'Learn Video Editing With Adobe Premiere Pro',
     students: '13,675 students',
     duration: '3h 44m',
@@ -60,7 +60,7 @@ const cardData = [
     author: 'Jordy Vandeput',
   },
   {
-    imageSrc: '/Images/AffiliateMarketing-1.jpg',
+    imageSrc: '/Images/iphone.png',
     altText: 'iPhone Photography Essentials',
     students: '12,395 students',
     duration: '1h 34m',
