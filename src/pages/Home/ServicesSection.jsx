@@ -193,11 +193,11 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
           </div>
         </div>
         {/* Achievements Section */}
-        <div className="flex flex-col lg:flex-row gap-4 items-center justify-around text-center md:max-w-3xl mx-auto space-y-8 lg:space-y-0">
+        <div className="flex flex-col lg:flex-row sm:gap-0 md:gap-4 sm:item-start md:items-center justify-around text-center md:max-w-3xl mx-auto space-y-8 lg:space-y-0">
           {/* Years of Excellence */}
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
-              5+
+            <div className="relative flex items-center justify-center w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
+              <span className="absolute inset-0 flex items-center justify-center">5+</span>
               <svg
                 className="absolute top-0 -right-1 w-8 h-8"
                 width="24"
@@ -238,14 +238,12 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg text-start sm:text-xl max-w-[8rem] text-gray-600">
-              Years of Excellence
-            </p>
+            <p className="text-xl text-start sm:text-xl text-gray-600">Years of Excellence</p>
           </div>
           {/* Success Rate */}
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
-              100%
+            <div className="relative flex items-center justify-center w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
+              <span className="absolute inset-0 flex items-center justify-center">100%</span>
               <svg
                 className="absolute -top-2 -right-1 w-10 h-10"
                 width="24"
@@ -290,13 +288,13 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg text-start sm:text-xl max-w-[8rem] text-gray-600">Success Rate</p>
+            <p className="text-xl text-start sm:text-xl text-gray-600">Success Rate</p>
           </div>
 
           {/* Thriving Projects */}
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
-              200+
+            <div className="relative flex items-center justify-center w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
+              <span className="absolute inset-0 flex items-center justify-center">200+</span>
               <svg
                 className="absolute -top-1 -right-2 w-10 h-10"
                 width="24"
@@ -335,11 +333,8 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg text-start sm:text-xl max-w-[8rem] text-gray-600">
-              Thriving Projects
-            </p>
+            <p className="text-xl text-start sm:text-xl text-gray-600">Thriving Projects</p>
           </div>
-
           {/* Let's Talk Button */}
           <div className="mt-8 lg:mt-0">
             <button
