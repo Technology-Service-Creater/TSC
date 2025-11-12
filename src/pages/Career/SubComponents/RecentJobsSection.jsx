@@ -118,12 +118,7 @@ const RecentJobsSection = () => {
                 </div>
                 <button
                   className="mt-auto bg-[#181A1B] text-white px-6 py-2 rounded-lg font-semibold hover:bg-neutral-800 transition"
-                  onClick={() =>
-                    window.open(
-                      'https://docs.google.com/forms/d/e/1FAIpQLSfZFU7g6nQjBRdv7IoL63_GBORe5MAcjh8krQDyZOUQGQ2i4w/viewform',
-                      '_blank'
-                    )
-                  }
+                  onClick={() => window.open('https://forms.gle/SRqPosQiC5GT3gFdA', '_blank')}
                 >
                   APPLY NOW
                 </button>
