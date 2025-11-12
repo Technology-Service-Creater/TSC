@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const SectionHero = () => {
   const images = [
@@ -8,6 +9,7 @@ const SectionHero = () => {
     '/Images/BroadcastDesign_hero.jpg',
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,6 +58,7 @@ const SectionHero = () => {
           <button
             aria-label="Get Started"
             className="font-[Montserrat] font-semibold flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#A468DA] to-[#149BF5] text-white text-sm sm:text-base hover:shadow-2xl hover:shadow-[#A468DA]/30 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#A468DA] focus:ring-opacity-50 active:scale-95"
+            onClick={() => navigate('/contact')}
           >
             <span>Get Started</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
