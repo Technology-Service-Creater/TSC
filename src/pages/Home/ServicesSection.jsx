@@ -8,7 +8,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
     <div className="py-16 px-6 sm:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div className="text-center mb-1 line-clamp-32 lg:mb-16">
           <div className="font-[Poppins] font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent text-xl sm:text-2xl lg:text-3xl mb-4">
             Our Services
           </div>
@@ -51,7 +51,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>19,268 students</span>
                   <span>6h 24m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   Kickstart your Creativity with Procreate: 20 Fun Drawings for Beginners and Beyond
                 </h3>
                 <p className="text-gray-700 text-sm">Lisa Bardot</p>
@@ -70,7 +70,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>39,106 students</span>
                   <span>13h 19m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   Social Media Content Creation in Canva: From Beginner to Advanced
                 </h3>
                 <p className="text-gray-700 text-sm">Maggie Stara</p>
@@ -89,7 +89,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>1,611 students</span>
                   <span>1h 42m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   Landscapes: A Free-Flow Watercolour Masterclass with Jane Davies
                 </h3>
                 <p className="text-gray-700 text-sm">Jane Davies</p>
@@ -108,7 +108,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>5,282 students</span>
                   <span>16h 8m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   Figma UI UX Design Advanced: Become a Figma Pro
                 </h3>
                 <p className="text-gray-700 text-sm">Daniel Scott</p>
@@ -127,7 +127,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>16,267 students</span>
                   <span>1h 18m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   ChatGPT for Creatives: AI-Powered SEO, Marketing, & Productivity
                 </h3>
                 <p className="text-gray-700 text-sm">Peggy Dean</p>
@@ -146,7 +146,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>14,312 students</span>
                   <span>5h 57m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   How to Draw: A Beginner&apos;s Guide - Part 1 of The Drawing Laboratory
                 </h3>
                 <p className="text-gray-700 text-sm">Brent Eviston</p>
@@ -165,7 +165,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>13,675 students</span>
                   <span>3h 44m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   Learn Video Editing With Adobe Premiere Pro For Beginners (2025)
                 </h3>
                 <p className="text-gray-700 text-sm">Jordy Vandeput</p>
@@ -184,7 +184,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                   <span>12,395 students</span>
                   <span>1h 34m</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-1">
+                <h3 className="font-semibold text-lg mb-1 line-clamp-3">
                   iPhone Photography Essentials: Take Pro Photos With Your iPhone
                 </h3>
                 <p className="text-gray-700 text-sm">Sean Dalton</p>
