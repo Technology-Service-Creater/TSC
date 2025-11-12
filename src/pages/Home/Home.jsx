@@ -12,22 +12,22 @@ const images = [
     desc: 'Creative visual solutions for your brand. Stand out with unique graphics.',
   },
   {
-    src: '/Images/img2.png',
+    src: '/Images/VirtualHybridEvents_1.jpg',
     title: 'Ui/Ux Design',
     desc: 'User-centered interfaces for web and mobile. Enhance user experience.',
   },
   {
-    src: '/Images/img3.png',
+    src: '/Images/AIDrivenMarketAnalytics-1.png',
     title: 'Digital Marketing',
     desc: 'Grow your business online with targeted campaigns and analytics.',
   },
   {
-    src: '/Images/img4.png',
+    src: '/Images/AIAutomationMarketing-2.png',
     title: 'Motion Graphics',
     desc: 'Engaging animations to tell your story and captivate your audience.',
   },
   {
-    src: '/Images/img5.png',
+    src: '/Images/AffiliateMarketing-1.jpg',
     title: 'Web Development',
     desc: 'Robust, scalable websites tailored to your business needs.',
   },
