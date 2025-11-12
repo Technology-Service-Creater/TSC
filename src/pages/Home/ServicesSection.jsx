@@ -1,7 +1,9 @@
 import ServicePill from './ServicePill';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 function ServicesSection({ services, selectedService, setSelectedService }) {
+  const navigate = useNavigate();
   return (
     <div className="py-16 px-6 sm:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -336,7 +338,10 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
 
           {/* Let's Talk Button */}
           <div className="mt-8 lg:mt-0">
-            <button className="bg-gradient-to-b from-purple-500 to-blue-500 text-white px-6 py-3 w-40 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition duration-300">
+            <button
+              className="bg-gradient-to-b from-purple-500 to-blue-500 text-white px-6 py-3 w-40 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition duration-300"
+              onClick={() => navigate('/contact')}
+            >
               LET&apos;S TALK
             </button>
           </div>
