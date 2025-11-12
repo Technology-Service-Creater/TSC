@@ -40,7 +40,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
             {/* Card 1 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img
-                src="/Images/img1.png"
+                src="/Images/AffiliateMarketing-2.jpg"
                 alt="Kickstart your Creativity"
                 className="w-full h-48 object-cover"
               />
@@ -59,7 +59,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
             {/* Card 2 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img
-                src="/Images/img2.png"
+                src="/Images/AIAutomationMarketing-2.png"
                 alt="Social Media Content Creation"
                 className="w-full h-48 object-cover"
               />
@@ -78,7 +78,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
             {/* Card 3 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img
-                src="/Images/img3.png"
+                src="/Images/AIAutomationMarketing-1.jpg"
                 alt="Landscapes: A Free-Flow Watercolour Masterclass"
                 className="w-full h-48 object-cover"
               />
@@ -97,7 +97,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
             {/* Card 4 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img
-                src="/Images/img4.png"
+                src="/Images/AIDrivenMarketAnalytics-1.png"
                 alt="Figma UI UX Design Advanced"
                 className="w-full h-48 object-cover"
               />
