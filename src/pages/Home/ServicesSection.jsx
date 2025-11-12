@@ -36,7 +36,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
         </div>
       </div>
       {/* New Card Section */}
-      <section className="py-16 px-6 sm:px-8 lg:px-16 bg-white">
+      <section className="py-16 px-6 sm:px-8 lg:px-16 max-w-7xl mx-auto bg-white">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
@@ -193,10 +193,10 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
           </div>
         </div>
         {/* Achievements Section */}
-        <div className="flex flex-col lg:flex-row items-center justify-around text-center space-y-8 lg:space-y-0 lg:space-x-8">
+        <div className="flex flex-col lg:flex-row gap-4 items-center justify-around text-center md:max-w-3xl mx-auto space-y-8 lg:space-y-0">
           {/* Years of Excellence */}
-          <div className="flex items-center gap-4">
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl">
+          <div className="flex items-center gap-2">
+            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
               5+
               <svg
                 className="absolute top-0 -right-1 w-8 h-8"
@@ -238,11 +238,11 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg sm:text-2xl max-w-[8rem] text-gray-600">Years of Excellence</p>
+            <p className="text-lg sm:text-xl max-w-[8rem] text-gray-600">Years of Excellence</p>
           </div>
           {/* Success Rate */}
-          <div className="flex items-center gap-4">
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl">
+          <div className="flex items-center gap-2">
+            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
               100%
               <svg
                 className="absolute -top-2 -right-1 w-10 h-10"
@@ -288,12 +288,12 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg sm:text-2xl max-w-[8rem] text-gray-600">Success Rate</p>
+            <p className="text-lg sm:text-xl max-w-[8rem] text-gray-600">Success Rate</p>
           </div>
 
           {/* Thriving Projects */}
-          <div className="flex items-center gap-4">
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl">
+          <div className="flex items-center gap-2">
+            <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
               200+
               <svg
                 className="absolute -top-1 -right-2 w-10 h-10"
@@ -333,7 +333,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg sm:text-2xl max-w-[8rem] text-gray-600">Thriving Projects</p>
+            <p className="text-lg sm:text-xl max-w-[8rem] text-gray-600">Thriving Projects</p>
           </div>
 
           {/* Let's Talk Button */}
