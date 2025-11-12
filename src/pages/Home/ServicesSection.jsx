@@ -24,7 +24,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
           </div>
         </div>
         {/* Services Pills */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-3">
           {services.map((service, idx) => (
             <ServicePill
               key={idx}
@@ -196,8 +196,8 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
         <div className="flex flex-col lg:flex-row sm:gap-0 md:gap-4 sm:item-start md:items-center justify-around text-center md:max-w-3xl mx-auto space-y-8 lg:space-y-0">
           {/* Years of Excellence */}
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
-              <span className="absolute inset-0 flex items-center justify-center">5+</span>
+            <div className="relative flex items-center justify-center w-24 h-24 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
+              <span className="absolute inset-0 flex items-center justify-center text-3xl">5+</span>
               <svg
                 className="absolute top-0 -right-1 w-8 h-8"
                 width="24"
@@ -242,8 +242,10 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
           </div>
           {/* Success Rate */}
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
-              <span className="absolute inset-0 flex items-center justify-center">100%</span>
+            <div className="relative flex items-center justify-center w-24 h-24 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
+              <span className="absolute inset-0 flex items-center justify-center text-3xl">
+                100%
+              </span>
               <svg
                 className="absolute -top-2 -right-1 w-10 h-10"
                 width="24"
@@ -293,8 +295,10 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
 
           {/* Thriving Projects */}
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
-              <span className="absolute inset-0 flex items-center justify-center">200+</span>
+            <div className="relative flex items-center justify-center w-24 h-24 rounded-full font-bold text-gray-800 bg-radial from-blue-300 to-blue-100 text-3xl sm:text-4xl flex-shrink-0">
+              <span className="absolute inset-0 flex items-center justify-center text-3xl">
+                200+
+              </span>
               <svg
                 className="absolute -top-1 -right-2 w-10 h-10"
                 width="24"
