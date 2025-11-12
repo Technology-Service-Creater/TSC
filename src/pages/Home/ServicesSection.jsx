@@ -238,7 +238,9 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg sm:text-xl max-w-[8rem] text-gray-600">Years of Excellence</p>
+            <p className="text-lg text-start sm:text-xl max-w-[8rem] text-gray-600">
+              Years of Excellence
+            </p>
           </div>
           {/* Success Rate */}
           <div className="flex items-center gap-2">
@@ -288,7 +290,7 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg sm:text-xl max-w-[8rem] text-gray-600">Success Rate</p>
+            <p className="text-lg text-start sm:text-xl max-w-[8rem] text-gray-600">Success Rate</p>
           </div>
 
           {/* Thriving Projects */}
@@ -333,7 +335,9 @@ function ServicesSection({ services, selectedService, setSelectedService }) {
                 </defs>
               </svg>
             </div>
-            <p className="text-lg sm:text-xl max-w-[8rem] text-gray-600">Thriving Projects</p>
+            <p className="text-lg text-start sm:text-xl max-w-[8rem] text-gray-600">
+              Thriving Projects
+            </p>
           </div>
 
           {/* Let's Talk Button */}
