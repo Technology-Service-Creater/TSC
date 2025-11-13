@@ -280,7 +280,7 @@ const Navbar = () => {
   return (
     <>
       {/* Sticky container for top bar + navbar. Fixes submenu/blur gap issues. */}
-      <div className="sticky top-0 z-50 bg-white ">
+      <div className="sticky top-0 z-[9999] bg-white ">
         {/* Top Bar - Only visible on tablet and desktop */}
         <div className="hidden sm:block w-full font-[Montserrat] font-normal bg-white border-b border-gray-200 text-[#222] py-2 px-4 sm:px-6 lg:px-10">
           <div className="max-w-screen-xl mx-auto flex flex-wrap justify-end gap-1.5 md:gap-8 lg:px-10 items-center">
