@@ -18,7 +18,10 @@ const TechnologyWorldCreaterSection = () => {
               From agriculture to property, services to education — we build impact-first tech
               solutions that uplift industries and empower communities.
             </p>
-            <button className="mt-8 flex items-center justify-center px-10 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300">
+            <button
+              className="mt-8 flex items-center justify-center px-10 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
+              onClick={() => window.open('https://technologyworldcreater.com/')}
+            >
               Explore More <span className="ml-2">→</span>
             </button>
           </div>
