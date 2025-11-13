@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Twitter } from 'lucide-react';
+import { Youtube, Instagram, Linkedin, Mail, MapPin, Twitter } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -34,10 +34,31 @@ const Footer = () => {
               </span>
             </div>
             <div className="flex items-center justify-start gap-3 lg:gap-4">
-              <Facebook className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg" />
-              <Linkedin className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg" />
-              <Twitter className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg" />
-              <Instagram className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg" />
+              <Youtube
+                className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg"
+                onClick={() =>
+                  window.open('https://www.youtube.com/@technologyworldcreater', '_blank')
+                }
+              />
+              <Linkedin
+                className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg"
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/company/technology-world-creater/posts/?feedView=all',
+                    '_blank'
+                  )
+                }
+              />
+              <Twitter
+                className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg"
+                onClick={() => window.open('https://x.com/twcindia01', '_blank')}
+              />
+              <Instagram
+                className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 hover:text-[#A468DA] transition-all duration-300 cursor-pointer hover:scale-110 hover:drop-shadow-lg"
+                onClick={() =>
+                  window.open('https://www.instagram.com/technology_world_creater/', '_blank')
+                }
+              />
             </div>
           </div>
 
@@ -50,10 +71,16 @@ const Footer = () => {
                 <div className="absolute -bottom-1 lg:-bottom-2 left-0 w-8 lg:w-12 h-0.5 bg-gradient-to-r from-[#A468DA] to-[#149BF5] rounded-full"></div>
               </div>
               <div className="font-[Montserrat] font-medium flex flex-col gap-2 lg:gap-5">
-                <div className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base">
+                <div
+                  className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base"
+                  onClick={() => window.open('/', '_self')}
+                >
                   Home
                 </div>
-                <div className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base">
+                <div
+                  className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base"
+                  onClick={() => window.open('/about', '_self')}
+                >
                   About
                 </div>
                 <div className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base">
@@ -62,7 +89,10 @@ const Footer = () => {
                 <div className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base">
                   News
                 </div>
-                <div className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base">
+                <div
+                  className="text-gray-300 hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-1 lg:hover:translate-x-2 transform text-sm lg:text-base"
+                  onClick={() => window.open('/contact', '_self')}
+                >
                   Contact
                 </div>
               </div>
