@@ -18,9 +18,9 @@ const OurCompaniesSection = ({ companyData }) => {
           Our Companies
           <div className="-z-10 w-full">
             <img
-              src="/Images/Line.png"
+              src="/Images/Image.png"
               alt="underline"
-              className="relative -top-8 left-10 mt-2 h-10 sm:max-w-full"
+              className="relative -top-8 mt-2 h-10 sm:max-w-full"
             />
           </div>
         </h2>
