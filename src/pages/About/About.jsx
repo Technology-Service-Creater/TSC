@@ -62,7 +62,7 @@ const teamMembers = {
 };
 
 const exploreContent = [
-  { heading: 'Explore career', link: '/career' },
+  { heading: 'Explore career', link: '/careers' },
   { heading: 'Explore Services', link: '/services' },
   { heading: 'Explore Events', link: '/events' },
   { heading: 'Explore Blogs', link: '/blogs' },
