@@ -111,16 +111,7 @@ function Home() {
     <>
       <div>
         <SectionHero />
-        <SectionInnovate
-          images={images}
-          visibleCount={visibleCount}
-          startIdx={startIdx}
-          handlePrev={handlePrev}
-          handleNext={handleNext}
-          canGoLeft={canGoLeft}
-          canGoRight={canGoRight}
-          progress={progress}
-        />
+        <SectionInnovate />
         <ServicesSection
           services={services}
           selectedService={selectedService}
