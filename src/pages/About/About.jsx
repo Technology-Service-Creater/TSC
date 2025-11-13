@@ -133,7 +133,7 @@ const companyData = [
 const About = () => (
   <>
     <WhatIsTSCSection bgImage="/Images/aboutHero.png" />
-    <div className="bg-white px-0 md:px-0">
+    <div className="bg-white px-0 md:px-0 overflow-x-hidden">
       <MissionVisionSection mission={mission} vision={vision} />
       <OurVisionSection
         heading1={ourVisionSection.heading1}
