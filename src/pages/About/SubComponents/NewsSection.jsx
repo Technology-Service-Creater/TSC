@@ -1,6 +1,14 @@
 import React from 'react';
 
 const NewsSection = () => {
+  const img = [
+    '/Images/Container-1.png',
+    '/Images/Container-2.png',
+    '/Images/Container-3.png',
+    '/Images/Container-4.png',
+    '/Images/Container-5.png',
+    '/Images/Container-6.png',
+  ];
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8 mb-10">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8">
@@ -22,8 +30,14 @@ const NewsSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {/* Placeholder for news cards */}
-        {[...Array(6)].map((_, index) => (
-          <div key={index} className="bg-[#383838] rounded-lg shadow-md h-80 w-full"></div>
+        {img.map((img, index) => (
+          <div key={index} className="bg-[#383838] rounded-lg shadow-md h-80 w-full">
+            <img
+              src={img}
+              alt={img}
+              className="h-full w-full object-cover object-left rounded-lg"
+            />
+          </div>
         ))}
       </div>
     </div>
