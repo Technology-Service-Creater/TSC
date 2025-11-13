@@ -40,7 +40,7 @@ const SectionInnovate = () => {
                 className="flex-shrink-0 flex items-center justify-center transition-all duration-500 
                    hover:scale-110 hover:grayscale-0"
               >
-                <img src={logo} alt={logo} className="h-[29em] w-full" />
+                <img src={logo} alt={logo} className="h-80 md:h-[29em] w-full object-cover" />
               </div>
             ))}
           </div>
