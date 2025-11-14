@@ -524,7 +524,7 @@ const SectionWhyChooseUs = () => {
             <img
               src="/Images/img6.png"
               alt="Team working on digital solutions"
-              className="rounded-xl object-cover w-full max-w-xs sm:max-w-sm lg:max-w-md"
+              className="object-cover w-full max-w-xs sm:max-w-sm lg:max-w-full"
             />
           </div>
         </div>
@@ -533,7 +533,7 @@ const SectionWhyChooseUs = () => {
             <img
               src="/Images/img7.jpg"
               alt="Celebrating project achievements"
-              className="rounded-xl object-cover w-full max-w-xs sm:max-w-sm lg:max-w-md"
+              className="object-cover w-full max-w-xs sm:max-w-sm lg:max-w-full"
             />
           </div>
           <div className="w-full lg:w-1/2">
@@ -572,6 +572,9 @@ const SectionWhyChooseUs = () => {
       </div>
       {/* carousel */}
       <div className="w-full overflow-hidden py-16">
+        <div className="font-[Poppins] text-center py-5 font-bold bg-gradient-to-r from-[#A468DA] to-[#149BF5] bg-clip-text text-transparent text-lg sm:text-2xl lg:text-3xl mb-3">
+          Proudly work with
+        </div>
         <div className="flex animate-slide hover:[animation-play-state:paused]">
           {duplicatedIcons.map((logo, i) => (
             <div
@@ -584,7 +587,6 @@ const SectionWhyChooseUs = () => {
           ))}
         </div>
       </div>
-
       {/* Correct Tailwind-compatible keyframes – NO <style jsx> needed */}
       <style>{`
         @keyframes slide {
